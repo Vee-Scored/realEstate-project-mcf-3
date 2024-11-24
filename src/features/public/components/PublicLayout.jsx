@@ -6,7 +6,7 @@ import PageLoading from "../../../components/PageLoading";
 
 const PublicLayout = () => {
   return (
-    <main className=" flex flex-col min-h-screen">
+    <main className=" flex flex-col gap-5 min-h-screen">
       <Header />
       <Suspense fallback={<PageLoading />}>
         <Outlet />

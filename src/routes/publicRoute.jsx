@@ -1,4 +1,5 @@
 import { lazy } from "react";
+import BlogPage from "../features/public/pages/BlogPage";
 
 const AboutUsPage = lazy(() => import("../features/public/pages/AboutUsPage"));
 const ContactUsPage = lazy(() => import("../features/public/pages/ContactUsPage"));
@@ -16,6 +17,10 @@ const publicRoute = [
   {
     path: "contact-us",
     element: <ContactUsPage />,
+  },
+  {
+    path: "blog",
+    element: <BlogPage />,
   },
 ];
 
