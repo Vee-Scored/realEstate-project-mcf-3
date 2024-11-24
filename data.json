@@ -1,0 +1,64 @@
+[
+  {
+    "unit_id": "R-101",
+    "name": "Modern Downtown Apartment",
+    "description": "A fully furnished 2-bedroom apartment located in the heart of the city with easy access to shopping centers and public transport.",
+    "price_per_month": 1500,
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "sqft": 950,
+    "listed_date": "2024-11-20",
+    "available": true,
+    "for": "rent"
+  },
+  {
+    "unit_id": "S-202",
+    "name": "Luxurious Suburban Home",
+    "description": "A spacious 4-bedroom home with a large backyard, ideal for families. Located in a quiet neighborhood.",
+    "price_per_month": null,
+    "price": 450000,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "sqft": 3000,
+    "listed_date": "2024-10-15",
+    "available": false,
+    "for": "sale"
+  },
+  {
+    "unit_id": "R-303",
+    "name": "Cozy Studio Apartment",
+    "description": "A compact and affordable studio apartment perfect for singles or students, located near the university.",
+    "price_per_month": 800,
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "sqft": 450,
+    "listed_date": "2024-11-01",
+    "available": true,
+    "for": "rent"
+  },
+  {
+    "unit_id": "S-404",
+    "name": "Beachside Condo",
+    "description": "A stunning 3-bedroom condo with ocean views, private balcony, and modern amenities.",
+    "price_per_month": null,
+    "price": 600000,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "sqft": 1800,
+    "listed_date": "2024-09-28",
+    "available": true,
+    "for": "sale"
+  },
+  {
+    "unit_id": "R-505",
+    "name": "Family Townhouse",
+    "description": "A 3-bedroom townhouse with a small garden and parking space. Located near schools and parks.",
+    "price_per_month": 1200,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "sqft": 1400,
+    "listed_date": "2024-10-30",
+    "available": false,
+    "for": "rent"
+  }
+]
