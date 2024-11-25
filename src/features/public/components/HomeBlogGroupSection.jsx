@@ -1,16 +1,20 @@
 import React from "react";
 import { blogs } from "../../../components/blog/constant";
 import BlogCard from "../../../components/blog/BlogCard";
-import Line101 from "../../../assets/HomeAssets/Line101.png";
 import ViewAllBtn from "../../../components/ViewAllBtn";
+import Container from "../../../components/Container";
+import SectionTitleComponent from "../../../components/SectionTitleComponent";
 const HomeBlogGroupSection = () => {
   return (
-    <section className="flex flex-col items-start  gap-14 ">
+    <Container>
+      <section className="flex flex-col items-start  gap-14 ">
       <div className=" flex flex-col items-start gap-8  w-full ">
-        <div className="flex items-center gap-3">
+        {/* <div className="flex items-center gap-3">
           <img src={Line101} alt="line" />
           <span className="text-sm font-medium text-blue-500">Blog</span>
-        </div>
+        </div> */}
+
+        <SectionTitleComponent name={'Blog'} />
         <h1 className="text-5xl font-semibold text-neutral-700 font-heading">
           Read Our Sight
         </h1>
@@ -29,6 +33,7 @@ const HomeBlogGroupSection = () => {
         ))}
       </div>
     </section>
+    </Container>
   );
 };
 
