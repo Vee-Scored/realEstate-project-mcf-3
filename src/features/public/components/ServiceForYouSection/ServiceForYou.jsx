@@ -36,7 +36,7 @@ const ServiceForYou = () => {
           />
         </div>
         {/* Right */}
-        <div className=" w-1/2 h-[510px] flex flex-col gap-6">
+        <div className=" w-1/2 h-[510px] flex flex-col gap-8">
           <SectionTitleComponent name={"Service For You"} />
           <div className=" w-[406px]">
             <h1 className=" text-[43px] text-neutral-700 font-notoSansLao leading-[53px] font-[600]">
