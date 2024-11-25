@@ -12,13 +12,13 @@ const RealEstateAgency = () => {
       <Container>
       <div className=" relative flex gap-5 items-center">
         {/* Left */}
-        <div className=" w-1/2 h-[624px] flex justify-between  flex-col gap-3">
-          <SectionTitleComponent name={"RealEstateAgency"} />
+        <div className=" w-1/2 h-[624px] flex justify-between  flex-col gap-8">
+          <SectionTitleComponent name={"RealEstateAgency"}  />
           <div>
             <p className=" text-[60px] leading-[65px] font-[600]  text-neutral-700">
-              Find Your Dream Property Today!
+            Find Your Dream Property Today!
             </p>
-          </div>
+         </div>
           <div>
             <span className=" text-lg text-neutral-500">
               Discover a wide range of properties tailored to your needs, from
