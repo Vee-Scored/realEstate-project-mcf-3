@@ -28,6 +28,7 @@ const HomePage = () => {
         <HomePoperBenefit />
         <HomeBlogGroupSection />
         <HomeTestimonial/>
+        <DownloadAppSection/>
         <NewLetters />
         <MeetOurTeam />
 
