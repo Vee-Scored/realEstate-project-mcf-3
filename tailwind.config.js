@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        inter: ["Inter", "sans-serif"],
-        notoSansLao: ["Noto Sans Lao", "sans-serif"],
+        heading: ["Inter", "sans-serif"],
+        sans: ["Noto Sans Lao", "sans-serif"],
       },
     },
   },
