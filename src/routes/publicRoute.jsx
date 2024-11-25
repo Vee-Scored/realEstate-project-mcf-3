@@ -22,6 +22,10 @@ const publicRoute = [
     path: "blog",
     element: <BlogPage />,
   },
+  {
+  path: "property",
+  element: <BlogPage />,
+},
 ];
 
 export default publicRoute;
