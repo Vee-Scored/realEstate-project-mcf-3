@@ -5,14 +5,20 @@ import ServiceForYou from "../components/ServiceForYouSection/ServiceForYou";
 import HomeBlogGroupSection from "../components/HomeBlogGroupSection";
 import HomePopularProper from "../components/HomePopularProper";
 import HomePoperBenefit from "../components/HomePoperBenefit";
+
+
+
+import HomeTestimonial from "../components/HomeTestimonial";
 const HomePage = () => {
   return (
     <section className="flex flex-col gap-20">
-      <RealEstateAgency />
-      <HomePopularProper />
-      <HomePoperBenefit />
-      <ServiceForYou />
-      <HomeBlogGroupSection />
+        <RealEstateAgency />
+        <ServiceForYou/>
+        <HomePopularProper />
+        <HomePoperBenefit />
+        <HomeBlogGroupSection />
+        <HomeTestimonial/>
+
     </section>
   );
 };
