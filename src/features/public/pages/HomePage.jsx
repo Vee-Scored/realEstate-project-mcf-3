@@ -4,6 +4,7 @@ import RealEstateAgency from "../components/RealEstateAgencySection/RealEstateAg
 import ServiceForYou from "../components/ServiceForYouSection/ServiceForYou";
 import HomeBlogGroupSection from "../components/HomeBlogGroupSection";
 import DownloadAppSection from "../components/DownloadAppSection";
+import MeetOurTeam from "../components/MeetOurTeam";
 const HomePage = () => {
   return (
     <section className="flex flex-col gap-20">
@@ -11,6 +12,7 @@ const HomePage = () => {
       <ServiceForYou />
       <HomeBlogGroupSection />
       <DownloadAppSection />
+      <MeetOurTeam />
     </section>
   );
 };
