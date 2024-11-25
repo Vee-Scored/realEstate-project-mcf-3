@@ -15,7 +15,7 @@ import HomePoperBenefit from "../components/HomePoperBenefit";
 import HomeTestimonial from "../components/HomeTestimonial";
 const HomePage = () => {
   return (
-    <section className="flex flex-col gap-20">
+    <section className="flex flex-col mb-20 gap-20">
         <RealEstateAgency />
         <ServiceForYou/>
         <HomePopularProper />
