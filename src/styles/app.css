@@ -4,6 +4,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .newLetters__bg {
+    @apply bg-[url('../assets/HomeAssets/newLetters.png')]  bg-cover bg-center;
+  }
+}
+
 .page-loading-progress {
   animation: progress 1s infinite linear;
 }
