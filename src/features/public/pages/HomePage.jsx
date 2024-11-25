@@ -4,10 +4,9 @@ import HeroSection from "../components/HeroSection";
 
 const HomePage = () => {
   return (
-    <Container>
-      <HeroSection />
-      
-    </Container>
+    <section className="flex flex-col gap-10">
+        
+    </section>
   );
 };
 
