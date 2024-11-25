@@ -54,7 +54,7 @@ const Header = () => {
   const [user] = useCookie("user");
 
   return (
-    <header className=" sticky top-0 ">
+    <header className=" sticky top-0 z-50 bg-white ">
       <nav className="h-20 flex flex-col justify-center dark:bg-gray-800">
         <Container className={"w-full"}>
           <div className="flex flex-wrap justify-between items-center">
