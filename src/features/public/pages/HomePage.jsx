@@ -4,6 +4,12 @@ import RealEstateAgency from "../components/RealEstateAgencySection/RealEstateAg
 import ServiceForYou from "../components/ServiceForYouSection/ServiceForYou";
 import HomeBlogGroupSection from "../components/HomeBlogGroupSection";
 
+import DownloadAppSection from "../components/DownloadAppSection";
+import MeetOurTeam from "../components/MeetOurTeam";
+
+     
+
+
 import NewLetters from "../../../components/NewLetters";
 
 import HomePopularProper from "../components/HomePopularProper";
@@ -23,6 +29,7 @@ const HomePage = () => {
         <HomeBlogGroupSection />
         <HomeTestimonial/>
         <NewLetters />
+        <MeetOurTeam />
 
 
     </section>
