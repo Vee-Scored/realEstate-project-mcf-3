@@ -15,7 +15,7 @@ const HomeBlogGroupSection = () => {
         </div> */}
 
         <SectionTitleComponent name={'Blog'} />
-        <h1 className="text-5xl font-semibold text-neutral-700 font-heading">
+        <h1 className="text-5xl leading-10 font-semibold text-neutral-700 font-heading">
           Read Our Sight
         </h1>
         <div className="flex justify-between items-center w-full">

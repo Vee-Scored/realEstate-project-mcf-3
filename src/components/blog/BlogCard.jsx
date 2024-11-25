@@ -16,15 +16,19 @@ const BlogCard = ({ blog: { blog_image, title, content, date } }) => {
           <div className="h-5 w-[1px] bg-neutral-500" />
           <span className="text-sm text-neutral-500">Estate</span>
         </p>
-        <h1 className="text-2xl font-semibold font-heading">{title}</h1>
-        <p className="text-sm text-neutral-500 font-normal">{content}</p>
+        <h1 className="text-2xl font-semibold font-heading line-clamp-2">
+          {title}
+        </h1>
+        <p className="text-sm text-neutral-500 font-normal line-clamp-3">
+          {content}
+        </p>
         <div className="h-[1px] w-full bg-neutral-200" />
         <div className="flex justify-between items-center w-full">
           <div className="flex items-center gap-3">
             <img src={calender} alt="calender" className="size-5" />
             <p className="text-sm text-neutral-500">{date}</p>
           </div>
-          <ViewAllBtn className={`bg-neutral-700 text-neutral-50`}>
+          <ViewAllBtn className={`bg-neutral-700 text-white`}>
             View detail
           </ViewAllBtn>
         </div>
