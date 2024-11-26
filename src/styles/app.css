@@ -28,3 +28,16 @@
     transform: translateX(100%) scaleX(0.5);
   }
 }
+
+/* Override the library's default styles for smooth transitions */
+.accordion__panel {
+  padding: 0; /* Ensures consistent padding */
+  margin: 0;
+  overflow: hidden; /* Prevents content from overflowing during animation */
+  transition: max-height 0.3s ease; /* Smooth height transition */
+  max-height: 0; /* Initially collapsed */
+}
+
+.accordion__panel--expanded {
+  max-height: 300px; /* Maximum height when expanded (adjust if needed) */
+}

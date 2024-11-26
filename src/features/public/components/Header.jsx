@@ -47,6 +47,11 @@ const navs = [
     content: "CONTACT",
     path: "/contact",
   },
+  {
+    id: 6,
+    content: "FAQ",
+    path: "/faq",
+  },
 ];
 
 const Header = () => {
