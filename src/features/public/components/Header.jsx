@@ -3,16 +3,16 @@ import { Link, useNavigate } from "react-router-dom";
 import useCookie from "react-use-cookie";
 import Container from "../../../components/Container";
 import logo from "../../../assets/HomeAssets/logo.png";
-import themeToggle from "../../../assets/HomeAssets/themeToggle.png"
-import userFavicon from "../../../assets/HomeAssets/user.png"
-import globe from "../../../assets/HomeAssets/globeFavicon.svg"
+import themeToggle from "../../../assets/HomeAssets/themeToggle.png";
+import userFavicon from "../../../assets/HomeAssets/user.png";
+import globe from "../../../assets/HomeAssets/globeFavicon.svg";
 
-const Links = ({content,path}) => {
+const Links = ({ content, path }) => {
   const nav = useNavigate();
   return (
     <li>
       <button
-        onClick={()=>nav(path)}
+        onClick={() => nav(path)}
         className="block py-2 pr-4 text-sm pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
       >
         {content}
@@ -21,34 +21,38 @@ const Links = ({content,path}) => {
   );
 };
 
-
 const navs = [
   {
-    id : 1,
-    content : "HOME",
-    path : "/"
+    id: 1,
+    content: "HOME",
+    path: "/",
   },
   {
-    id : 2,
-    content : "ABOUT",
-    path : "/about"
+    id: 2,
+    content: "ABOUT",
+    path: "/about-us",
   },
   {
-    id : 3,
-    content : "BLOG",
-    path : "/blog"
+    id: 3,
+    content: "BLOG",
+    path: "/blog",
   },
   {
-    id : 4,
-    content : "PROPERTY",
-    path : "/property"
+    id: 4,
+    content: "PROPERTY",
+    path: "/property",
   },
   {
-    id : 5,
-    content : "CONTACT",
-    path : "/contact"
-  }
-]
+    id: 5,
+    content: "CONTACT",
+    path: "/contact",
+  },
+  {
+    id: 6,
+    content: "FAQ",
+    path: "/faq",
+  },
+];
 
 const Header = () => {
   const [user] = useCookie("user");
@@ -59,7 +63,7 @@ const Header = () => {
         <Container className={"w-full"}>
           <div className="flex flex-wrap justify-between items-center">
             <Link to="/" className="flex items-center">
-                <img className="h-9" src={logo} alt="" />
+              <img className="h-9" src={logo} alt="" />
             </Link>
             <div className="flex items-center gap-5 lg:order-2">
               {!user ? (
@@ -124,9 +128,9 @@ const Header = () => {
               id="mobile-menu-2"
             >
               <ul className=" text-sm leading-4  flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
-                {
-                  navs.map(n => <Links key={n.id} path={n.path} content={n.content} />)
-                }
+                {navs.map((n) => (
+                  <Links key={n.id} path={n.path} content={n.content} />
+                ))}
               </ul>
             </div>
           </div>

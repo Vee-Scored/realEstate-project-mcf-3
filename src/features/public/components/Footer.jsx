@@ -11,7 +11,7 @@ import Home from "../../../assets/FooterIcons/Home.svg";
 
 const Footer = () => {
   return (
-    <footer className="bg-neutral-700 text-white py-8">
+    <footer className="bg-neutral-700 mt-auto text-white py-8">
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}

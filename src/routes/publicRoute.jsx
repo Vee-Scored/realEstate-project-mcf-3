@@ -1,8 +1,16 @@
 import { lazy } from "react";
-import BlogPage from "../features/public/pages/BlogPage";
-
+const BlogPage = lazy(() => import("../features/public/pages/BlogPage"));
+const BlogDetailPage = lazy(() =>
+  import("../features/public/pages/BlogDetailPage")
+);
+const Faq = lazy(() => import("../features/public/components/FaqSection/Faq"));
+const TermsAndConditionPage = lazy(() =>
+  import("../features/public/pages/TermsAndConditionPage")
+);
 const AboutUsPage = lazy(() => import("../features/public/pages/AboutUsPage"));
-const ContactUsPage = lazy(() => import("../features/public/pages/ContactUsPage"));
+const ContactUsPage = lazy(() =>
+  import("../features/public/pages/ContactUsPage")
+);
 const HomePage = lazy(() => import("../features/public/pages/HomePage"));
 
 const publicRoute = [
@@ -19,13 +27,24 @@ const publicRoute = [
     element: <ContactUsPage />,
   },
   {
-    path: "blog",
+    path: "blogs",
     element: <BlogPage />,
   },
   {
-  path: "property",
-  element: <BlogPage />,
-},
+    path: "blogs/estate/:slug-name",
+    element: <BlogDetailPage />,
+  },
+
+  {
+    path: "faq",
+    element: <Faq />,
+  },
+
+  { path: "property", element: <BlogPage /> },
+  {
+    path: "terms-and-conditions",
+    element: <TermsAndConditionPage />,
+  },
 ];
 
 export default publicRoute;
