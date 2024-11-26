@@ -13,12 +13,11 @@ import HomePopularProper from "../components/HomePopularProper";
 import HomePoperBenefit from "../components/HomePoperBenefit";
 
 import HomeTestimonial from "../components/HomeTestimonial";
-import BreadCrumb from "../components/BreadCrumb";
 const HomePage = () => {
   return (
     <section className="flex flex-col mb-20 gap-20">
       <RealEstateAgency />
-      <ServiceForYou />
+      <ServiceForYou />e
       <HomePopularProper />
       <HomePoperBenefit />
       <HomeBlogGroupSection />

@@ -1,8 +1,11 @@
 import { lazy } from "react";
 import BlogPage from "../features/public/pages/BlogPage";
+import Faq from "../features/public/components/FaqSection/Faq";
 
 const AboutUsPage = lazy(() => import("../features/public/pages/AboutUsPage"));
-const ContactUsPage = lazy(() => import("../features/public/pages/ContactUsPage"));
+const ContactUsPage = lazy(() =>
+  import("../features/public/pages/ContactUsPage")
+);
 const HomePage = lazy(() => import("../features/public/pages/HomePage"));
 
 const publicRoute = [
@@ -23,9 +26,13 @@ const publicRoute = [
     element: <BlogPage />,
   },
   {
-  path: "property",
-  element: <BlogPage />,
-},
+    path: "property",
+    element: <BlogPage />,
+  },
+  {
+    path: "faq",
+    element: <Faq />,
+  },
 ];
 
 export default publicRoute;
