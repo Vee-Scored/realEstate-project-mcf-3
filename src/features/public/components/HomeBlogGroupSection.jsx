@@ -40,8 +40,8 @@ const HomeBlogGroupSection = () => {
             <ViewAllBtn>View all</ViewAllBtn>
           </div>
         </div>
-        <Container className={"w-full px-0"}>
-          <div className="gird grid-cols-3 gap-5">
+        <Container className={"!px-0"}>
+          <div className=" gap-5 ">
             <Swiper
               modules={[Autoplay]}
               spaceBetween={20}
@@ -51,7 +51,7 @@ const HomeBlogGroupSection = () => {
               breakpoints={breakPoint}
             >
               {blogs.map((blog) => (
-                <SwiperSlide key={blog.id} className="border border-gray-300">
+                <SwiperSlide key={blog.id}>
                   <BlogCard blog={blog} />
                 </SwiperSlide>
               ))}
