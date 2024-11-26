@@ -14,7 +14,7 @@ const HomeBlogGroupSection = () => {
     disableOnInteraction: false,
   };
   const breakPoint = {
-    640: { slidesPerView: 1 },
+    0: { slidesPerView: 1 },
     768: { slidesPerView: 2 },
     1024: { slidesPerView: 3 },
   };
@@ -45,7 +45,7 @@ const HomeBlogGroupSection = () => {
             <Swiper
               modules={[Autoplay]}
               spaceBetween={20}
-              slidesPerView={3}
+              
               autoplay={options}
               loop={true}
               breakpoints={breakPoint}

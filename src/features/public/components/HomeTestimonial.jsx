@@ -17,19 +17,16 @@ const responsive = {
     breakpoint: { max: 3000, min: 1024 },
     items: 2,
   },
-  tablet: {
-    breakpoint: { max: 1024, min: 464 },
-    items: 2,
-  },
+  
   mobile: {
-    breakpoint: { max: 464, min: 0 },
+    breakpoint: { max: 750, min: 0 },
     items: 1,
   },
 };
 
 const TestimonialCard = () => {
   return (
-    <div className="w-[628px] rounded-lg font-heading flex flex-col justify-between p-5 h-[304px] border-2 border-gray-200 ">
+    <div className='w-full rounded-lg font-heading flex flex-col justify-between p-5 h-[304px] border-2 border-gray-200 '>
       <div>
         <img className="w-[51px] h-[37px]" src={openQuote} alt="" />
       </div>
@@ -91,8 +88,9 @@ const HomeTestimonial = () => {
         </div>
       </Container>
 
-      <Container className={"!p-0"}>
+      <Container   className={"lg:!p-0"}>
         <Carousel
+          sliderClass='md:gap-5'
           arrows={false}
           infinite={true}
           ref={carouselRef}

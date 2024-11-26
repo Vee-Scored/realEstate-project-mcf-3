@@ -6,14 +6,14 @@ import logo from "../../../assets/HomeAssets/logo.png";
 import themeToggle from "../../../assets/HomeAssets/themeToggle.png";
 import userFavicon from "../../../assets/HomeAssets/user.png";
 import globe from "../../../assets/HomeAssets/globeFavicon.svg";
-
+import envelope from "../../../assets/HomeAssets/envelope.png"
 const Links = ({ content, path }) => {
   const nav = useNavigate();
   return (
     <li>
       <button
         onClick={() => nav(path)}
-        className="block py-2 pr-4 text-sm pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
+        className="block py-2 pr-4 text-sm font-heading font-[500px] pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
       >
         {content}
       </button>
@@ -29,29 +29,21 @@ const navs = [
   },
   {
     id: 2,
-    content: "ABOUT",
-    path: "/about-us",
+    content: "PROPERTY",
+    path: "/properties",
   },
   {
     id: 3,
-    content: "BLOG",
-    path: "/blog",
+    content: "ABOUT",
+    path: "/about-us",
   },
+  
+  
   {
     id: 4,
-    content: "PROPERTY",
-    path: "/property",
-  },
-  {
-    id: 5,
     content: "CONTACT",
-    path: "/contact",
-  },
-  {
-    id: 6,
-    content: "FAQ",
-    path: "/faq",
-  },
+    path: "/contact-us",
+  }
 ];
 
 const Header = () => {
@@ -59,18 +51,26 @@ const Header = () => {
 
   return (
     <header className=" sticky top-0 z-50 bg-white ">
-      <nav className="h-20 flex flex-col justify-center dark:bg-gray-800">
+     
+      <nav className="flex flex-col justify-center dark:bg-gray-800">
         <Container className={"w-full"}>
-          <div className="flex flex-wrap justify-between items-center">
+        <div className="border-b text-neutral-700 border-neutral-200 mb-5 py-3 justify-end flex items-center">
+           <div className="border-r border-neutral-700 px-3">
+           +95034526313
+           </div>
+           <div className="border-l flex gap-2 items-center border-neutral-700 px-3">
+           <img src={envelope} alt="envelope" /> estatela123@gmail.com
+           </div>
+           
+          </div>
+          <div className="flex h-20 flex-wrap justify-between items-center">
             <Link to="/" className="flex items-center">
               <img className="h-9" src={logo} alt="" />
             </Link>
             <div className="flex items-center gap-5 lg:order-2">
               {!user ? (
                 <>
-                  <button>
-                    <img className="size-[28px]" src={themeToggle} alt="" />
-                  </button>
+                 
                   <button>
                     <img className="size-[28px]" src={userFavicon} alt="" />
                   </button>

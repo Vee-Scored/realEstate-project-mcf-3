@@ -1,4 +1,5 @@
 import { lazy } from "react";
+import PropertyPage from "../features/public/pages/PropertyPage";
 const BlogPage = lazy(() => import("../features/public/pages/BlogPage"));
 const BlogDetailPage = lazy(() =>
   import("../features/public/pages/BlogDetailPage")
@@ -40,7 +41,9 @@ const publicRoute = [
     element: <Faq />,
   },
 
-  { path: "property", element: <BlogPage /> },
+  { 
+    path: "properties",
+     element: <PropertyPage /> },
   {
     path: "terms-and-conditions",
     element: <TermsAndConditionPage />,
