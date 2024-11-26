@@ -16,6 +16,7 @@ import HomeTestimonial from "../components/HomeTestimonial";
 const HomePage = () => {
   return (
     <section className="flex flex-col mb-20 gap-20">
+      <BreadCrumb currentPage={'Home'} />
       <RealEstateAgency />
       <ServiceForYou />e
       <HomePopularProper />
