@@ -80,17 +80,17 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-2">Useful Links</h3>
             <ul className="text-sm space-y-2">
               <li>
-                <a onClick={()=> handlePath('properties')} className="hover:text-blue-400">
+                <a onClick={()=> handlePath('properties')} className="hover:text-blue-400 cursor-pointer">
                   All properties
                 </a>
               </li>
               <li>
-                <a onClick={()=>handlePath()} className="hover:text-blue-400">
+                <a onClick={()=>handlePath()} className="hover:text-blue-400 cursor-pointer">
                   Our best services
                 </a>
               </li>
               <li>
-                <a onClick={()=> handlePath("blogs")} className="hover:text-blue-400">
+                <a onClick={()=> handlePath("blogs")} className="hover:text-blue-400 cursor-pointer">
                   Blog
                 </a>
               </li>
@@ -102,17 +102,17 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-2">Legal</h3>
             <ul className="text-sm space-y-2">
               <li>
-                <a  onClick={()=> handlePath("terms-and-conditions")} className="hover:text-blue-400">
+                <a  onClick={()=> handlePath("terms-and-conditions")} className="hover:text-blue-400 cursor-pointer">
                   Terms of Service
                 </a>
               </li>
               <li>
-                <a onClick={()=> handlePath("privacy-policy")} className="hover:text-blue-400">
+                <a onClick={()=> handlePath("privacy-policy")} className="hover:text-blue-400 cursor-pointer">
                   Privacy Policy
                 </a>
               </li>
               <li>
-                <a onClick={()=>handlePath("faq")} className="hover:text-blue-400">
+                <a onClick={()=>handlePath("faq")} className="hover:text-blue-400 cursor-pointer">
                   FAQ
                 </a>
               </li>
