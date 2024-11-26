@@ -4,7 +4,7 @@ import avatarImage2 from "../../../assets/Avatars/AvatarImage-2.png";
 import avatarImage3 from "../../../assets/Avatars/AvatarImage-3.png";
 import avatarImage4 from "../../../assets/Avatars/AvatarImage-4.png";
 import avatarImage5 from "../../../assets/Avatars/AvatarImage-5.png";
-
+import bgImg from "../../../assets/meetOurTeam/meetOurTeamBg.jpg"
 const avatars = [
   avatarImage5,
   avatarImage1,
@@ -15,7 +15,7 @@ const avatars = [
 
 const MeetOurTeam = () => {
   return (
-    <section className="bg-gray-50 py-10 lg:py-16">
+    <section className="bg-[url('/src/assets/meetOurTeam/meetOurTeamBg.jpg')] bg-no-repeat bg-cover  py-10 my-16 lg:py-16">
       {/* Content Container */}
       <div className="flex flex-col gap-12 max-w-[1280px] mx-auto px-4 lg:px-8">
         <div className="text-center ">

@@ -17,6 +17,7 @@ import BreadCrumb from "../components/BreadCrumb";
 const HomePage = () => {
   return (
     <section className="flex flex-col mb-20 gap-20">
+      <BreadCrumb currentPage={'Home'} />
       <RealEstateAgency />
       <ServiceForYou />
       <HomePopularProper />
