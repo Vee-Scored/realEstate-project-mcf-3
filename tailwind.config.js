@@ -36,8 +36,8 @@ export default {
 
     extend: {
       fontFamily: {
-        heading: ["Inter", "sans-serif"],
-        sans: ["Noto Sans Lao", "sans-serif"],
+        sans: ["Inter", "sans-serif"],
+        heading: ["Noto Sans Lao", "sans-serif"],
       },
     },
   },
