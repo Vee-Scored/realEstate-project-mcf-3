@@ -31,7 +31,7 @@ const PopularProperCard = ({ property }) => {
             </div>
           </div>
           <p className=" text-blue-500 leading-normal font-bold text-2xl">
-            Golden Pearl Condo
+            {title}
           </p>
           <div className=" flex gap-2 text-sm  text-neutral-700 dark:text-neutral-400 font-normal">
             <p>Unit ID : </p>
@@ -43,7 +43,7 @@ const PopularProperCard = ({ property }) => {
           </p>
           <p>
             <span className=" text-sm font-semibold text-neutral-700">
-              $1200
+              ${price}
             </span>{" "}
             <span className="text-sm font-semibold text-neutral-500 ">
               / month
@@ -53,18 +53,18 @@ const PopularProperCard = ({ property }) => {
             <div className=" flex items-center gap-2 text-nowrap justify-center text-xs text-neutral-500 dark:text-neutral-400">
               <IoBedOutline />
 
-              <span> 2 Bedrooms</span>
+              <span> {property.bedRoom ?? 2} Bedrooms</span>
             </div>{" "}
             |
             <div className=" flex items-center gap-2 text-nowrap justify-center text-xs text-neutral-500 dark:text-neutral-400">
               <LuBath />
 
-              <span> 2 Bathrooms</span>
+              <span> {property.bathroom ?? 2} Bathrooms</span>
             </div>{" "}
             |
             <div className=" flex items-center gap-2 text-nowrap justify-center text-xs text-neutral-500 dark:text-neutral-400">
               <BsArrowsMove />
-              <span> 50 Sqft</span>
+              <span> {property.sqft ?? 50} Sqft</span>
             </div>
           </div>
         </div>
