@@ -3,10 +3,20 @@ import { FaRegCalendarAlt } from "react-icons/fa";
 import { IoBedOutline } from "react-icons/io5";
 import { LuBath } from "react-icons/lu";
 import PropertyBtn from "./PropertyBtn";
+import { Link } from "react-router-dom";
 
 const PopularProperCard = ({ property }) => {
-  const { id, img, state, title, description, price, listedDate, unitId } =
-    property;
+  const {
+    id,
+    img,
+    state,
+    title,
+    description,
+    price,
+    slug,
+    listedDate,
+    unitId,
+  } = property;
   return (
     <div className=" flex relative overflow-hidden  flex-col rounded-sm border border-gray-200 bg-white  shadow-sm dark:border-gray-700 dark:bg-gray-800">
       {/* img section */}
@@ -77,7 +87,9 @@ const PopularProperCard = ({ property }) => {
             <span>Listed date : </span>
             <span>23 Nov 20024</span>
           </div>
-          <PropertyBtn text={"View detail"} />
+          <Link to={`/properties/property-detail/:${slug}`}>
+            <PropertyBtn text={"View detail"} />
+          </Link>
         </div>
       </div>
     </div>

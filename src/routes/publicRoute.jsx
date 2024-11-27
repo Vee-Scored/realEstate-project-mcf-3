@@ -4,7 +4,12 @@ const PrivacyPolicyPage = lazy(() =>
   import("../features/public/pages/PrivacyPolicyPage")
 );
 
-import PropertyPage from "../features/public/pages/PropertyPage";
+const PropertyPage = lazy(() =>
+  import("../features/public/pages/PropertyPage")
+);
+const PropertyDetail = lazy(() =>
+  import("../features/public/pages/PropertyDetail")
+);
 
 const BlogPage = lazy(() => import("../features/public/pages/BlogPage"));
 const BlogDetailPage = lazy(() =>
@@ -47,9 +52,14 @@ const publicRoute = [
     element: <Faq />,
   },
 
-  { 
+  {
     path: "properties",
-     element: <PropertyPage /> },
+    element: <PropertyPage />,
+  },
+  {
+    path: "properties/property-detail/:slug",
+    element: <PropertyDetail />,
+  },
   {
     path: "terms-and-conditions",
     element: <TermsAndConditionPage />,

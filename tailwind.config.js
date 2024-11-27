@@ -37,6 +37,7 @@ export default {
     extend: {
       backgroundImage: {
         "error-pattern": "url('/src/assets/erroState.png')",
+        "dream-home": "url('/src/assets/building.png')",
       },
       fontFamily: {
         sans: ["Inter", "sans-serif"],
