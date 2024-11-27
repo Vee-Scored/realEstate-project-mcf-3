@@ -5,7 +5,13 @@ import ServiceForYou from "../components/ServiceForYouSection/ServiceForYou";
 import HomeBlogGroupSection from "../components/HomeBlogGroupSection";
 
 import DownloadAppSection from "../components/DownloadAppSection";
+
+
+     
+
+
 import MeetOurTeam from "../components/MeetOurTeam";
+
 
 import NewLetters from "../../../components/NewLetters";
 
@@ -16,6 +22,12 @@ import HomeTestimonial from "../components/HomeTestimonial";
 import BreadCrumb from "../components/BreadCrumb";
 const HomePage = () => {
   return (
+
+        
+        
+
+
+
     <section className="flex flex-col mb-20 gap-20">
       <BreadCrumb currentPage={"Home"} />
       <RealEstateAgency />
@@ -26,7 +38,7 @@ const HomePage = () => {
       <HomeTestimonial />
       <DownloadAppSection />
       <NewLetters />
-      <MeetOurTeam />
+     
     </section>
   );
 };

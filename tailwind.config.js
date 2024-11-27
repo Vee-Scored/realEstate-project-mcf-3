@@ -35,6 +35,9 @@ export default {
     },
 
     extend: {
+      backgroundImage: {
+        "error-pattern": "url('/src/assets/erroState.png')",
+      },
       fontFamily: {
         heading: ["Inter", "sans-serif"],
         sans: ["Noto Sans Lao", "sans-serif"],
