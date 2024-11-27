@@ -4,14 +4,6 @@ import BreadCrumb from "../BreadCrumb";
 import MeetOurTeam from "../MeetOurTeam";
 import FaqImg from "../../../../assets/FaqImgs/faq.png";
 import Arrow from "../../../../assets/FaqImgs/arrow.svg";
-import {
-  Accordion,
-  AccordionItem,
-  AccordionItemHeading,
-  AccordionItemButton,
-  AccordionItemPanel,
-} from "react-accessible-accordion";
-import "react-accessible-accordion/dist/fancy-example.css"; // Optional default styling (can customize later)
 
 const faqs = [
   {
@@ -42,12 +34,12 @@ const faqs = [
 ];
 
 const Faq = () => {
-  const [activeIndex, setActiveIndex] = useState(null);
+  const [expanded, setExpanded] = useState(null);
 
   const toggleAccordion = (index) => {
-    console.log(index);
-    setActiveIndex(activeIndex === index ? null : index);
+    setExpanded(expanded === index ? null : index);
   };
+
   return (
     <section>
       <BreadCrumb currentPage={"faq"} />
@@ -58,43 +50,47 @@ const Faq = () => {
               <h1 className="font-sans font-semibold text-4xl text-neutral-700 mb-8">
                 You ask ? We Answer
               </h1>
-              <p className="font-sans font-semibold text-2xl text-neutral-700">
+              <p className="font-sans font-semibold text-2xl text-neutral-700 mb-8">
                 Now, dive in, explore, and let’s answer those burning questions!
                 🔥
               </p>
-              <div className="max-w-3xl mx-auto space-y-4">
-                <Accordion allowZeroExpanded className="!border-none">
+              <div className="max-w-3xl mx-auto">
+                <div className="space-y-4">
                   {faqs.map((faq, index) => (
-                    <AccordionItem
-                      uuid={index}
+                    <div
                       key={index}
-                      className="border-b"
+                      className="border-b border-gray-300 cursor-pointer"
+                      onClick={() => toggleAccordion(index)}
                     >
-                      <AccordionItemHeading>
-                        <AccordionItemButton className="py-4 px-2 text-left font-medium text-gray-900">
-                          <div
-                            className=" flex justify-between items-center"
-                            onClick={() => toggleAccordion(index)}
-                          >
-                            <span>{faq.question}</span>
-                            <img
-                              src={Arrow}
-                              alt="arrow"
-                              className={`${
-                                activeIndex === index ? "rotate-180" : ""
-                              }`}
-                            />
-                          </div>
-                        </AccordionItemButton>
-                      </AccordionItemHeading>
-                      {faq.answer && (
-                        <AccordionItemPanel className="px-2 py-2 text-gray-600">
+                      {/* Question */}
+                      <div className="flex justify-between items-center py-4 px-2">
+                        <span className="font-medium text-gray-900">
+                          {faq.question}
+                        </span>
+                        <img
+                          src={Arrow}
+                          alt="arrow"
+                          className={`transition-transform duration-300 ${
+                            expanded === index ? "rotate-180" : "rotate-0"
+                          }`}
+                        />
+                      </div>
+
+                      {/* Answer */}
+                      <div
+                        className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                          expanded === index
+                            ? "max-h-[200px] opacity-100"
+                            : "max-h-0 opacity-0"
+                        }`}
+                      >
+                        <div className="px-2 py-2 text-gray-600">
                           {faq.answer}
-                        </AccordionItemPanel>
-                      )}
-                    </AccordionItem>
+                        </div>
+                      </div>
+                    </div>
                   ))}
-                </Accordion>
+                </div>
               </div>
             </div>
             <div>
