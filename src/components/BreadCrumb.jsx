@@ -7,7 +7,7 @@ const BreadCrumb = ({ currentPageTitle, links }) => {
   const navigate = useNavigate();
 
   return (
-    <div className=" w-full flex items-center    justify-between gap-3 mb-5 border-y py-1">
+    <div className=" w-full flex items-center    justify-between gap-3 mb-5  py-1">
       <nav className="flex" aria-label="Breadcrumb">
         <ol className="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
           <li className="inline-flex  items-center">
@@ -35,7 +35,7 @@ const BreadCrumb = ({ currentPageTitle, links }) => {
 
           <li aria-current="page">
             <div className="flex items-center">
-              <HiChevronRight />
+              <LuChevronRight />
               <span className="ms-1 text-sm font-medium text-gray-500 md:ms-2 dark:text-gray-400">
                 {currentPageTitle}
               </span>
@@ -43,7 +43,7 @@ const BreadCrumb = ({ currentPageTitle, links }) => {
           </li>
         </ol>
       </nav>
-      <div className=" flex items-center">
+      {/* <div className=" flex items-center">
         <button
           type="button"
           onClick={() => navigate(-1)}
@@ -58,7 +58,7 @@ const BreadCrumb = ({ currentPageTitle, links }) => {
         >
           <LuChevronRight />
         </button>
-      </div>
+      </div> */}
     </div>
   );
 };
