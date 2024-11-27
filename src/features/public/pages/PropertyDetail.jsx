@@ -1,5 +1,6 @@
 import BreadCrumb from "../../../components/BreadCrumb";
 import Container from "../../../components/Container";
+import PropertyDetailList from "../components/propertySectionCompo/PropertyDetailList";
 
 const PropertyDetail = () => {
   return (
@@ -9,6 +10,7 @@ const PropertyDetail = () => {
           currentPageTitle={"property detail"}
           links={[{ title: "property", path: "/properties" }]}
         />
+        <PropertyDetailList />
       </Container>
     </div>
   );
