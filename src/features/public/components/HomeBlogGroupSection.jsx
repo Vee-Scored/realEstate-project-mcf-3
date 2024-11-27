@@ -45,7 +45,6 @@ const HomeBlogGroupSection = () => {
             <Swiper
               modules={[Autoplay]}
               spaceBetween={20}
-              
               autoplay={options}
               loop={true}
               breakpoints={breakPoint}
