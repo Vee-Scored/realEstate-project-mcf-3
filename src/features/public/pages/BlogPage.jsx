@@ -6,11 +6,13 @@ import BlogCardGroup from "../components/blog/BlogCardGroup";
 
 const BlogPage = () => {
   return (
+    <>
+    <BreadCrumb currentPage={"Blog"} />
     <Container>
-      <BreadCrumb currentPage={"Blog"} />
       <BlogHeroSection />
       <BlogCardGroup />
     </Container>
+    </>
   );
 };
 
