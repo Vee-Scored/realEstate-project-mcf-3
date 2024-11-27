@@ -50,7 +50,11 @@ const Faq = () => {
               <h1 className="font-sans font-semibold text-4xl text-neutral-700 mb-8">
                 You ask ? We Answer
               </h1>
+
               <p className="font-sans font-semibold text-2xl text-neutral-700 mb-8">
+
+             
+
                 Now, dive in, explore, and let’s answer those burning questions!
                 🔥
               </p>

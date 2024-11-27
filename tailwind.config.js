@@ -1,6 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+    "./node_modules/swiper/**/*.{js,css}",
+  ],
   theme: {
     colors: {
       primary: {
@@ -32,9 +35,12 @@ export default {
     },
 
     extend: {
+      backgroundImage: {
+        "error-pattern": "url('/src/assets/erroState.png')",
+      },
       fontFamily: {
-        heading: ["Inter", "sans-serif"],
-        sans: ["Noto Sans Lao", "sans-serif"],
+        sans: ["Inter", "sans-serif"],
+        heading: ["Noto Sans Lao", "sans-serif"],
       },
     },
   },
