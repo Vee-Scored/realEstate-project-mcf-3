@@ -39,8 +39,8 @@ export default {
         "error-pattern": "url('/src/assets/erroState.png')",
       },
       fontFamily: {
-        heading: ["Inter", "sans-serif"],
-        sans: ["Noto Sans Lao", "sans-serif"],
+        sans: ["Inter", "sans-serif"],
+        heading: ["Noto Sans Lao", "sans-serif"],
       },
     },
   },
