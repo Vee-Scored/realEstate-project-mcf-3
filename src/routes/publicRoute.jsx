@@ -1,4 +1,5 @@
 import { lazy } from "react";
+import ContactAdminPage from "../features/public/pages/ContactAdminPage";
 
 const PrivacyPolicyPage = lazy(() =>
   import("../features/public/pages/PrivacyPolicyPage")
@@ -67,6 +68,10 @@ const publicRoute = [
   {
     path: "privacy-policy",
     element: <PrivacyPolicyPage />,
+  },
+  {
+    path: "contact-admin",
+    element: <ContactAdminPage />,
   },
 ];
 
