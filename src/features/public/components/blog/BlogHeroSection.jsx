@@ -4,14 +4,18 @@ import SectionTitleComponent from "../../../../components/SectionTitleComponent"
 import ViewAllBtn from "../../../../components/ViewAllBtn";
 const BlogHeroSection = () => {
   return (
-    <section className=" min-h-dvh   grid grid-cols-2 items-center gap-6">
-      <div className=" col-span-1">
-        <img src={blogHero} alt="blogHeroImage" className="w-full" />
+    <section className=" min-h-dvh   grid  lg:grid-cols-2  lg:grid-flow-col  items-center gap-6 py-10 lg:py-0 my-6 lg:my-0">
+      <div className="order-2 lg:order-1  ">
+        <img
+          src={blogHero}
+          alt="blogHeroImage"
+          className="w-full object-cover object-center h-full"
+        />
       </div>
-      <div className=" col-span-1">
+      <div className=" order-1 lg:order-2 ">
         <div className="flex flex-col items-start gap-6">
           <SectionTitleComponent name={"Blog"} />
-          <h2 className="text-[40px] leading-[65px] font-semibold text-neutral-700 font-heading">
+          <h2 className="text-3xl md:text-5xl leading-[42px] md:leading-[53px] font-semibold text-neutral-700 font-heading">
             14,000 homes planned for September 2026
           </h2>
           <p className="font-normal text-base text-neutral-500">

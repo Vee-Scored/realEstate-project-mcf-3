@@ -1,4 +1,6 @@
-import React from "react";
+
+import React, { useState } from "react";
+
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import useCookie from "react-use-cookie";
 import Container from "../../../components/Container";
@@ -7,14 +9,24 @@ import themeToggle from "../../../assets/HomeAssets/themeToggle.png";
 import userFavicon from "../../../assets/HomeAssets/user.png";
 import globe from "../../../assets/HomeAssets/globeFavicon.svg";
 import envelope from "../../../assets/HomeAssets/envelope.png"
-const Links = ({ content, path }) => {
+import { Menu, X } from "lucide-react";
+const Links = ({ content, path,close = null }) => {
   const nav = useNavigate();
   const location = useLocation();
-  const isActive = location.pathname === path
+
+
+  const isActive = location.pathname == path
+
+  
   return (
     <li>
       <button
-        onClick={() => nav(path)}
+        onClick={()=>{
+          nav(path)
+          close && close()
+        }}
+          
+
         className={`block py-2 pr-4 pl-3 text-sm font-heading font-medium transition-all duration-300 ease-in-out
           ${isActive
             ? "text-primary-700 lg:text-primary-700 scale-x-100`"
@@ -59,28 +71,47 @@ const navs = [
 
 const Header = () => {
   const [user] = useCookie("user");
+  const [isOpen, setIsOpen] = useState(false)
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen)
+  }
+
+  // Close the menu when a link is clicked
+  const closeMenu = () => {
+    setIsOpen(false)
+  }
 
   return (
     <header className=" sticky top-0 z-50 bg-white ">
      
       <nav className="flex flex-col justify-center dark:bg-gray-800">
         <Container className={"w-full"}>
-        <div className="border-b text-neutral-700 border-neutral-200 mb-5 py-3 justify-end flex items-center">
+        <div className="border-b text-xs md:text-sm text-neutral-700 border-neutral-200 mb-5 py-3 justify-end flex items-center">
            <div className="border-r border-neutral-700 px-3">
            +95034526313
            </div>
            <div className="border-l flex gap-2 items-center border-neutral-700 px-3">
            <img src={envelope} alt="envelope" /> estatela123@gmail.com
            </div>
-           
+
+           <div className="flex gap-5 md:hidden ml-3">
+                 
+                 <button>
+                   <img className="size-[25px]" src={userFavicon} alt="" />
+                 </button>
+                 <button>
+                   <img className="size-[25px]" src={globe} />
+                 </button>
+               </div>
           </div>
           <div className="flex h-20 flex-wrap justify-between items-center">
             <Link to="/" className="flex items-center">
               <img className="h-9" src={logo} alt="" />
             </Link>
-            <div className="flex items-center gap-5 lg:order-2">
+            <div className="flex items-center gap-5 md:order-2">
               {!user ? (
-                <>
+                <div className="hidden md:flex gap-3">
                  
                   <button>
                     <img className="size-[28px]" src={userFavicon} alt="" />
@@ -88,7 +119,7 @@ const Header = () => {
                   <button>
                     <img className="size-[28px]" src={globe} />
                   </button>
-                </>
+                </div>
               ) : (
                 <>
                   <Link
@@ -100,49 +131,75 @@ const Header = () => {
                 </>
               )}
 
-              <button
-                data-collapse-toggle="mobile-menu-2"
-                type="button"
-                className="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-                aria-controls="mobile-menu-2"
-                aria-expanded="false"
+              
+<button
+                className="relative h-10 w-10 text-gray-500 hover:text-gray-600 md:hidden"
+                onClick={toggleMenu}
+                aria-label={isOpen ? "Close Menu" : "Open Menu"}
+                aria-expanded={isOpen}
+                aria-controls="mobile-menu"
               >
-                <span className="sr-only">Open main menu</span>
-                <svg
-                  className="w-6 h-6"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                    clipRule="evenodd"
+                <span className="sr-only">Toggle menu</span>
+                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                  <Menu
+                    className={`absolute left-1/2 top-1/2 size-9 -translate-x-1/2 -translate-y-1/2 transform transition-all duration-300 ${
+                      isOpen ? "rotate-180 opacity-0" : "rotate-0 opacity-100"
+                    }`}
                   />
-                </svg>
-                <svg
-                  className="hidden w-6 h-6"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                    clipRule="evenodd"
+                  <X
+                    className={`absolute  left-1/2 top-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 transform transition-all duration-300 ${
+                      isOpen ? "rotate-0 opacity-100" : "-rotate-180 opacity-0"
+                    }`}
                   />
-                </svg>
+                </div>
               </button>
             </div>
             <div
-              className="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1"
+              className="hidden justify-between items-center w-full md:flex md:w-auto md:order-1"
               id="mobile-menu-2"
             >
-              <ul className=" text-sm leading-4  flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
+              <ul className=" text-sm leading-4  flex flex-col  font-medium md:flex-row lg:space-x-8 lg:mt-0">
                 {navs.map((n) => (
-                  <Links key={n.id} path={n.path} content={n.content} />
+                  <Links  key={n.id} path={n.path} content={n.content} />
                 ))}
               </ul>
+            </div>
+
+            <div
+              className={`fixed inset-0 z-40 bg-black/50 backdrop-blur-sm transition-all duration-300 ${
+                isOpen ? "opacity-100" : "pointer-events-none opacity-0"
+              }`}
+              aria-hidden="true"
+              onClick={closeMenu}
+            />
+
+            {/* Mobile menu */}
+            <div
+              id="mobile-menu"
+              className={`fixed inset-x-0 top-0 z-40 w-3/4 rounded-md mx-auto transform bg-white p-6 shadow-lg transition-transform duration-300 ease-in-out ${
+                isOpen ? "translate-y-40" : "-translate-y-full"
+              }`}
+              role="dialog"
+              aria-modal="true"
+              aria-label="Navigation Menu"
+            >
+              
+              <nav className="flex flex-col space-y-8 relative">
+              <button onClick={()=>closeMenu()}
+                    className={`absolute  top-0 right-0  `}
+                  > <X className="size-9" /> </button>
+                <ul className="flex flex-col items-center ">
+                {navs.map((n,i) => (
+                  <Links close={closeMenu}
+                  key={i} path={n.path} content={n.content}
+                   
+                    className="text-lg font-medium text-gray-600 transition-colors hover:text-gray-900"
+                  />
+                   
+                 
+                ))}
+                </ul>
+              </nav>
             </div>
           </div>
         </Container>
@@ -151,4 +208,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Header

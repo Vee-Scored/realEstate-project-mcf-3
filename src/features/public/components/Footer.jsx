@@ -19,7 +19,7 @@ const Footer = () => {
   return (
     <footer className="bg-neutral-700 mt-auto text-white py-8">
       <Container>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2  md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="flex flex-col gap-2">
             <div className="text-xl font-bold text-blue-500 flex items-center ">
