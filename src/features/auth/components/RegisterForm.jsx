@@ -9,7 +9,7 @@ const RegisterForm = () => {
   return (
     <form
       onSubmit={handleSubmit(handleRegister)}
-      className="space-y-4 md:space-y-6"
+      className="space-y-4 md:space-y-6 bg-neutral-50"
     >
       <div>
         <label
