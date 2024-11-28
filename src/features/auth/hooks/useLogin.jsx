@@ -10,7 +10,7 @@ const useLogin = () => {
   const {
     register,
     handleSubmit,
-    formState: { isSubmitting },
+    formState: { isSubmitting, errors },
   } = useForm();
 
   const [token, setToken] = useCookie("my_token");
@@ -35,7 +35,8 @@ const useLogin = () => {
     handleLogin,
     handleSubmit,
     register,
-    isSubmitting
+    isSubmitting,
+    errors,
   };
 };
 

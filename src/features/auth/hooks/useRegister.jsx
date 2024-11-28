@@ -9,9 +9,10 @@ const useRegister = () => {
   const {
     register,
     handleSubmit,
-    formState: { isSubmitting },
+    formState: { errors, isSubmitting },
+    watch,
   } = useForm();
-
+  const password = watch("password");
   const handleRegister = async (data) => {
     console.log(data);
 
@@ -33,6 +34,8 @@ const useRegister = () => {
     handleSubmit,
     handleRegister,
     isSubmitting,
+    errors,
+    password,
   };
 };
 
