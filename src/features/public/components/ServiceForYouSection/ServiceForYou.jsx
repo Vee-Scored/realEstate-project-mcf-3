@@ -32,7 +32,7 @@ const ServiceForYou = () => {
       <Container>
         <div className=" relative  md:flex gap-5 items-stretch">
           {/* Left */}
-          <div className=" w-full my-2  md:m-0 md:w-1/2 xl:h-[510px]">
+          <div className=" w-full my-2  md:m-0 md:w-1/2 ">
             <img
               className=" rounded-sm w-full h-full object-cover"
               src={ServiceForYouImg}
@@ -40,7 +40,7 @@ const ServiceForYou = () => {
             />
           </div>
           {/* Right */}
-          <div className="w-full md:w-1/2 xl:h-[510px] flex flex-col gap-5 lg:gap-8">
+          <div className="w-full md:w-1/2  flex flex-col gap-5 lg:gap-8">
             <SectionTitleComponent name={"Service For You"} />
             <div className=" grid grid-cols-5">
               <h1 className="text-[35px]  lg:text-[50px] leading-[38px] xl:text-[60px] lg:leading-[50px] xl:leading-[65px] font-[600] col-span-4  md:leading-[37px]  text-neutral-700 font-notoSansLao ">

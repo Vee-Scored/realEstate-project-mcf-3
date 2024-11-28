@@ -6,7 +6,11 @@ import leftArrow from "../../../assets/HomeAssets/leftArrow.png";
 import rightArrow from "../../../assets/HomeAssets/rightArrow.png";
 import openQuote from "../../../assets/HomeAssets/openQuote.png";
 import star from "../../../assets/HomeAssets/star.png";
+import steadyGirl from "../../../assets/HomeAssets/steady-girl.jpg";
 import manYellowBg from "../../../assets/HomeAssets/man-yellow-bg.jpg";
+import redGirl from "../../../assets/HomeAssets/red-girl.jpg";
+import whiteGirl from "../../../assets/HomeAssets/white-girl.jpg";
+
 const responsive = {
   superLargeDesktop: {
     // the naming can be any, depends on you.
@@ -24,7 +28,55 @@ const responsive = {
   },
 };
 
-const TestimonialCard = () => {
+const TestimonialData = [
+  {
+    id : 1,
+    image : manYellowBg,
+    name : "Alexander Jameson",
+    badge : "Happy Homeowner",
+    comment : `"Working with Estatela Property was a game-changer! The platform was
+          easy to use, and their team guided me every step of the way. I found
+          my dream condo in no time. Highly recommended!"`
+  },
+  {
+    id : 2,
+    image : steadyGirl,
+    name : "Alexander Jameson",
+    badge : "Happy Homeowner",
+    comment : `"Working with Estatela Property was a game-changer! The platform was
+          easy to use, and their team guided me every step of the way. I found
+          my dream condo in no time. Highly recommended!"`
+  },
+  {
+    id : 3,
+    image : whiteGirl,
+    name : "Alexander Jameson",
+    badge : "Happy Homeowner",
+    comment : `"Working with Estatela Property was a game-changer! The platform was
+          easy to use, and their team guided me every step of the way. I found
+          my dream condo in no time. Highly recommended!"`
+  },
+  {
+    id : 4,
+    image : redGirl,
+    name : "Alexander Jameson",
+    badge : "Happy Homeowner",
+    comment : `"Working with Estatela Property was a game-changer! The platform was
+          easy to use, and their team guided me every step of the way. I found
+          my dream condo in no time. Highly recommended!"`
+  },
+  {
+    id : 5,
+    image : manYellowBg,
+    name : "Alexander Jameson",
+    badge : "Happy Homeowner",
+    comment : `"Working with Estatela Property was a game-changer! The platform was
+          easy to use, and their team guided me every step of the way. I found
+          my dream condo in no time. Highly recommended!"`
+  }
+
+]
+const TestimonialCard = ({name,image,comment,badge}) => {
   return (
     <div className='w-full rounded-lg font-heading flex flex-col justify-between p-5 h-[304px] border-2 border-gray-200 '>
       <div>
@@ -32,19 +84,17 @@ const TestimonialCard = () => {
       </div>
       <div className="h-[84px]">
         <p className=" text-[12px] leading-5 lg:text-lg font-sans text-neutral-500 ">
-          "Working with Estatela Property was a game-changer! The platform was
-          easy to use, and their team guided me every step of the way. I found
-          my dream condo in no time. Highly recommended!"
+          {comment}
         </p>
       </div>
       <div className="h-[79px] gap-5 flex">
         <div>
-          <img className="size-[79px] rounded-[8px]" src={manYellowBg} alt="" />
+          <img className="size-[79px] rounded-[8px]" src={image} alt="" />
         </div>
         <div className="flex flex-col justify-between">
-          <h3 className="text-lg  leading-[28px]">Alexander Jameson</h3>
+          <h3 className="text-lg  leading-[28px]">{name}</h3>
           <p className="text-primary-500 text-[10px] leading-[12px]">
-            Happy Homeowner
+            {badge}
           </p>
           <div className="flex gap-3">
             <img className="size-[24px]" src={star} alt="star" />
@@ -96,12 +146,9 @@ const HomeTestimonial = () => {
           ref={carouselRef}
           responsive={responsive}
         >
-          <TestimonialCard />
-          <TestimonialCard />
-          <TestimonialCard />
-          <TestimonialCard />
-          <TestimonialCard />
-          <TestimonialCard />
+          {
+            TestimonialData.map(t => <TestimonialCard name={t.name} image={t.image} comment={t.comment} badge={t.badge} />)
+          }
         </Carousel>
       </Container>
     </div>
