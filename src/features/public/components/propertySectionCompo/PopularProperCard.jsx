@@ -5,61 +5,55 @@ import { LuBath } from "react-icons/lu";
 import PropertyBtn from "./PropertyBtn";
 import { Link } from "react-router-dom";
 
-const PopularProperCard = ({
-  property: {
+const PopularProperCard = ({ property }) => {
+  const {
     id,
-    name,
-    available,
-    type,
-    propertyImg,
-    shortDescription,
-    pricePerMonth,
-    bedrooms,
-    bathrooms,
-    sizeSqft,
-    listedDate,
+    img,
+    state,
+    title,
+    description,
+    price,
     slug,
-  },
-}) => {
+    listedDate,
+    unitId,
+  } = property;
   return (
     <div className=" flex relative overflow-hidden  flex-col rounded-sm border border-gray-200 bg-white  shadow-sm dark:border-gray-700 dark:bg-gray-800">
       {/* img section */}
       <div className="relative w-full ">
-        <img src={propertyImg} alt={name} />
+        <img
+          src="https://s3-alpha-sig.figma.com/img/f016/88d8/ac7807346b5826c1ea3598446e7d2a55?Expires=1733097600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=jdpGkSR9BV-YYPXW6EZnuvWn70vxLCZmmLfz4bN84cEvJRvBhdrrR-WxuadwahoclygtdgjbAKl8ctAXWbJN7n35~no3dAH3Wxor85J4~379WBiEywP~s3FokbxM9BlHS5ufApe5Gq89o3m40T4XhzPkzqfIDQNTIB~EPnOCE0MQxxKw9BG55GqGwh6oOW17yp0wLB3YPUql2bXA2juVqe9MNSDGDxzRPZ4~eBDGHrLcIQPtITL0zHITHVteAKDzwGQGh0UOfiu~PV1L3p1yT0tW~yEH9CreONYYXTJuXm9mUBNyF19k2A8ZFW08BK3Zs5MFcWlab2ycyIEOlIziYg__"
+          alt=""
+        />
         <button
           className={`absolute top-0 right-0 z-30 py-0.5  px-2.5  rounded-sm ${
-            available === true ? "bg-[#22C55E]" : "bg-[#EAB308]"
+            state === true ? "bg-[#22C55E]" : "bg-[#EAB308]"
           } ] text-xs  text-white mx-2 my-2`}
         >
-          {type === "rent" ? "For Rent" : "For Sale"}
+          {state !== true ? "For Sale" : "For Rent"}
         </button>
       </div>
       <div className=" h-[330px] flex flex-col justify-between   px-3 py-8 border border-gray-200 bg-white  shadow-sm dark:border-gray-700 dark:bg-gray-800  ">
         <div className="  flex flex-col gap-3 ">
           <div>
-            <div
-              className={`inline-block px-4 rounded-sm ${
-                available === true ? "bg-[#22C55E] text-white" : "bg-[#EAB308]"
-              }`}
-            >
-              {available === true ? "Available" : "Not Available"}
+            <div className=" bg-[#22C55E] inline-block px-4  text-white rounded-sm ">
+              Available
             </div>
           </div>
           <p className=" text-blue-500 leading-normal font-bold text-2xl">
-            {name}
+            {title}
           </p>
           <div className=" flex gap-2 text-sm  text-neutral-700 dark:text-neutral-400 font-normal">
             <p>Unit ID : </p>
-            <p>{id}</p>
+            <p>AA123456</p>
           </div>
-          <p className=" text-xs  text-neutral-500">{shortDescription}</p>
-          <p
-            className={
-              available === false ? "line-through text-neutral-500" : ""
-            }
-          >
+          <p className=" text-xs  text-neutral-500">
+            Prime condo located in downtown, just 10 minutes to mall. Surrounded
+            by lush parks, trendy cafes .....
+          </p>
+          <p>
             <span className=" text-sm font-semibold text-neutral-700">
-              ${pricePerMonth}
+              ${price}
             </span>{" "}
             <span className="text-sm font-semibold text-neutral-500 ">
               / month
@@ -69,18 +63,18 @@ const PopularProperCard = ({
             <div className=" flex items-center gap-2 text-nowrap justify-center text-xs text-neutral-500 dark:text-neutral-400">
               <IoBedOutline />
 
-              <span> {bedrooms} Bedrooms</span>
+              <span> {property.bedRoom ?? 2} Bedrooms</span>
             </div>{" "}
             |
             <div className=" flex items-center gap-2 text-nowrap justify-center text-xs text-neutral-500 dark:text-neutral-400">
               <LuBath />
 
-              <span> {bathrooms} Bathrooms</span>
+              <span> {property.bathroom ?? 2} Bathrooms</span>
             </div>{" "}
             |
             <div className=" flex items-center gap-2 text-nowrap justify-center text-xs text-neutral-500 dark:text-neutral-400">
               <BsArrowsMove />
-              <span> {sizeSqft} Sqft</span>
+              <span> {property.sqft ?? 50} Sqft</span>
             </div>
           </div>
         </div>
@@ -91,9 +85,9 @@ const PopularProperCard = ({
               <FaRegCalendarAlt className=" text-blue-500" />
             </span>
             <span>Listed date : </span>
-            <span>{listedDate}</span>
+            <span>23 Nov 20024</span>
           </div>
-          <Link to={`/properties/property-detail/:${slug}`}>
+          <Link to={`/properties/property-detail/${slug}`} state={property}>
             <PropertyBtn text={"View detail"} />
           </Link>
         </div>
