@@ -3,6 +3,7 @@ import Container from "../../../components/Container";
 import SectionTitleComponent from "../../../components/SectionTitleComponent";
 import ViewAllBtn from "../../../components/ViewAllBtn";
 import PopularProperCard from "./propertySectionCompo/PopularProperCard";
+import SeeMoreBtn from "./SeeMoreBtn";
 
 const HomePopularProper = () => {
   const properties = [
@@ -110,8 +111,9 @@ const HomePopularProper = () => {
             {properties.map((property) => (
               <PopularProperCard key={property.id} property={property} />
             ))}
+        <SeeMoreBtn className={'rounded-md'} />
           </div>
-          <div className=" my-5 flex justify-center items-center ">
+          <div className="hidden md:flex my-5  justify-center items-center ">
             <ViewAllBtn>View all</ViewAllBtn>
           </div>
         </section>

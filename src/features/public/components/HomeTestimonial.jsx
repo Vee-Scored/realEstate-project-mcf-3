@@ -147,7 +147,7 @@ const HomeTestimonial = () => {
           responsive={responsive}
         >
           {
-            TestimonialData.map(t => <TestimonialCard name={t.name} image={t.image} comment={t.comment} badge={t.badge} />)
+            TestimonialData.map(t => <TestimonialCard key={t.id} name={t.name} image={t.image} comment={t.comment} badge={t.badge} />)
           }
         </Carousel>
       </Container>
