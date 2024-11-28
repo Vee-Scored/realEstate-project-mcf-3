@@ -8,16 +8,20 @@ import userFavicon from "../../../assets/HomeAssets/user.png";
 import globe from "../../../assets/HomeAssets/globeFavicon.svg";
 import envelope from "../../../assets/HomeAssets/envelope.png"
 import { Menu, X } from "lucide-react";
-const Links = ({ content, path }) => {
+const Links = ({ content, path,close = null }) => {
   const nav = useNavigate();
   const location = useLocation();
-  const isActive = location.pathname === path
+  const isActive = location.pathname == path
 
   
   return (
     <li>
       <button
-        onClick={() => nav(path)}
+        onClick={()=>{
+          nav(path)
+          close && close()
+        }}
+          
         className={`block py-2 pr-4 pl-3 text-sm font-heading font-medium transition-all duration-300 ease-in-out
           ${isActive
             ? "text-primary-700 lg:text-primary-700 scale-x-100`"
@@ -151,7 +155,7 @@ const Header = () => {
             >
               <ul className=" text-sm leading-4  flex flex-col  font-medium md:flex-row lg:space-x-8 lg:mt-0">
                 {navs.map((n) => (
-                  <Links key={n.id} path={n.path} content={n.content} />
+                  <Links  key={n.id} path={n.path} content={n.content} />
                 ))}
               </ul>
             </div>
@@ -181,9 +185,9 @@ const Header = () => {
                   > <X className="size-9" /> </button>
                 <ul className="flex flex-col items-center ">
                 {navs.map((n,i) => (
-                  <Links
+                  <Links close={closeMenu}
                   key={i} path={n.path} content={n.content}
-                    onClick={closeMenu}
+                   
                     className="text-lg font-medium text-gray-600 transition-colors hover:text-gray-900"
                   />
                    
