@@ -2,19 +2,20 @@ import React from "react";
 import BlogCategoryBtnGroup from "./BlogCategoryBtnGroup";
 import { blogs } from "../../../../components/blog/constant";
 import BlogCard from "../../../../components/blog/BlogCard";
+import ViewAllBtn from "../../../../components/ViewAllBtn";
 
 const BlogCardGroup = () => {
   const pageLimits = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
   return (
-    <section className=" min-h-dvh mb-10">
+    <section className=" min-h-dvh flex flex-col gap-10 mb-10">
       <BlogCategoryBtnGroup />
-      <div className=" grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-5 mb-10">
+      <div className=" grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-5 ">
         {blogs.map((blog) => (
           <BlogCard key={blog.id} blog={blog} />
         ))}
       </div>
-      <div className=" flex items-center gap-2 w-full justify-center">
+      <div className=" flex items-center gap-2 w-full justify-center ">
         <label
           htmlFor="countries"
           className="block text-neutral-700 text-sm text-nowrap dark:text-white"
@@ -34,6 +35,16 @@ const BlogCardGroup = () => {
         >
           of 10
         </label>
+      </div>
+      <div className="text-start inline-block md:hidden">
+        <ViewAllBtn
+          className={
+            "bg-neutral-700 text-white !px-12 !py-4 !text-base w-auto "
+          }
+          path={"/blogs/estate/home-condo"}
+        >
+          See More
+        </ViewAllBtn>
       </div>
     </section>
   );

@@ -2,9 +2,9 @@ import React from "react";
 import blogDetail from "../../../../assets/blogAssets/BlogDetailImage.png";
 const BlogDetailHeroSection = () => {
   return (
-    <section className=" min-h-dvh  py-16">
-      <div className="flex flex-col gap-10 items-start">
-        <h3 className=" text-5xl leading-[53px] font-semibold text-neutral-700 font-heading">
+    <section className="min-h-dvh  py-10 lg:py-16">
+      <div className="flex flex-col gap-8 lg:gap-10 items-start">
+        <h3 className=" text-3xl md:text-4xl lg:text-5xl leading-[42px] lg:leading-[53px] font-semibold text-neutral-700 font-heading">
           14,000 homes planned for Sembawang and <br /> Woodlands North by 2035
         </h3>
         <span className="text-xs text-neutral-500 font-normal">
