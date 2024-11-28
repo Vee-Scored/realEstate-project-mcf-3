@@ -15,11 +15,11 @@ const ServiceForYouNumberCount = ({ num, Text }) => {
   });
 
   return (
-    <div className=" w-[139px]">
-      <h1 className=" text-[40px] leading-[65.8px] font-[600] text-primary-500 font-notoSansLao">
+    <div className=" w-1/3">
+      <h1 className=" lg:text-[40px] text-[27px] leading-[45px] lg:leading-[65.8px] font-[600] text-primary-500 font-notoSansLao">
         {progress}K+
       </h1>
-      <span className=" text-neutral-500 text-base font-normal font-inter">
+      <span className=" lg:p-0 text-neutral-500 text-xs md:text-lg   font-normal font-inter">
         {Text}
       </span>
     </div>

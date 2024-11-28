@@ -31,7 +31,7 @@ const TestimonialCard = () => {
         <img className="w-[51px] h-[37px]" src={openQuote} alt="" />
       </div>
       <div className="h-[84px]">
-        <p className=" text-lg text-neutral-500 leading-7">
+        <p className=" text-[12px] leading-5 lg:text-lg font-sans text-neutral-500 ">
           "Working with Estatela Property was a game-changer! The platform was
           easy to use, and their team guided me every step of the way. I found
           my dream condo in no time. Highly recommended!"
@@ -63,15 +63,15 @@ const HomeTestimonial = () => {
   const carouselRef = useRef(null);
   return (
     <div className="overflow-hidden ">
-      <Container className={"flex flex-col gap-8 mb-16"}>
+      <Container className={"flex flex-col gap-5 lg:gap-8 mb-16"}>
         <SectionTitleComponent name={"Testimonials"} />
-        <h1 className="text-5xl leading-10 font-semibold text-neutral-700 font-heading">
+        <h1 className="text-[35px]  lg:text-[50px] leading-[38px] xl:text-[60px] lg:leading-[50px] xl:leading-[65px] font-[600] col-span-4  md:leading-[37px]  text-neutral-700 font-notoSansLao">
           What Our Clients Say
         </h1>
 
         <div className="flex">
-          <div className="w-1/2 ">
-            <p>
+          <div className="lg:w-1/2 w-full ">
+            <p className="font-[400]  text-[11px] md:text-lg font-sans text-neutral-500">
               Hear from our satisfied clients who found their dream homes with
               us. Their success stories are a testament to our dedication,
               trust, and exceptional service.
