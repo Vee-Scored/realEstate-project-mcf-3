@@ -1,4 +1,6 @@
+
 import React, { useState } from "react";
+
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import useCookie from "react-use-cookie";
 import Container from "../../../components/Container";
@@ -11,6 +13,8 @@ import { Menu, X } from "lucide-react";
 const Links = ({ content, path,close = null }) => {
   const nav = useNavigate();
   const location = useLocation();
+
+
   const isActive = location.pathname == path
 
   
@@ -22,6 +26,7 @@ const Links = ({ content, path,close = null }) => {
           close && close()
         }}
           
+
         className={`block py-2 pr-4 pl-3 text-sm font-heading font-medium transition-all duration-300 ease-in-out
           ${isActive
             ? "text-primary-700 lg:text-primary-700 scale-x-100`"

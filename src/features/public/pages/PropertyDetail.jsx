@@ -1,5 +1,6 @@
 import BreadCrumb from "../../../components/BreadCrumb";
 import Container from "../../../components/Container";
+import AmenityFeatures from "../components/propertySectionCompo/AmenityFeatures";
 import PropertyDetailList from "../components/propertySectionCompo/PropertyDetailList";
 import PropertyLightbox from "../components/propertySectionCompo/PropertyLightbox";
 
@@ -13,6 +14,7 @@ const PropertyDetail = () => {
         />
         <PropertyLightbox />
         <PropertyDetailList />
+        <AmenityFeatures />
       </Container>
     </div>
   );
