@@ -1,12 +1,11 @@
 import DetailListDiv from "./DetailListDiv";
+import ProperDetailTitle from "./ProperDetailTitle";
 
 const PropertyDetailList = () => {
   return (
-    <div className=" flex flex-col gap-8">
-      <h1 className=" text-neutral-700 font-bold font-heading text-3xl">
-        Property Detail
-      </h1>
-      <div className=" flex -gray-500 w-full p-16 gap-7 bg-neutral-100 rounded-sm ">
+    <div className=" flex flex-col gap-8 py-16 ">
+      <ProperDetailTitle text={"Property Details"} />
+      <div className=" flex  w-full p-16 gap-7 bg-neutral-100 rounded-sm ">
         <div className=" grid md:grid-cols-2 md:justify-between  w-full gap-5  ">
           <div className=" col-span-1 flex flex-col gap-5 justify-start ">
             <DetailListDiv

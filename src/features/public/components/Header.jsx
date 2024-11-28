@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import useCookie from "react-use-cookie";
 import Container from "../../../components/Container";
 import logo from "../../../assets/HomeAssets/logo.png";
@@ -9,11 +9,22 @@ import globe from "../../../assets/HomeAssets/globeFavicon.svg";
 import envelope from "../../../assets/HomeAssets/envelope.png"
 const Links = ({ content, path }) => {
   const nav = useNavigate();
+  const location = useLocation();
+  const isActive = location.pathname === path
   return (
     <li>
       <button
         onClick={() => nav(path)}
-        className="block py-2 pr-4 text-sm font-heading font-[500px] pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
+        className={`block py-2 pr-4 pl-3 text-sm font-heading font-medium transition-all duration-300 ease-in-out
+          ${isActive
+            ? "text-primary-700 lg:text-primary-700 scale-x-100`"
+            : "text-gray-700 after:scale-x-0 hover:text-primary-700 dark:text-gray-400 dark:hover:text-white"
+          }
+          border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:p-0
+          dark:hover:bg-gray-700 lg:dark:hover:bg-transparent dark:border-gray-700
+          relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary-700
+          after:transform  after:transition-transform after:duration-300 after:ease-in-out
+          hover:after:scale-x-100`}
       >
         {content}
       </button>

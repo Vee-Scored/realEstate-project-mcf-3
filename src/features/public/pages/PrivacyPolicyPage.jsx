@@ -5,10 +5,12 @@ import PrivacyPolicy from "../components/PrivacyPolicy/PrivacyPolicy";
 
 const PrivacyPolicyPage = () => {
   return (
+    <>
+    <BreadCrumb currentPage={"Privacy Policy"} />
     <Container>
-      <BreadCrumb currentPage={"Privacy Policy"} />
       <PrivacyPolicy />
     </Container>
+    </>
   );
 };
 

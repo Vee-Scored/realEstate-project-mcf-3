@@ -1,5 +1,6 @@
 import BreadCrumb from "../../../components/BreadCrumb";
 import Container from "../../../components/Container";
+import AmenityFeatures from "../components/propertySectionCompo/AmenityFeatures";
 import PropertyDetailList from "../components/propertySectionCompo/PropertyDetailList";
 
 const PropertyDetail = () => {
@@ -11,6 +12,7 @@ const PropertyDetail = () => {
           links={[{ title: "property", path: "/properties" }]}
         />
         <PropertyDetailList />
+        <AmenityFeatures />
       </Container>
     </div>
   );
