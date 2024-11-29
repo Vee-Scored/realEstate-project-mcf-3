@@ -8,7 +8,7 @@ const PropertyPage = () => {
   return (
     <div className=" flex flex-col mb-20 gap-24">
       <BreadCrumb className={'hidden md:block'} currentPage={"Property"} />
-      <SecBreadCrumb className={'block md:hidden'} />
+      <SecBreadCrumb currentPageTitle={'property'} className={'block md:hidden px-3'} />
       <AllPropertyCompo />
       <ShowResult />
       <DreamHome />

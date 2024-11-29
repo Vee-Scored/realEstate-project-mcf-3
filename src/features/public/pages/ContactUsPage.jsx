@@ -31,8 +31,8 @@ const ContactUsPage = () => {
   return (
     <section className="flex flex-col  mb-20 gap-24">
        <BreadCrumb className={'hidden md:block'} currentPage={"Contact-us"} />
-      <SecBreadCrumb currentPageTitle={'contact-us'}  className={'md:hidden'} />
     <Container>
+      <SecBreadCrumb currentPageTitle={'contact-us'}  className={'md:hidden'} />
         <div className=" flex flex-col gap-20">
           {/* first section */}
           <ContactUSFirstSection />

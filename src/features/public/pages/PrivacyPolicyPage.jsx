@@ -9,8 +9,8 @@ const PrivacyPolicyPage = () => {
     <>
 
      <BreadCrumb className={'hidden md:block'} currentPage={"Blog"} />
-     <SecBreadCrumb currentPageTitle={'privacy policy'}  className={'md:hidden'} />
      <Container>
+     <SecBreadCrumb currentPageTitle={'privacy policy'}  className={'md:hidden'} />
       <PrivacyPolicy />
     </Container>
 
