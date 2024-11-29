@@ -6,7 +6,7 @@ const ContactUsSecondSection = ({ contactBox }) => {
     <section>
       <div className=" gap-12 flex flex-col">
         {/*header div */}
-        <div className=" w-[625px]">
+        <div className=" w-[625px] hidden xl:block">
           <div>
             <h1 className=" text-[40px] leading-[60.5px] font-heading font-semibold text-neutral-700">
               Get in Touch with Us
@@ -25,7 +25,7 @@ const ContactUsSecondSection = ({ contactBox }) => {
           </div>
         </div>
         {/* footer div */}
-        <div className=" flex flex-wrap gap-[25px] justify-between">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 xl:grid-cols-3">
           {contactBox.map(({ icon, header, text }, index) => (
             <ContactUsAddressBox
               key={index}
@@ -34,6 +34,11 @@ const ContactUsSecondSection = ({ contactBox }) => {
               text={text}
             />
           ))}
+
+            <ContactUsAddressBox           
+              header={"Get in touch"}
+              text={"Have questions or need assistance? We're here to help!"}
+            />
         </div>
       </div>
     </section>

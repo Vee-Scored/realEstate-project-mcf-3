@@ -38,7 +38,7 @@ const AboutUsPage = () => {
     },
   ];
   return (
-    <section className="flex flex-col mb-20 gap-20">
+    <section className="flex flex-col mb-20 gap-24">
       <BreadCrumb currentPage={"about-as"} />
       <Container>
         <div className=" flex flex-col justify-between gap-40">

@@ -28,7 +28,7 @@ const ContactUsPage = () => {
     },
   ];
   return (
-    <section className="flex flex-col mb-20 gap-20">
+    <section className="flex flex-col  mb-20 gap-24">
       <BreadCrumb currentPage={"contact-us"} />
       <Container>
         <div className=" flex flex-col gap-20">
