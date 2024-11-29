@@ -1,7 +1,17 @@
 import { lazy } from "react";
+import ContactAdminPage from "../features/public/pages/ContactAdminPage";
+
 const PrivacyPolicyPage = lazy(() =>
   import("../features/public/pages/PrivacyPolicyPage")
 );
+
+const PropertyPage = lazy(() =>
+  import("../features/public/pages/PropertyPage")
+);
+const PropertyDetail = lazy(() =>
+  import("../features/public/pages/PropertyDetail")
+);
+
 const BlogPage = lazy(() => import("../features/public/pages/BlogPage"));
 const BlogDetailPage = lazy(() =>
   import("../features/public/pages/BlogDetailPage")
@@ -43,7 +53,14 @@ const publicRoute = [
     element: <Faq />,
   },
 
-  { path: "property", element: <BlogPage /> },
+  {
+    path: "properties",
+    element: <PropertyPage />,
+  },
+  {
+    path: "properties/property-detail/:slug",
+    element: <PropertyDetail />,
+  },
   {
     path: "terms-and-conditions",
     element: <TermsAndConditionPage />,
@@ -51,6 +68,10 @@ const publicRoute = [
   {
     path: "privacy-policy",
     element: <PrivacyPolicyPage />,
+  },
+  {
+    path: "contact-admin",
+    element: <ContactAdminPage />,
   },
 ];
 

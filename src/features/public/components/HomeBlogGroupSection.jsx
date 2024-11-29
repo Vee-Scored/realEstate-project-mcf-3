@@ -8,13 +8,14 @@ import "swiper/css";
 import "swiper/css/autoplay";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import SeeMoreBtn from "./SeeMoreBtn";
 const HomeBlogGroupSection = () => {
   const options = {
     delay: 3000,
     disableOnInteraction: false,
   };
   const breakPoint = {
-    640: { slidesPerView: 1 },
+    0: { slidesPerView: 1 },
     768: { slidesPerView: 2 },
     1024: { slidesPerView: 3 },
   };
@@ -45,7 +46,6 @@ const HomeBlogGroupSection = () => {
             <Swiper
               modules={[Autoplay]}
               spaceBetween={20}
-              slidesPerView={3}
               autoplay={options}
               loop={true}
               breakpoints={breakPoint}
@@ -57,6 +57,7 @@ const HomeBlogGroupSection = () => {
               ))}
             </Swiper>
           </div>
+          <SeeMoreBtn className={'my-2 rounded-md'}/>
         </Container>
       </section>
     </Container>

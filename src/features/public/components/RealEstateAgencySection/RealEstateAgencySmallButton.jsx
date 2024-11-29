@@ -2,8 +2,8 @@ import React from "react";
 
 const RealEstateAgencySmallButton = ({ name }) => {
   return (
-    <button className=" w-[247px] h-[70px] border gap-[10px] border-neutral-300  rounded-md flex items-center justify-around py-2 px-3">
-      <span className=" w-[197px] text-[14px] leading-[23px]">{name}</span>
+    <button className=" w-1/2 h-[50px]  lg:h-[70px] border gap-[10px] border-neutral-300  rounded-md flex items-center justify-around py-2 px-3">
+      <span className=" text-[14px] leading-[23px]">{name}</span>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"

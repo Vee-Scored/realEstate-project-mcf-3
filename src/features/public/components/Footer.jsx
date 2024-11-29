@@ -8,12 +8,18 @@ import MapPin from "../../../assets/FooterIcons/MapPin.svg";
 import PhoneCall from "../../../assets/FooterIcons/PhoneCall.svg";
 import YoutubeLogo from "../../../assets/FooterIcons/YoutubeLogo.svg";
 import Home from "../../../assets/FooterIcons/Home.svg";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const nav = useNavigate()
+
+  const handlePath = (path) => {
+      nav(path);
+  }
   return (
     <footer className="bg-neutral-700 mt-auto text-white py-8">
       <Container>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2  md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="flex flex-col gap-2">
             <div className="text-xl font-bold text-blue-500 flex items-center ">
@@ -74,17 +80,17 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-2">Useful Links</h3>
             <ul className="text-sm space-y-2">
               <li>
-                <a href="#" className="hover:text-blue-400">
+                <a onClick={()=> handlePath('properties')} className="hover:text-blue-400 cursor-pointer">
                   All properties
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-blue-400">
+                <a onClick={()=>handlePath()} className="hover:text-blue-400 cursor-pointer">
                   Our best services
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-blue-400">
+                <a onClick={()=> handlePath("blogs")} className="hover:text-blue-400 cursor-pointer">
                   Blog
                 </a>
               </li>
@@ -96,17 +102,17 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-2">Legal</h3>
             <ul className="text-sm space-y-2">
               <li>
-                <a href="#" className="hover:text-blue-400">
+                <a  onClick={()=> handlePath("terms-and-conditions")} className="hover:text-blue-400 cursor-pointer">
                   Terms of Service
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-blue-400">
+                <a onClick={()=> handlePath("privacy-policy")} className="hover:text-blue-400 cursor-pointer">
                   Privacy Policy
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-blue-400">
+                <a onClick={()=>handlePath("faq")} className="hover:text-blue-400 cursor-pointer">
                   FAQ
                 </a>
               </li>

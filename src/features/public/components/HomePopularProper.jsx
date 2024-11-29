@@ -4,92 +4,45 @@ import SectionTitleComponent from "../../../components/SectionTitleComponent";
 import ViewAllBtn from "../../../components/ViewAllBtn";
 import PopularProperCard from "./propertySectionCompo/PopularProperCard";
 
+import data from "../../../../data.json";
+import { useEffect, useState } from "react";
+
+import SeeMoreBtn from "./SeeMoreBtn";
+
+
 const HomePopularProper = () => {
-  const properties = [
-    {
-      id: 1,
-      img: "img/product1.jpg",
-      state: true,
-      title: "Wireless Headphones",
-      description:
-        "Noise-cancelling over-ear headphones with Bluetooth connectivity.",
-      price: 120.99,
-      listedDate: "2024-11-20",
-      unitId: "WH123",
-    },
-    {
-      id: 2,
-      img: "img/product2.jpg",
-      state: false,
-      title: "Laptop",
-      description: "14-inch lightweight laptop with 8GB RAM and 256GB SSD.",
-      price: 499.99,
-      listedDate: "2024-11-19",
-      unitId: "LP456",
-    },
-    {
-      id: 3,
-      img: "img/product3.jpg",
-      state: true,
-      title: "Smartphone",
-      description: "6.5-inch AMOLED display, 128GB storage, and dual cameras.",
-      price: 299.99,
-      listedDate: "2024-11-18",
-      unitId: "SP789",
-    },
-    {
-      id: 4,
-      img: "img/product4.jpg",
-      state: false,
-      title: "Gaming Mouse",
-      description: "Ergonomic design with customizable RGB lighting.",
-      price: 45.99,
-      listedDate: "2024-11-17",
-      unitId: "GM101",
-    },
-    {
-      id: 5,
-      img: "img/product5.jpg",
-      state: false,
-      title: "Tablet",
-      description: "10-inch tablet with Wi-Fi and 64GB storage.",
-      price: 179.99,
-      listedDate: "2024-11-16",
-      unitId: "TB202",
-    },
-    {
-      id: 6,
-      img: "img/product6.jpg",
-      state: true,
-      title: "Bluetooth Speaker",
-      description: "Portable speaker with 10-hour battery life.",
-      price: 69.99,
-      listedDate: "2024-11-15",
-      unitId: "BS303",
-    },
-  ];
+  const [properties, setProperties] = useState([]);
+
+  useEffect(() => {
+    setProperties(data.slice(0, 6));
+  }, []);
 
   return (
     <section>
       <Container className={" flex flex-col gap-14"}>
-        <div className=" flex flex-col gap-8">
+        <div className=" flex flex-col gap-5 lg:gap-8">
           <SectionTitleComponent name={"Properties"} />
           <div className=" flex justify-between items-center">
-            <h1 className="text-5xl text-neutral-700 font-notoSansLao leading-10 font-bold">
+            <h1 className="text-[35px]  lg:text-[50px] leading-[38px] xl:text-[60px] lg:leading-[50px] xl:leading-[65px] font-[600] col-span-4  md:leading-[37px]  text-neutral-700 font-notoSansLao">
               Popular Properties
             </h1>
-            <ViewAllBtn className={" py-1 px-2"}>View all</ViewAllBtn>
+            <ViewAllBtn className={"hidden md:block py-1 px-2"}>
+              View all
+            </ViewAllBtn>
           </div>
         </div>
         {/* Card Section  */}
-        <section className=" flex flex-col gap-14">
-          <div className=" w-full grid lg:grid-cols-3 gap-5 mt-4  justify-between items-center">
+        <section className=" flex flex-col gap-5">
+          <div className=" w-full grid md:grid-cols-2 lg:grid-cols-3 gap-5 mt-4  justify-between items-center">
             {properties.map((property) => (
               <PopularProperCard key={property.id} property={property} />
             ))}
+        <SeeMoreBtn className={'rounded-md'} />
           </div>
-          <div className=" my-5 flex justify-center items-center ">
-            <ViewAllBtn>View all</ViewAllBtn>
+
+          <div className="hidden md:flex my-2 justify-center items-center ">
+            <ViewAllBtn path={"/properties"}>View all</ViewAllBtn>
+
           </div>
         </section>
       </Container>

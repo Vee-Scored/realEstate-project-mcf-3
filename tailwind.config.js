@@ -35,9 +35,13 @@ export default {
     },
 
     extend: {
+      backgroundImage: {
+        "error-pattern": "url('/src/assets/erroState.png')",
+        "dream-home": "url('/src/assets/building.png')",
+      },
       fontFamily: {
-        heading: ["Inter", "sans-serif"],
-        sans: ["Noto Sans Lao", "sans-serif"],
+        sans: ["Inter", "sans-serif"],
+        heading: ["Noto Sans Lao", "sans-serif"],
       },
     },
   },
