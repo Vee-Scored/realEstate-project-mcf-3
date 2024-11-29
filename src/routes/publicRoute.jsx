@@ -44,7 +44,7 @@ const publicRoute = [
     element: <BlogPage />,
   },
   {
-    path: "blogs/estate/:slug-name",
+    path: "blogs/estate/:slug",
     element: <BlogDetailPage />,
   },
 
