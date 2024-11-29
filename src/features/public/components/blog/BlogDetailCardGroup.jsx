@@ -21,7 +21,7 @@ const BlogDetailCardGroup = () => {
     1024: { slidesPerView: 3 },
   };
   return (
-    <section className="  min-h-dvh items-center py-10 lg:py-16">
+    <section className="   py-10  mb-10 lg:mb-20">
       <div className=" flex flex-col gap-10 ">
         <div className="flex justify-center items-center gap-5 flex-col">
           <div className=" px-4 py-2 bg-neutral-100 shadow-sm inline-block">
