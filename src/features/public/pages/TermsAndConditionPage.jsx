@@ -2,6 +2,7 @@ import React from 'react'
 import Container from '../../../components/Container'
 import BreadCrumb from '../components/BreadCrumb'
 import MeetOurTeam from '../components/MeetOurTeam'
+import SecBreadCrumb from '../../../components/SecBreadCrumb'
 
 
 const terms = [
@@ -71,7 +72,8 @@ const TermsBox = ({serial,title, paragraph, subLines}) => {
 const TermsAndConditionPage = () => {
   return (
     <section>
-            <BreadCrumb currentPage={"Terms & Condition"} />
+            <BreadCrumb className={'hidden md:block'} currentPage={"Terms & Conditions"} />
+            <SecBreadCrumb className={"block md:hidden"} currentPageTitle={'terms & conditions'} />
         <Container className={"my-20"}>
 
             
