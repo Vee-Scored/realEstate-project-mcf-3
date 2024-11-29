@@ -8,7 +8,7 @@ const SimilarListCardSection = () => {
   useEffect(() => {
     setResultList(data);
   }, []);
-  console.log(resultList.slice(0, 3));
+  // console.log(resultList.slice(0, 3));
   return (
     <div>
       <div className="xl:grid grid xl:grid-cols-3 gap-16 md:hidden grid-cols-1   justify-between items-center">

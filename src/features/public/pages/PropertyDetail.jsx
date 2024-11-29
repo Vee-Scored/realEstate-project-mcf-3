@@ -11,9 +11,10 @@ import PropertyVideo from "../components/propertySectionCompo/PropertyVideo";
 import { useLocation, useParams } from "react-router-dom";
 import SecBreadCrumb from "../../../components/SecBreadCrumb";
 import { SimilarListSection } from "../components/propertySectionCompo/SimilarListSection";
-
+import data from "../../../../data.json";
 const PropertyDetail = () => {
   const { slug } = useParams();
+  const currentData = data.find((d) => d.slug == slug);
 
   return (
     <div>
@@ -23,6 +24,10 @@ const PropertyDetail = () => {
           links={[{ title: "property", path: "/properties" }]}
         />
         <PropertyDetailAvailableSection slug={slug} />
+        {/* <div className=" text-base font-sans font-normal  text-neutral-700 ">
+          <span>Listed date :</span>
+          <span>{currentData.listedDate}</span>
+        </div> */}
         <PropertyLightbox />
         <PropertyDetailList />
         <AmenityFeatures />
