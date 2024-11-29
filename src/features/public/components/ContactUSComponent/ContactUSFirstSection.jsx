@@ -5,9 +5,9 @@ import ContactUsImg from "../../../../assets/Contact-us/contact-us-image.png";
 const ContactUSFirstSection = () => {
   return (
     <section>
-      <div className=" flex justify-between items-center">
+      <div className=" flex flex-col md:flex-row justify-between items-center">
         {/* left */}
-        <div className="w-[627px] flex flex-wrap  gap-[25px] ">
+        <div className="lg:w-[627px] flex flex-col gap-5 w-full ">
           <LabelAndInputComponent
             name={"name"}
             textType={"text"}
@@ -35,10 +35,9 @@ const ContactUSFirstSection = () => {
         </div>
         {/* right */}
         <div>
-          <div>
-            {" "}
+          
             <img src={ContactUsImg} alt="" />
-          </div>
+        
         </div>
       </div>
     </section>

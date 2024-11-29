@@ -39,7 +39,7 @@ const ContactUsPage = () => {
           {/* second section */}
           <ContactUsSecondSection contactBox={contactBox} />
           {/* third section */}
-          <ContactUSThirdSection />
+          <ContactUSThirdSection  />
         </div>
       </Container>
     </section>

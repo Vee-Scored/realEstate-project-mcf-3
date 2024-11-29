@@ -35,7 +35,7 @@ const ContactUsSecondSection = ({ contactBox }) => {
             />
           ))}
 
-            <ContactUsAddressBox           
+            <ContactUsAddressBox className={'xl:hidden'}    
               header={"Get in touch"}
               text={"Have questions or need assistance? We're here to help!"}
             />
