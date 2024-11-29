@@ -21,7 +21,7 @@ const ShowResult = () => {
             </h1>
           </div>
           {/* show cards section */}
-          <div className="grid grid-cols-3 gap-16">
+          <div className="grid grid-cols-3 gap-16 ">
             {resultList.map((item) => (
               <PopularProperCard key={item.id} property={item} />
             ))}

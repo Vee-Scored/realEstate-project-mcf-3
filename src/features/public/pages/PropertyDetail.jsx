@@ -5,6 +5,7 @@ import LocationInMap from "../components/propertySectionCompo/LocationInMap";
 import PropertyDetailList from "../components/propertySectionCompo/PropertyDetailList";
 import PropertyLightbox from "../components/propertySectionCompo/PropertyLightbox";
 import PropertyVideo from "../components/propertySectionCompo/PropertyVideo";
+import { SimilarListSection } from "../components/propertySectionCompo/SimilarListSection";
 
 const PropertyDetail = () => {
   return (
@@ -19,6 +20,7 @@ const PropertyDetail = () => {
         <AmenityFeatures />
         <PropertyVideo />
         <LocationInMap />
+        <SimilarListSection />
       </Container>
     </div>
   );
