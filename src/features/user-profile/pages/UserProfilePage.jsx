@@ -1,6 +1,6 @@
 
-import BreadCrumb from "../../../components/BreadCrumb";
 import Container from "../../../components/Container";
+import BreadCrumb from "../../public/components/BreadCrumb";
 import UserProfileCard from "../components/UserProfileCard";
 
 const UserProfilePage = () => {

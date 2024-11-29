@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import Container from "../../../components/Container";
-import BreadCrumb from "../components/BreadCrumb";
 
 import FirstSectionWhoWeAre from "../components/AboutUsComponent/FirstSectionWhoWeAre";
 import SecondSectionThePath from "../components/AboutUsComponent/SecondSectionThePath";
 import ThirdSectionChallengesInto from "../components/AboutUsComponent/ThirdSectionChallengesInto";
 import SecBreadCrumb from "../../../components/SecBreadCrumb";
+import BreadCrumb from "../components/BreadCrumb";
 const AboutUsPage = () => {
   const [show, setShow] = useState(false);
   const pBarRef = useRef();
