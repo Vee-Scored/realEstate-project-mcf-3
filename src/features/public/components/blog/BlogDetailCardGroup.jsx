@@ -4,10 +4,12 @@ import "swiper/css/autoplay";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Container from "../../../../components/Container";
-import { blogs } from "../../../../components/blog/constant";
-import BlogCard from "../../../../components/blog/BlogCard";
+// import { blogs } from "../../../../components/blog/constant";
+import BlogCard from "./BlogCard";
 import ViewAllBtn from "../../../../components/ViewAllBtn";
+import useBlogStore from "../../../../stores/useBlogStore";
 const BlogDetailCardGroup = () => {
+  const { blogs } = useBlogStore();
   const options = {
     delay: 3000,
     disableOnInteraction: false,
@@ -58,7 +60,7 @@ const BlogDetailCardGroup = () => {
             className={
               "bg-neutral-700 text-white !px-12 !py-4 !text-base w-auto "
             }
-            path={"/blogs/estate/home-condo"}
+            path={"/blogs"}
           >
             See More
           </ViewAllBtn>

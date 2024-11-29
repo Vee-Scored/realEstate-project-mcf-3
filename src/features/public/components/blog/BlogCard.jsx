@@ -1,9 +1,9 @@
 import React from "react";
-import { userCircle, calender } from "../../assets/HomeAssets/index";
-import ViewAllBtn from "../ViewAllBtn";
-const BlogCard = ({ blog: { blog_image, title, content, date } }) => {
+import { userCircle, calender } from "../../../../assets/HomeAssets/index";
+import ViewAllBtn from "../../../../components/ViewAllBtn";
+const BlogCard = ({ blog: { id, blog_image, slug, title, content, date } }) => {
   return (
-    <div className=" rounded-lg border border-neutral-200 ">
+    <div className=" rounded-lg border border-neutral-200 hover:shadow hover:scale-[0.99] duration-300">
       <img
         src={blog_image}
         alt="images"
@@ -29,12 +29,7 @@ const BlogCard = ({ blog: { blog_image, title, content, date } }) => {
               <img src={calender} alt="calender" className="size-5" />
               <p className="text-sm text-neutral-500">{date}</p>
             </div>
-            <ViewAllBtn
-              className={`bg-neutral-700 text-white`}
-              path={"/blogs/estate/home-condo"}
-            >
-              View detail
-            </ViewAllBtn>
+            <ViewAllBtn path={`/blogs/estate/${slug}`}>View detail</ViewAllBtn>
           </div>
         </div>
       </div>

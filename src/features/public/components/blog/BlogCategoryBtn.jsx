@@ -13,8 +13,8 @@ const BlogCategoryBtn = ({ category, children, className, ...rest }) => {
       className={`${
         category?.isActive
           ? "bg-neutral-700 text-white"
-          : "hover:bg-neutral-100 border-neutral-400 border text-neutral-500 bg-transparent"
-      } text-nowrap px-6 py-2.5 rounded  duration-200 hover:scale-95  active:bg-neutral-500 active:text-white  ${className}`}
+          : "hover:bg-neutral-700 hover:text-white border-neutral-700 border text-neutral-700 bg-transparent"
+      } text-nowrap px-6 py-2.5 rounded  duration-200   active:bg-neutral-600 active:text-white  ${className}`}
     >
       {children}
     </button>
