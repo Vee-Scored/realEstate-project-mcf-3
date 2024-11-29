@@ -7,11 +7,13 @@ import SecBreadCrumb from "../../../components/SecBreadCrumb";
 const PrivacyPolicyPage = () => {
   return (
     <>
+
      <BreadCrumb className={'hidden md:block'} currentPage={"Blog"} />
      <SecBreadCrumb currentPageTitle={'privacy policy'}  className={'md:hidden'} />
      <Container>
       <PrivacyPolicy />
     </Container>
+
     </>
   );
 };
