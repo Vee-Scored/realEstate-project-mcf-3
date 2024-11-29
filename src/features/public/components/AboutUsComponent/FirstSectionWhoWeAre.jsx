@@ -4,11 +4,11 @@ import pexelsFauxels from "../../../../assets/About us/pexels-fauxels.png";
 const FirstSectionWhoWeAre = ({ show, pBarRef }) => {
   return (
     <section>
-      <div className=" flex   justify-between items-center ">
+      <div className=" flex justify-between gap-6 xl:gap-0 flex-col xl:flex-row md:flex-row items-center ">
         {/* left */}
-        <div className=" w-[628px] flex flex-col gap-5">
-          <div className=" w-[520px] flex flex-col gap-5">
-            <div className=" flex flex-col font-semibold  font-sans text-[48px] leading-[53px] text-neutral-700">
+        <div className=" w-full md:w-[414px] xl:w-[628px] flex flex-col gap-5">
+          <div className=" w-full xl:w-[520px]  flex flex-col gap-5">
+            <div className=" flex flex-col font-semibold  font-sans text-[30px] leading-[42px] xl:text-[48px] xl:leading-[53px] text-neutral-700">
               <h1 className=" ">Who We Are</h1>
               <h1>and What Drives Us</h1>
             </div>
@@ -35,9 +35,13 @@ const FirstSectionWhoWeAre = ({ show, pBarRef }) => {
           </div>
         </div>
         {/* right */}
-        <div>
-          <div>
-            <img className=" rounded-sm" src={pexelsFauxels} alt="" />
+        <div className="  md:w-1/2 ">
+          <div className=" md:w-full">
+            <img
+              className="md:w-full md:object-cover rounded-sm"
+              src={pexelsFauxels}
+              alt=""
+            />
           </div>
         </div>
       </div>
