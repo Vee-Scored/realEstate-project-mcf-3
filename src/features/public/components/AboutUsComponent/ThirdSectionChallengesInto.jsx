@@ -6,13 +6,13 @@ const ThirdSectionChallengesInto = () => {
     <section>
       <div className=" gap-12 flex flex-col">
         <div>
-          <h1 className=" text-5xl font-sans font-semibold text-neutral-700">
+          <h1 className="text-[37px] leading-[53px] xl:leading-[0px] xl:text-5xl font-sans font-semibold text-neutral-700">
             Turning Challenges into Opportunities
           </h1>
         </div>
-        <div className=" h-[500px] overflow-hidden  rounded-sm">
+        <div className=" w-full xl:h-[500px] overflow-hidden  rounded-sm">
           <img
-            className=" object-[0%_5%] object-cover w-full h-full"
+            className=" object-[0%_5%] xl:object-cover w-full h-full"
             src={pexelsFauxelsAboutUsTwo}
             alt=""
           />
