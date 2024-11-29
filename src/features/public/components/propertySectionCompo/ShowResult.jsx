@@ -1,14 +1,16 @@
 import Container from "../../../../components/Container";
 import PopularProperCard from "./PopularProperCard";
 import ShowResultPagination from "./ShowResultPagination";
-import data from "../../../../../data.json";
 import { useEffect, useState } from "react";
+import useCardList from "../../../../stores/useCardList";
 
 const ShowResult = () => {
+  const { cards } = useCardList();
+
   const [resultList, setResultList] = useState([]);
 
   useEffect(() => {
-    setResultList(data);
+    setResultList(cards);
   }, []);
 
   return (
@@ -21,6 +23,7 @@ const ShowResult = () => {
             </h1>
           </div>
           {/* show cards section */}
+
           <div className="grid grid-cols-1 xl:grid-cols-3 md:grid-cols-2 gap-5">
             {resultList.map((item) => (
               <PopularProperCard key={item.id} property={item} />

@@ -4,6 +4,7 @@ import BreadCrumb from "../BreadCrumb";
 import MeetOurTeam from "../MeetOurTeam";
 import FaqImg from "../../../../assets/FaqImgs/faq.png";
 import Arrow from "../../../../assets/FaqImgs/arrow.svg";
+import SecBreadCrumb from "../../../../components/SecBreadCrumb";
 
 const faqs = [
   {
@@ -42,8 +43,9 @@ const Faq = () => {
 
   return (
     <section className="flex flex-col gap-10 lg:gap-24">
-      <BreadCrumb currentPage={"faq"} />
+      <BreadCrumb currentPage={"Faq"} className={'hidden md:block'} />
       <Container>
+      <SecBreadCrumb className={'block md:hidden'}  currentPageTitle={'faq'}/>
         <div className="mt-10 flex flex-col gap-5">
           <div className="lg:grid flex flex-col-reverse lg:grid-cols-2 gap-6">
             <div className="">

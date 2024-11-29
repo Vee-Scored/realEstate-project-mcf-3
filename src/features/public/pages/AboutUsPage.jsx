@@ -41,9 +41,9 @@ const AboutUsPage = () => {
   return (
     <section className="flex flex-col mb-20 gap-24">
       <BreadCrumb className={"hidden md:block"} currentPage={"about-us"} />
-      <SecBreadCrumb currentPageTitle={"about-us"} className={"md:hidden"} />
       <Container>
-        <div className=" flex flex-col justify-between gap-40">
+        <SecBreadCrumb currentPageTitle={"about-us"} className={"md:hidden"} />
+        <div className=" flex flex-col justify-between gap-8 xl:gap-16">
           {/* first section */}
           <FirstSectionWhoWeAre show={show} pBarRef={pBarRef} />
 

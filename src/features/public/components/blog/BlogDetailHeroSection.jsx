@@ -8,7 +8,7 @@ const BlogDetailHeroSection = () => {
   const { blogs } = useBlogStore();
   const blog = blogs.find((blog) => blog.slug === slug);
   return (
-    <section className="min-h-dvh  py-10 lg:py-16">
+    <section className="  py-10  mb-10 lg:mb-20">
       <div className="flex flex-col gap-8 lg:gap-10 items-start">
         <h3 className=" text-3xl md:text-4xl lg:text-5xl leading-[42px] lg:leading-[53px] font-semibold text-neutral-700 font-heading">
           {blog?.title ? (

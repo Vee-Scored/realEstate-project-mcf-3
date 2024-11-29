@@ -10,8 +10,10 @@ import PropertyLightbox from "../components/propertySectionCompo/PropertyLightbo
 import PropertyVideo from "../components/propertySectionCompo/PropertyVideo";
 import { useLocation, useParams } from "react-router-dom";
 import SecBreadCrumb from "../../../components/SecBreadCrumb";
-
+import { SimilarListSection } from "../components/propertySectionCompo/SimilarListSection";
+import useCardList from "../../../stores/useCardList";
 const PropertyDetail = () => {
+
   const { slug } = useParams();
 
   return (
@@ -22,11 +24,13 @@ const PropertyDetail = () => {
       />
       <Container>
         <PropertyDetailAvailableSection slug={slug} />
+
         <PropertyLightbox />
         <PropertyDetailList />
         <AmenityFeatures />
         <PropertyVideo />
         <LocationInMap />
+        <SimilarListSection />
       </Container>
     </div>
   );
