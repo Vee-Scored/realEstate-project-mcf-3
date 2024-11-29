@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
-import data from "../../../../../data.json";
+// import data from "../../../../../data.js";
 
 import PopularProperCard from "./PopularProperCard";
+import useCardList from "../../../../stores/useCardList";
 
 const SimilarListCardSection = () => {
+  const { cards } = useCardList();
+
   const [resultList, setResultList] = useState([]);
   useEffect(() => {
-    setResultList(data);
+    setResultList(cards);
   }, []);
   // console.log(resultList.slice(0, 3));
   return (

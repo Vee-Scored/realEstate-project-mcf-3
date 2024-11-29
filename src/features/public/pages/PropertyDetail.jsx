@@ -11,10 +11,12 @@ import PropertyVideo from "../components/propertySectionCompo/PropertyVideo";
 import { useLocation, useParams } from "react-router-dom";
 import SecBreadCrumb from "../../../components/SecBreadCrumb";
 import { SimilarListSection } from "../components/propertySectionCompo/SimilarListSection";
-import data from "../../../../data.json";
+import useCardList from "../../../stores/useCardList";
 const PropertyDetail = () => {
+  const { cards } = useCardList();
+
   const { slug } = useParams();
-  const currentData = data.find((d) => d.slug == slug);
+  const currentData = cards.find((d) => d.slug == slug);
 
   return (
     <div>

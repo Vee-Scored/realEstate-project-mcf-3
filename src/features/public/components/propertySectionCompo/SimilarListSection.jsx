@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import ProperDetailTitle from "./ProperDetailTitle";
 import SimilarListCardSection from "./SimilarListCardSection";
-import data from "../../../../../data.json";
 
 export const SimilarListSection = () => {
   return (
@@ -16,7 +15,7 @@ export const SimilarListSection = () => {
           </Link>
         </div>
         <div className=" w-full rounded-sm overflow-hidden">
-          <SimilarListCardSection data={data} />
+          <SimilarListCardSection />
         </div>
         <div>
           <Link className=" md:hidden inline-block">

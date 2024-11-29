@@ -8,17 +8,18 @@ import AvatarFour from "../../../../assets/propertyDetail/AvatarFour.png";
 import Vector from "../../../../assets/propertyDetail/Vector.png";
 // import calendar from "../../../../assets/propertyDetail/calendar-days.png";
 // import PropertyDetailRoomInfoSmall from "./PropertyDetailRoomInfoSmall";
-import data from "../../../../../data.json";
 import { FaRegCalendarAlt } from "react-icons/fa";
 // import PropertyBtn from "./PropertyBtn";
 import { BsArrowsMove } from "react-icons/bs";
 import { LuBath } from "react-icons/lu";
 import { IoBedOutline } from "react-icons/io5";
+import useCardList from "../../../../stores/useCardList";
 
 const avatars = [AvatarOne, AvatarTwo, AvatarThree, AvatarFour];
 
 const PropertyDetailAvailableSection = ({ slug }) => {
-  const currentData = data.find((d) => d.slug == slug);
+  const { cards } = useCardList();
+  const currentData = cards.find((d) => d.slug == slug);
   console.log(currentData);
 
   // const {
