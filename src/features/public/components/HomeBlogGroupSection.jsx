@@ -8,6 +8,7 @@ import "swiper/css";
 import "swiper/css/autoplay";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import SeeMoreBtn from "./SeeMoreBtn";
 const HomeBlogGroupSection = () => {
   const options = {
     delay: 3000,
@@ -56,6 +57,7 @@ const HomeBlogGroupSection = () => {
               ))}
             </Swiper>
           </div>
+          <SeeMoreBtn className={'my-2 rounded-md'}/>
         </Container>
       </section>
     </Container>
