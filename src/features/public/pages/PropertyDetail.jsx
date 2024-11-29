@@ -13,23 +13,18 @@ import SecBreadCrumb from "../../../components/SecBreadCrumb";
 import { SimilarListSection } from "../components/propertySectionCompo/SimilarListSection";
 import useCardList from "../../../stores/useCardList";
 const PropertyDetail = () => {
-  const { cards } = useCardList();
 
   const { slug } = useParams();
-  const currentData = cards.find((d) => d.slug == slug);
 
   return (
     <div>
+      <SecBreadCrumb
+        currentPageTitle={"property detail"}
+        links={[{ title: "property", path: "/properties" }]}
+      />
       <Container>
-        <SecBreadCrumb
-          currentPageTitle={"property detail"}
-          links={[{ title: "property", path: "/properties" }]}
-        />
         <PropertyDetailAvailableSection slug={slug} />
-        {/* <div className=" text-base font-sans font-normal  text-neutral-700 ">
-          <span>Listed date :</span>
-          <span>{currentData.listedDate}</span>
-        </div> */}
+
         <PropertyLightbox />
         <PropertyDetailList />
         <AmenityFeatures />
