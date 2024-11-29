@@ -11,6 +11,9 @@ import AvatarFour from "../../../../assets/propertyDetail/AvatarFour.png";
 import Vector from "../../../../assets/propertyDetail/Vector.png";
 import calendar from "../../../../assets/propertyDetail/calendar-days.png";
 import PropertyDetailRoomInfoSmall from "./PropertyDetailRoomInfoSmall";
+
+const avatars = [AvatarOne, AvatarTwo, AvatarThree, AvatarFour];
+
 const PropertyDetailAvailableSection = () => {
   const { state } = useLocation();
   console.log(state);
@@ -95,18 +98,10 @@ const PropertyDetailAvailableSection = () => {
                 <img src={CheckCircle} alt="" />
               </div>
               <div className=" flex items-center  gap-1">
-                <div>
-                  <img src={AvatarOne} alt="" />
-                </div>
-                <div>
-                  <img src={AvatarTwo} alt="" />
-                </div>
-                <div>
-                  <img src={AvatarThree} alt="" />
-                </div>
-                <div>
-                  <img src={AvatarFour} alt="" />
-                </div>
+                {/* DRY ( Don't Repeat Yourself ) */}
+                {avatars.map((avatar, index) => (
+                  <img key={index} src={avatar} alt="" />
+                ))}
               </div>
               <div>
                 <img src={Vector} alt="" />
