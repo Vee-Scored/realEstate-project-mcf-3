@@ -1,4 +1,4 @@
-import BreadCrumb from "../../../components/BreadCrumb";
+
 import Container from "../../../components/Container";
 
 import PropertyDetailAvailableSection from "../components/propertySectionCompo/PropertyDetailAvailableSection";
@@ -10,14 +10,15 @@ import PropertyDetailList from "../components/propertySectionCompo/PropertyDetai
 import PropertyLightbox from "../components/propertySectionCompo/PropertyLightbox";
 import PropertyVideo from "../components/propertySectionCompo/PropertyVideo";
 import { useLocation, useParams } from "react-router-dom";
+import SecBreadCrumb from "../../../components/SecBreadCrumb";
 
 const PropertyDetail = () => {
   const {slug} = useParams();
  
   return (
     <div>
-      <Container>
-        <BreadCrumb
+      <Container >
+        <SecBreadCrumb
           currentPageTitle={"property detail"}
           links={[{ title: "property", path: "/properties" }]}
         />

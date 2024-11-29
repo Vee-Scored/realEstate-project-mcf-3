@@ -37,7 +37,7 @@ const HomePopularProper = () => {
             {properties.map((property) => (
               <PopularProperCard key={property.id} property={property} />
             ))}
-        <SeeMoreBtn className={'rounded-md'} />
+        <SeeMoreBtn className={'rounded-md md:hidden'} />
           </div>
 
           <div className="hidden md:flex my-2 justify-center items-center ">

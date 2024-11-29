@@ -3,11 +3,11 @@ import { HiChevronRight, HiHome, HiMiniHome } from "react-icons/hi2";
 import { LuChevronLeft, LuChevronRight, LuHome } from "react-icons/lu";
 import { Link, useNavigate } from "react-router-dom";
 
-const BreadCrumb = ({ currentPageTitle, links }) => {
+const SecBreadCrumb = ({ currentPageTitle, links, className }) => {
   const navigate = useNavigate();
 
   return (
-    <div className=" w-full flex items-center    justify-between gap-3 mb-5  py-1">
+    <div className={`w-full flex items-center  ${className}  justify-between gap-3 mb-5  py-1`}>
       <nav className="flex" aria-label="Breadcrumb">
         <ol className="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
           <li className="inline-flex  items-center">
@@ -15,7 +15,7 @@ const BreadCrumb = ({ currentPageTitle, links }) => {
               to="/dashboard"
               className="inline-flex gap-1 items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white"
             >
-              <LuHome />
+              <LuHome className="hidden md:block" />
               Home
             </Link>
           </li>
@@ -63,4 +63,4 @@ const BreadCrumb = ({ currentPageTitle, links }) => {
   );
 };
 
-export default BreadCrumb;
+export default SecBreadCrumb;
