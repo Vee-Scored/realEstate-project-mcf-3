@@ -1,4 +1,3 @@
-
 import Container from "../../../components/Container";
 
 import PropertyDetailAvailableSection from "../components/propertySectionCompo/PropertyDetailAvailableSection";
@@ -13,16 +12,16 @@ import { useLocation, useParams } from "react-router-dom";
 import SecBreadCrumb from "../../../components/SecBreadCrumb";
 
 const PropertyDetail = () => {
-  const {slug} = useParams();
- 
+  const { slug } = useParams();
+
   return (
     <div>
-      <Container >
-        <SecBreadCrumb
-          currentPageTitle={"property detail"}
-          links={[{ title: "property", path: "/properties" }]}
-        />
-         <PropertyDetailAvailableSection slug={slug} /> 
+      <SecBreadCrumb
+        currentPageTitle={"property detail"}
+        links={[{ title: "property", path: "/properties" }]}
+      />
+      <Container>
+        <PropertyDetailAvailableSection slug={slug} />
         <PropertyLightbox />
         <PropertyDetailList />
         <AmenityFeatures />

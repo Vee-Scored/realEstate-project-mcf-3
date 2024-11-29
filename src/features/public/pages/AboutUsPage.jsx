@@ -38,11 +38,11 @@ const AboutUsPage = () => {
       text: "We believe our success is intertwined with the communities we serve. Since day one, we’ve made it our mission to not only provide exceptional [services/products] but also to give back and grow alongside those who trust us",
     },
   ];
-  return ( 
+  return (
     <section className="flex flex-col mb-20 gap-24">
-      <BreadCrumb className={'hidden md:block'} currentPage={"about-us"} />
+      <BreadCrumb className={"hidden md:block"} currentPage={"about-us"} />
+      <SecBreadCrumb currentPageTitle={"about-us"} className={"md:hidden"} />
       <Container>
-      <SecBreadCrumb currentPageTitle={'about-us'}  className={'md:hidden'} />
         <div className=" flex flex-col justify-between gap-40">
           {/* first section */}
           <FirstSectionWhoWeAre show={show} pBarRef={pBarRef} />
