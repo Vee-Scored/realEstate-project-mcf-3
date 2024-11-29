@@ -5,7 +5,7 @@ import ShowResult from "../components/propertySectionCompo/ShowResult";
 
 const PropertyPage = () => {
   return (
-    <div className=" flex flex-col gap-10">
+    <div className=" flex flex-col mb-20 gap-24">
       <BreadCrumb currentPage={"Property"} />
       <AllPropertyCompo />
       <ShowResult />
