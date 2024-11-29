@@ -11,13 +11,15 @@ import AvatarFour from "../../../../assets/propertyDetail/AvatarFour.png";
 import Vector from "../../../../assets/propertyDetail/Vector.png";
 import calendar from "../../../../assets/propertyDetail/calendar-days.png";
 import PropertyDetailRoomInfoSmall from "./PropertyDetailRoomInfoSmall";
+import data from "../../../../../data.json";
 
 const avatars = [AvatarOne, AvatarTwo, AvatarThree, AvatarFour];
 
-const PropertyDetailAvailableSection = () => {
-  const { state } = useLocation();
-  console.log(state);
+const PropertyDetailAvailableSection = ({slug}) => {
 
+  const currentData =data.find(d => d.slug == slug
+)
+  
   return (
     <section>
       <div className="  py-16 flex  gap-[134px] justify-between items-center">
@@ -28,28 +30,28 @@ const PropertyDetailAvailableSection = () => {
             <div className=" flex flex-col gap-4">
               <div className="  flex justify-center items-center bg-[#22C55E] w-[128px] h-[32px] py-[2px] px-[10px] rounded-sm">
                 <span className=" text-neutral-50 text-base font-medium font-heading">
-                  {state.details.propertyDetails.status}
+                  {currentData.details.propertyDetails.status}
                 </span>
               </div>
               <div>
                 <h1 className=" text-primary-500 text-[40px] leading-[65.8px] font-semibold font-heading">
-                  {state.name}
+                  {currentData.name}
                 </h1>
               </div>
             </div>
             {/* Unit Id */}
             <div className=" flex items-center gap-1 text-neutral-700 text-base font-medium font-sans">
               <span>Unit ID :</span>
-              <span>{state.id}</span>
+              <span>{currentData.id}</span>
             </div>
             {/* description */}
             <div className=" text-neutral-700 font-normal text-base font-sans">
-              <p>{state.details.description}</p>
+              <p>{currentData.details.description}</p>
             </div>
             {/* price */}
             <div className=" flex items-center gap-[5px]">
               <span className=" text-2xl font-semibold font-heading text-neutral-700">
-                ${state.pricePerMonth}
+                ${currentData.pricePerMonth}
               </span>
               <span className=" text-neutral-500 text-lg font-normal font-sans">
                 /month
@@ -59,7 +61,7 @@ const PropertyDetailAvailableSection = () => {
             <div className=" flex items-center gap-4">
               <PropertyDetailRoomInfoSmall
                 image={BedSingle}
-                bathrooms={state.bathrooms}
+                bathrooms={currentData.bathrooms}
                 unt={"Bedrooms"}
               />
               <div className=" bg-neutral-700 py-3 px-[1px]"></div>
@@ -67,13 +69,13 @@ const PropertyDetailAvailableSection = () => {
               <PropertyDetailRoomInfoSmall
                 image={Bath}
                 unt={"Bathrooms"}
-                bathrooms={state.bedrooms}
+                bathrooms={currentData.bedrooms}
               />
               <div className=" bg-neutral-700 py-3 px-[1px]"></div>
 
               <PropertyDetailRoomInfoSmall
                 image={Move}
-                bathrooms={state.sizeSqft}
+                bathrooms={currentData.sizeSqft}
                 unt={"sqft"}
               />
             </div>
@@ -85,7 +87,7 @@ const PropertyDetailAvailableSection = () => {
             </div>
             <div className=" text-base font-sans font-normal  text-neutral-700">
               <span>Listed date :</span>
-              <span>{state.listedDate}</span>
+              <span>{currentData.listedDate}</span>
             </div>
           </div>
         </div>

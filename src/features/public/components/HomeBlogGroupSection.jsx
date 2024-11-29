@@ -46,6 +46,8 @@ const HomeBlogGroupSection = () => {
             >
               View all
             </ViewAllBtn>
+
+           
           </div>
         </div>
         <Container className={"!px-0"}>
@@ -64,6 +66,9 @@ const HomeBlogGroupSection = () => {
               ))}
             </Swiper>
           </div>
+
+          <SeeMoreBtn className={'my-2 rounded-md md:hidden'}/>
+
         </Container>
       </section>
     </Container>
