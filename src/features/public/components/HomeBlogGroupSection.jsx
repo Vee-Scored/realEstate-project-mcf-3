@@ -8,6 +8,7 @@ import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import useBlogStore from "../../../stores/useBlogStore";
 import BlogCard from "./blog/BlogCard";
+import SeeMoreBtn from "./SeeMoreBtn";
 const HomeBlogGroupSection = () => {
   const { blogs } = useBlogStore();
   const options = {
