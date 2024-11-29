@@ -21,6 +21,7 @@ const PopularProperCard = ({
     slug,
   },
 }) => {
+  console.log("testing");
   return (
     <div className=" flex relative overflow-hidden  flex-col rounded-sm border border-gray-200 bg-white  shadow-sm dark:border-gray-700 dark:bg-gray-800">
       {/* img section */}
