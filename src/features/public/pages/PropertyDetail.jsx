@@ -11,6 +11,7 @@ import PropertyLightbox from "../components/propertySectionCompo/PropertyLightbo
 import PropertyVideo from "../components/propertySectionCompo/PropertyVideo";
 
 const PropertyDetail = () => {
+  console.log("I am property");
   return (
     <div>
       <Container>
