@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+Mono:wght@100..900&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+Lao:wght@100..900&family=Padauk:wght@400;700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -27,4 +26,17 @@
   100% {
     transform: translateX(100%) scaleX(0.5);
   }
+}
+
+/* Override the library's default styles for smooth transitions */
+.accordion__panel {
+  padding: 0; /* Ensures consistent padding */
+  margin: 0;
+  overflow: hidden; /* Prevents content from overflowing during animation */
+  transition: max-height 0.3s ease; /* Smooth height transition */
+  max-height: 0; /* Initially collapsed */
+}
+
+.accordion__panel--expanded {
+  max-height: 300px; /* Maximum height when expanded (adjust if needed) */
 }

@@ -5,6 +5,7 @@ import ServiceForYou from "../components/ServiceForYouSection/ServiceForYou";
 import HomeBlogGroupSection from "../components/HomeBlogGroupSection";
 
 import DownloadAppSection from "../components/DownloadAppSection";
+
 import MeetOurTeam from "../components/MeetOurTeam";
 
 import NewLetters from "../../../components/NewLetters";
@@ -25,7 +26,6 @@ const HomePage = () => {
       <HomeTestimonial />
       <DownloadAppSection />
       <NewLetters />
-      <MeetOurTeam />
     </section>
   );
 };

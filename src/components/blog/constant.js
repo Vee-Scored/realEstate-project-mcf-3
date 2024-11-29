@@ -1,3 +1,8 @@
+import {
+  blogCardImg1,
+  blogCardImg2,
+  blogCardImg3,
+} from "../../assets/blogAssets";
 import { aeroPlane, corridor, family } from "../../assets/HomeAssets/index";
 export const blogs = [
   {
@@ -29,7 +34,7 @@ export const blogs = [
     title: "“5 Essential Tips for First-Time Home Buyers”",
     content:
       "Explore expert tips, market trends, and home-buying guides in our blog section. Start reading today......",
-    blog_image: corridor,
+    blog_image: blogCardImg1,
     date: "24 Nov 2024",
   },
   {
@@ -37,7 +42,15 @@ export const blogs = [
     title: "Renting vs. Buying: What’s Right for You?",
     content:
       "Unsure whether to rent or buy? Explore the pros and cons of each option to determine which aligns best with your lifestyle.....",
-    blog_image: family,
+    blog_image: blogCardImg2,
+    date: "24 Nov 2024",
+  },
+  {
+    id: 6,
+    title: "“Top 10 Upcoming Neighborhoods to Invest In”",
+    content:
+      "Discover the hottest areas with high growth potential and why they’re attracting buyers and investors alike. Don’t miss out......",
+    blog_image: blogCardImg3,
     date: "24 Nov 2024",
   },
 ];
