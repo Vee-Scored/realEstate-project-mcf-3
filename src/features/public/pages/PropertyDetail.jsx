@@ -1,4 +1,3 @@
-
 import Container from "../../../components/Container";
 
 import PropertyDetailAvailableSection from "../components/propertySectionCompo/PropertyDetailAvailableSection";
@@ -11,23 +10,32 @@ import PropertyLightbox from "../components/propertySectionCompo/PropertyLightbo
 import PropertyVideo from "../components/propertySectionCompo/PropertyVideo";
 import { useLocation, useParams } from "react-router-dom";
 import SecBreadCrumb from "../../../components/SecBreadCrumb";
-
+import { SimilarListSection } from "../components/propertySectionCompo/SimilarListSection";
+import useCardList from "../../../stores/useCardList";
 const PropertyDetail = () => {
-  const {slug} = useParams();
- 
+  const { cards } = useCardList();
+
+  const { slug } = useParams();
+  const currentData = cards.find((d) => d.slug == slug);
+
   return (
     <div>
-      <Container >
+      <Container>
         <SecBreadCrumb
           currentPageTitle={"property detail"}
           links={[{ title: "property", path: "/properties" }]}
         />
-         <PropertyDetailAvailableSection slug={slug} /> 
+        <PropertyDetailAvailableSection slug={slug} />
+        {/* <div className=" text-base font-sans font-normal  text-neutral-700 ">
+          <span>Listed date :</span>
+          <span>{currentData.listedDate}</span>
+        </div> */}
         <PropertyLightbox />
         <PropertyDetailList />
         <AmenityFeatures />
         <PropertyVideo />
         <LocationInMap />
+        <SimilarListSection />
       </Container>
     </div>
   );
