@@ -6,13 +6,13 @@ import BlogDetailCardGroup from "../components/blog/BlogDetailCardGroup";
 
 const BlogDetailPage = () => {
   return (
-    <Container>
-      <div className="flex flex-col mb-20 gap-24">
+    <section className="flex flex-col mb-20 gap-24">
       <BreadCrumb currentPage={"Blog Detail"} />
-      <BlogDetailHeroSection />
-      <BlogDetailCardGroup />
-      </div>
-    </Container>
+      <Container>
+        <BlogDetailHeroSection />
+        <BlogDetailCardGroup />
+      </Container>
+    </section>
   );
 };
 

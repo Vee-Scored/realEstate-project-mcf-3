@@ -7,6 +7,7 @@ import { BsTelephone } from "react-icons/bs";
 import ContactUSFirstSection from "../components/ContactUSComponent/ContactUSFirstSection";
 import ContactUsSecondSection from "../components/ContactUSComponent/ContactUsSecondSection";
 import ContactUSThirdSection from "../components/ContactUSComponent/ContactUSThirdSection";
+import SecBreadCrumb from "../../../components/SecBreadCrumb";
 
 const ContactUsPage = () => {
   const contactBox = [
@@ -29,8 +30,9 @@ const ContactUsPage = () => {
   ];
   return (
     <section className="flex flex-col  mb-20 gap-24">
-      <BreadCrumb currentPage={"contact-us"} />
-      <Container>
+       <BreadCrumb className={'hidden md:block'} currentPage={"Contact-us"} />
+      <SecBreadCrumb currentPageTitle={'contact-us'}  className={'md:hidden'} />
+    <Container>
         <div className=" flex flex-col gap-20">
           {/* first section */}
           <ContactUSFirstSection />

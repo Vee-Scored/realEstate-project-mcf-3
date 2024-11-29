@@ -1,10 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import Container from "../../../components/Container";
-import BreadCrumb from "../components/BreadCrumb";
 
 import FirstSectionWhoWeAre from "../components/AboutUsComponent/FirstSectionWhoWeAre";
 import SecondSectionThePath from "../components/AboutUsComponent/SecondSectionThePath";
 import ThirdSectionChallengesInto from "../components/AboutUsComponent/ThirdSectionChallengesInto";
+import SecBreadCrumb from "../../../components/SecBreadCrumb";
+import BreadCrumb from "../components/BreadCrumb";
 const AboutUsPage = () => {
   const [show, setShow] = useState(false);
   const pBarRef = useRef();
@@ -37,10 +38,11 @@ const AboutUsPage = () => {
       text: "We believe our success is intertwined with the communities we serve. Since day one, we’ve made it our mission to not only provide exceptional [services/products] but also to give back and grow alongside those who trust us",
     },
   ];
-  return (
+  return ( 
     <section className="flex flex-col mb-20 gap-24">
-      <BreadCrumb currentPage={"about-as"} />
+      <BreadCrumb className={'hidden md:block'} currentPage={"about-us"} />
       <Container>
+      <SecBreadCrumb currentPageTitle={'about-us'}  className={'md:hidden'} />
         <div className=" flex flex-col justify-between gap-40">
           {/* first section */}
           <FirstSectionWhoWeAre show={show} pBarRef={pBarRef} />

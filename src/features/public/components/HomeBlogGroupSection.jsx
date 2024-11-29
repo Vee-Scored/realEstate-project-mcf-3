@@ -1,6 +1,4 @@
 import React from "react";
-import { blogs } from "../../../components/blog/constant";
-import BlogCard from "../../../components/blog/BlogCard";
 import ViewAllBtn from "../../../components/ViewAllBtn";
 import Container from "../../../components/Container";
 import SectionTitleComponent from "../../../components/SectionTitleComponent";
@@ -8,8 +6,11 @@ import "swiper/css";
 import "swiper/css/autoplay";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import useBlogStore from "../../../stores/useBlogStore";
+import BlogCard from "./blog/BlogCard";
 import SeeMoreBtn from "./SeeMoreBtn";
 const HomeBlogGroupSection = () => {
+  const { blogs } = useBlogStore();
   const options = {
     delay: 3000,
     disableOnInteraction: false,
@@ -38,7 +39,16 @@ const HomeBlogGroupSection = () => {
               blog <br />
               section. Start reading today.
             </p>
-            <ViewAllBtn>View all</ViewAllBtn>
+            <ViewAllBtn
+              path={"/blogs"}
+              className={
+                "!text-neutral-500 bg-white border   border-neutral-500 hover:bg-neutral-500 hover:!text-white"
+              }
+            >
+              View all
+            </ViewAllBtn>
+
+           
           </div>
         </div>
         <Container className={"!px-0"}>
@@ -50,14 +60,16 @@ const HomeBlogGroupSection = () => {
               loop={true}
               breakpoints={breakPoint}
             >
-              {blogs.map((blog) => (
+              {blogs?.map((blog) => (
                 <SwiperSlide key={blog.id}>
                   <BlogCard blog={blog} />
                 </SwiperSlide>
               ))}
             </Swiper>
           </div>
-          <SeeMoreBtn className={'my-2 rounded-md'}/>
+
+          <SeeMoreBtn className={'my-2 rounded-md md:hidden'}/>
+
         </Container>
       </section>
     </Container>
