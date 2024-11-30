@@ -18,18 +18,18 @@ const NotFound = () => {
         </div>
         {/* 404 state  */}
         <Container
-          className={`relative w-full mx-auto items-start bg-no-repeat bg-contain bg-center bg-error-pattern `}
+          className={`relative w-full mx-auto items-start bg-no-repeat bg-contain bg-center xl:bg-error-pattern `}
         >
-          <div className=" flex  justify-between items-center w-[1280px] gap-8">
-            <div>
+          <div className=" flex xl:flex-row flex-col-reverse  justify-between items-center xl:w-[1280px] gap-8 py-16">
+            <div className=" w-full bg-error-pattern bg-no-repeat bg-contain bg-center">
               <img src={errorImg} alt="" />
             </div>
-            <div className=" flex flex-col justify-between gap-8 items-start">
-              <div className=" flex flex-col  gap-6 ">
-                <h1 className="text-5xl text-neutral-700 font-bold font-notoSansLao  tracking-wider leading-10  ">
+            <div className=" flex flex-col xl:justify-between justify-center items-center gap-8 xl:items-start">
+              <div className=" flex flex-col  gap-6 text-start ">
+                <h1 className="xl:text-6xl md:text-4xl text-3xl text-neutral-700 font-bold font-notoSansLao   font-heading  leading-10  ">
                   Oops! That page can’t be found.
                 </h1>
-                <p className="  font-medium text-base text-neutral-500 tracking-wider leading-6">
+                <p className="  font-medium text-base text-neutral-500 xl:tracking-wider xl:leading-6 ">
                   The page you’re looking for might have been moved, deleted, or
                   doesn’t exist. Try heading back to the homepage or using the
                   menu to find what you need.
