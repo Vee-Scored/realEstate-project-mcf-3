@@ -58,10 +58,12 @@ const PopularProperCard = ({
             <p>Unit ID : </p>
             <p>{id}</p>
           </div>
-          <p className=" text-xs  text-neutral-500">{shortDescription}</p>
+          <p className=" text-xs min-h-9  text-neutral-500">{shortDescription}</p>
           <p
             className={
-              available === false ? "line-through text-neutral-500" : ""
+              `flex items-center
+                ${available === false ? "line-through decoration-[1.5px]  text-neutral-500" : ""}
+              `
             }
           >
             <span className=" text-sm font-semibold text-neutral-700">

@@ -6,7 +6,7 @@ import ShowResult from "../components/propertySectionCompo/ShowResult";
 
 const PropertyPage = () => {
   return (
-    <div className=" flex flex-col mb-20 md:gap-24">
+    <div className=" flex flex-col mb-20 gap-5 md:gap-24">
 
       <BreadCrumb className={"hidden md:block"} currentPage={"Property"} />
       <SecBreadCrumb
