@@ -18,11 +18,12 @@ const PropertyDetail = () => {
 
   return (
     <div>
+     
+      <Container>
       <SecBreadCrumb
         currentPageTitle={"property detail"}
         links={[{ title: "property", path: "/properties" }]}
       />
-      <Container>
         <PropertyDetailAvailableSection slug={slug} />
 
         <PropertyLightbox />

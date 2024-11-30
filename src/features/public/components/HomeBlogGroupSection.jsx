@@ -42,7 +42,7 @@ const HomeBlogGroupSection = () => {
             <ViewAllBtn
               path={"/blogs"}
               className={
-                "!text-neutral-500 bg-white border   border-neutral-500 hover:bg-neutral-500 hover:!text-white"
+                "!text-neutral-500 bg-white border hidden md:block  border-neutral-500 hover:bg-neutral-500 hover:!text-white"
               }
             >
               View all
@@ -68,7 +68,7 @@ const HomeBlogGroupSection = () => {
             </Swiper>
           </div>
 
-          <SeeMoreBtn className={'my-2 rounded-md md:hidden'}/>
+          <SeeMoreBtn path={'/blogs'} className={'my-2 rounded-md md:hidden'}/>
 
         </Container>
       </section>

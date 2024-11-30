@@ -39,7 +39,7 @@ const PropertyDetailAvailableSection = ({ slug }) => {
 
   return (
     <section>
-      <div className="   py-16 flex xl:flex-row flex-col  gap-[134px] justify-between xl:items-center">
+      <div className=" py-5  md:py-16 flex xl:flex-row flex-col  gap-[134px] justify-between xl:items-center">
         {/* left */}
         {/* <div className=" w-[735px] gap-20 flex flex-col justify-between ">
           <div className=" flex flex-col gap-4 justify-between">
@@ -103,7 +103,7 @@ const PropertyDetailAvailableSection = ({ slug }) => {
             </div>
           </div>
         </div> */}
-        <div className=" flex flex-col justify-between   px-3 xl:py-8  bg-white   dark:border-gray-700 dark:bg-gray-800  ">
+        <div className=" flex flex-col justify-between    xl:py-8  bg-white   dark:border-gray-700 dark:bg-gray-800  ">
           <div className="  flex flex-col gap-3 ">
             <div>
               <div
@@ -116,7 +116,7 @@ const PropertyDetailAvailableSection = ({ slug }) => {
                 {currentData.available === true ? "Available" : "Not Available"}
               </div>
             </div>
-            <p className="text-primary-500 text-[40px]   font-heading  leading-normal font-bold text-2xl">
+            <p className="text-primary-500 text-lg md:text-[40px]   font-heading  leading-normal font-bold ">
               {currentData.name}
             </p>
             <div className=" flex gap-2 text-sm  text-neutral-700 dark:text-neutral-400 font-normal">
@@ -140,20 +140,20 @@ const PropertyDetailAvailableSection = ({ slug }) => {
                 / month
               </span>
             </p>
-            <div className=" flex gap-2 text-neutral-700 items-center">
-              <div className=" flex items-center gap-2 text-nowrap justify-center text-base text-neutral-500 dark:text-neutral-400">
+            <div className=" flex gap-2 text-[12px] sm:text-base text-neutral-700 items-center">
+              <div className=" flex items-center gap-2 text-nowrap justify-center  text-neutral-500 dark:text-neutral-400">
                 <IoBedOutline />
 
                 <span> {currentData.bedrooms} Bedrooms</span>
               </div>{" "}
               |
-              <div className=" flex items-center gap-2 text-nowrap justify-center text-base text-neutral-500 dark:text-neutral-400 ">
+              <div className=" flex items-center gap-2 text-nowrap justify-center  text-neutral-500 dark:text-neutral-400 ">
                 <LuBath />
 
                 <span> {currentData.bathrooms} Bathrooms</span>
               </div>{" "}
               |
-              <div className=" flex items-center gap-2 text-nowrap justify-center text-base text-neutral-500 dark:text-neutral-400">
+              <div className=" flex items-center gap-2 text-nowrap justify-center  text-neutral-500 dark:text-neutral-400">
                 <BsArrowsMove />
                 <span> {currentData.sizeSqft} Sqft</span>
               </div>
