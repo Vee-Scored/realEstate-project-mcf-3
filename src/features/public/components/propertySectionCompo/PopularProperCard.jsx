@@ -45,7 +45,7 @@ const PopularProperCard = ({
           <div>
             <div
               className={`inline-block px-4 rounded-sm ${
-                available === true ? "bg-[#22C55E] text-white" : "bg-[#EAB308]"
+                available === true ? "bg-[#22C55E] text-white" : "bg-[#EAB308] text-gray-100"
               }`}
             >
               {available === true ? "Available" : "Not Available"}

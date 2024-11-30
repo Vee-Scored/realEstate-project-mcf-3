@@ -8,7 +8,7 @@ const SecBreadCrumb = ({ currentPageTitle, links, className }) => {
   const navigate = useNavigate();
 
   return (
-    <Container>
+    
       <div
         className={`w-full flex items-center  ${className}  justify-between gap-3 mb-5  py-1`}
       >
@@ -64,7 +64,7 @@ const SecBreadCrumb = ({ currentPageTitle, links, className }) => {
         </button>
       </div> */}
       </div>
-    </Container>
+   
   );
 };
 

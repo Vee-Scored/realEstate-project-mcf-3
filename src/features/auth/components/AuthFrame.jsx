@@ -1,5 +1,5 @@
 import React from "react";
-import AuthPhoto from "../../../assets/AuthAsset/AuthPhoto.png";
+import AuthPhoto from "../../../assets/AuthAsset/AuthPhoto.jpg";
 import { HiX } from "react-icons/hi";
 import { Link } from "react-router-dom";
 const AuthFrame = ({ children, className }) => {
