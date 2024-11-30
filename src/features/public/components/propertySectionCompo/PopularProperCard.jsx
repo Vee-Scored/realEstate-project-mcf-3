@@ -21,6 +21,12 @@ const PopularProperCard = ({
     slug,
   },
 }) => {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // Adds smooth scrolling animation
+    });
+  };
   return (
     <div className=" flex relative overflow-hidden  flex-col rounded-sm border border-gray-200 bg-white  shadow-sm dark:border-gray-700 dark:bg-gray-800">
       {/* img section */}
@@ -94,7 +100,7 @@ const PopularProperCard = ({
             <span>{listedDate}</span>
           </div>
           <Link to={`/properties/property-detail/${slug}`}>
-            <PropertyBtn text={"View detail"} />
+            <PropertyBtn onClick={scrollToTop} text={"View detail"} />
           </Link>
         </div>
       </div>
