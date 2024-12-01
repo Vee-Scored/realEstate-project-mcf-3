@@ -13,11 +13,11 @@ const Lightbox = ({ images }) => {
   return (
     <div className="mx-auto flex flex-col justify-center items-center">
       {/* Main Image */}
-      <div className="mb-8 ">
+      <div className="mb-8 xl:w-[1000px]  xl:h-[636px] ">
         <img
           src={selectedImage}
           alt="Selected"
-          className="xl:w-[1000px]  xl:h-[636px]  rounded-sm shadow-md "
+          className="h-full w-full aspect-square object-cover rounded-sm shadow-md "
         />
       </div>
 

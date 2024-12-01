@@ -1,5 +1,5 @@
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import useCookie from "react-use-cookie";
@@ -73,6 +73,30 @@ const Header = () => {
   const [user] = useCookie("user");
   const [isOpen, setIsOpen] = useState(false)
   const [isAuthOpen, setAuthOpen] = useState(false)
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  const handleScroll = () => {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY > lastScrollY && currentScrollY > 100) {
+      // Scrolling down, hide navbar
+      setIsVisible(false);
+    } else {
+      // Scrolling up, show navbar
+      setIsVisible(true);
+    }
+
+    setLastScrollY(currentScrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]);
   const nav = useNavigate();
   const toggleMenu = () => {
     setIsOpen(!isOpen)
@@ -89,7 +113,9 @@ const Header = () => {
 
 
   return (
-    <header className=" sticky top-0 z-50 bg-white ">
+    <header className={`sticky top-0 z-50 transition-all duration-300 bg-white ${
+        isVisible ? "translate-y-0" : "-translate-y-full"
+      } `}>
      
       <nav className="flex flex-col  justify-center dark:bg-gray-800">
         <Container className={"w-full relative overflow-visible"}>
