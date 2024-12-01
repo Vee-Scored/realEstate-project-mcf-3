@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -8,29 +7,26 @@ import logo from "../../../assets/HomeAssets/logo.png";
 import themeToggle from "../../../assets/HomeAssets/themeToggle.png";
 import userFavicon from "../../../assets/HomeAssets/user.png";
 import globe from "../../../assets/HomeAssets/globeFavicon.svg";
-import envelope from "../../../assets/HomeAssets/envelope.png"
+import envelope from "../../../assets/HomeAssets/envelope.png";
 import { Menu, X } from "lucide-react";
-const Links = ({ content, path,close = null }) => {
+const Links = ({ content, path, close = null }) => {
   const nav = useNavigate();
   const location = useLocation();
 
+  const isActive = location.pathname == path;
 
-  const isActive = location.pathname == path
-
-  
   return (
     <li>
       <button
-        onClick={()=>{
-          nav(path)
-          close && close()
+        onClick={() => {
+          nav(path);
+          close && close();
         }}
-          
-
         className={`block py-2 pr-4 pl-3 text-sm font-heading font-medium transition-all duration-300 ease-in-out
-          ${isActive
-            ? "text-primary-700 lg:text-primary-700 scale-x-100`"
-            : "text-gray-700 after:scale-x-0 hover:text-primary-700 dark:text-gray-400 dark:hover:text-white"
+          ${
+            isActive
+              ? "text-primary-700 lg:text-primary-700 scale-x-100`"
+              : "text-gray-700 after:scale-x-0 hover:text-primary-700 dark:text-gray-400 dark:hover:text-white"
           }
           border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:p-0
           dark:hover:bg-gray-700 lg:dark:hover:bg-transparent dark:border-gray-700
@@ -60,19 +56,18 @@ const navs = [
     content: "ABOUT",
     path: "/about-us",
   },
-  
-  
+
   {
     id: 4,
     content: "CONTACT",
     path: "/contact-us",
-  }
+  },
 ];
 
 const Header = () => {
   const [user] = useCookie("user");
-  const [isOpen, setIsOpen] = useState(false)
-  const [isAuthOpen, setAuthOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
+  const [isAuthOpen, setAuthOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -99,51 +94,61 @@ const Header = () => {
   }, [lastScrollY]);
   const nav = useNavigate();
   const toggleMenu = () => {
-    setIsOpen(!isOpen)
-  }
+    setIsOpen(!isOpen);
+  };
 
   const toggleAuth = () => {
-    setAuthOpen(!isAuthOpen)
-  }
+    setAuthOpen(!isAuthOpen);
+  };
 
   // Close the menu when a link is clicked
   const closeMenu = () => {
-    setIsOpen(false)
-  }
-
+    setIsOpen(false);
+  };
 
   return (
-    <header className={`sticky top-0 z-50 transition-all duration-300 bg-white ${
+    <header
+      className={`sticky top-0 z-50 transition-all duration-300 bg-white ${
         isVisible ? "translate-y-0" : "-translate-y-full"
-      } `}>
-     
+      } `}
+    >
       <nav className="flex flex-col  justify-center dark:bg-gray-800">
         <Container className={"w-full relative overflow-visible"}>
-        <div className={`w-[110px] md:right-16 right-10 lg:right-20 ${isAuthOpen ? 'md:-bottom-12 bottom-8 opacity-100' : 'md:bottom-14 -bottom-10  opacity-0'} transition-all duration-300 absolute grid grid-rows-2  rounded-sm h-[70px] border-2 cursor-pointer bg-white`}>
-              <button onClick={()=> nav('/login')} className="hover:text-gray-500">Sign in</button>
-              <button onClick={()=> nav('/register')} className="hover:text-gray-500">Sign up</button>
-        </div>
-        <div className="border-b text-xs    md:text-sm text-neutral-700 border-neutral-200 mb-5 py-3 justify-end flex items-center">
-        
+          <div
+            className={`w-[110px] md:right-16 right-10 lg:right-20 ${
+              isAuthOpen
+                ? "md:-bottom-12 bottom-8 opacity-100"
+                : "md:bottom-14 -bottom-10  opacity-0"
+            } transition-all duration-300 absolute grid grid-rows-2  rounded-sm h-[70px] border-2 cursor-pointer bg-white`}
+          >
+            <button
+              onClick={() => nav("/login")}
+              className="hover:text-gray-500"
+            >
+              Sign in
+            </button>
+            <button
+              onClick={() => nav("/register")}
+              className="hover:text-gray-500"
+            >
+              Sign up
+            </button>
+          </div>
+          <div className="border-b text-xs    md:text-sm text-neutral-700 border-neutral-200 mb-5 py-3 justify-end flex items-center">
+            <div className="border-r border-neutral-700 px-3">+95034526313</div>
+            <div className="border-l flex gap-2 items-center border-neutral-700 px-3">
+              <img src={envelope} alt="envelope" /> estatela123@gmail.com
+            </div>
 
-           <div className="border-r border-neutral-700 px-3">
-           +95034526313
-           </div>
-           <div className="border-l flex gap-2 items-center border-neutral-700 px-3">
-           <img src={envelope} alt="envelope" /> estatela123@gmail.com
-           </div>
-
-              <div className="flex  gap-5 md:hidden ml-3">
-
-                 <button onClick={toggleAuth}>
-                   <img className="size-[25px]" src={userFavicon} alt="" />
-                 </button>
-                 <button>
-                   <img className="size-[25px]" src={globe} />
-                 </button>
-               </div>
-            
-       </div>
+            <div className="flex  gap-5 md:hidden ml-3">
+              <button onClick={toggleAuth}>
+                <img className="size-[25px]" src={userFavicon} alt="" />
+              </button>
+              <button>
+                <img className="size-[25px]" src={globe} />
+              </button>
+            </div>
+          </div>
           <div className="flex h-20 flex-wrap justify-between items-center">
             <Link to="/" className="flex items-center">
               <img className="h-9" src={logo} alt="" />
@@ -151,8 +156,7 @@ const Header = () => {
             <div className="flex items-center gap-5 md:order-2">
               {!user ? (
                 <div className="hidden md:flex gap-3">
-                 
-                  <button onClick={()=> toggleAuth()}>
+                  <button onClick={() => toggleAuth()}>
                     <img className="size-[28px]" src={userFavicon} alt="" />
                   </button>
                   <button>
@@ -170,8 +174,7 @@ const Header = () => {
                 </>
               )}
 
-              
-             <button
+              <button
                 className="relative h-10 w-10 text-gray-500 hover:text-gray-600 md:hidden"
                 onClick={toggleMenu}
                 aria-label={isOpen ? "Close Menu" : "Open Menu"}
@@ -199,14 +202,16 @@ const Header = () => {
             >
               <ul className=" text-sm leading-4  flex flex-col  font-medium md:flex-row lg:space-x-8 lg:mt-0">
                 {navs.map((n) => (
-                  <Links  key={n.id} path={n.path} content={n.content} />
+                  <Links key={n.id} path={n.path} content={n.content} />
                 ))}
               </ul>
             </div>
 
             <div
               className={`fixed inset-0 z-40 bg-black/50 backdrop-blur-sm transition-all duration-300 ${
-                isOpen ? "opacity-100" : "pointer-events-none opacity-0"
+                isOpen
+                  ? "opacity-100 h-[1000px] "
+                  : "pointer-events-none opacity-0 "
               }`}
               aria-hidden="true"
               onClick={closeMenu}
@@ -222,31 +227,32 @@ const Header = () => {
               aria-modal="true"
               aria-label="Navigation Menu"
             >
-              
               <nav className="flex flex-col space-y-8 relative">
-              <button onClick={()=>closeMenu()}
-                    className={`absolute  top-0 right-0  `}
-                  > <X className="size-9" /> </button>
+                <button
+                  onClick={() => closeMenu()}
+                  className={`absolute  top-0 right-0  `}
+                >
+                  {" "}
+                  <X className="size-9" />{" "}
+                </button>
                 <ul className="flex flex-col items-center ">
-                {navs.map((n,i) => (
-                  <Links close={closeMenu}
-                  key={i} path={n.path} content={n.content}
-                   
-                    className="text-lg font-medium text-gray-600 transition-colors hover:text-gray-900"
-                  />
-                   
-                 
-                ))}
+                  {navs.map((n, i) => (
+                    <Links
+                      close={closeMenu}
+                      key={i}
+                      path={n.path}
+                      content={n.content}
+                      className="text-lg font-medium text-gray-600 transition-colors hover:text-gray-900"
+                    />
+                  ))}
                 </ul>
               </nav>
             </div>
           </div>
-          
         </Container>
-        
       </nav>
     </header>
   );
 };
 
-export default Header
+export default Header;
