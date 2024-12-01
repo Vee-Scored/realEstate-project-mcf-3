@@ -20,7 +20,7 @@ const avatars = [AvatarOne, AvatarTwo, AvatarThree, AvatarFour];
 const PropertyDetailAvailableSection = ({ slug }) => {
   const { cards } = useCardList();
   const currentData = cards.find((d) => d.slug == slug);
-  console.log(currentData);
+  // console.log(currentData);
 
   // const {
   //   id,
