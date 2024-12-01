@@ -11,7 +11,7 @@ const BlogDetailPage = () => {
       <BreadCrumb currentPage={"Blog Detail"} className={"hidden md:block"} />
       <SecBreadCrumb
         className={"md:hidden"}
-        currentPageTitle={"property detail"}
+        currentPageTitle={"blog detail"}
         links={[{ title: "blog", path: "/blogs" }]}
       />
       <Container>

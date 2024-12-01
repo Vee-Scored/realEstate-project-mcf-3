@@ -7,7 +7,7 @@ const PropertyDetailList = () => {
       <ProperDetailTitle text={"Property Details"} />
       <div className=" flex  w-full p-16 gap-7 bg-neutral-100 rounded-sm ">
         <div className=" grid md:grid-cols-2 md:justify-between  w-full gap-5  ">
-          <div className=" col-span-1 flex flex-col gap-5 justify-start ">
+          <div className=" col-span-1 flex flex-col gap-3 md:gap-5 justify-start ">
             <DetailListDiv
               className={""}
               title={"Unit ID"}
