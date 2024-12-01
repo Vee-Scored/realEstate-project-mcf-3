@@ -39,7 +39,7 @@ const PropertyDetailAvailableSection = ({ slug }) => {
 
   return (
     <section>
-      <div className=" py-5  md:py-16 flex xl:flex-row flex-col  gap-[134px] justify-between xl:items-center">
+      <div className="  py-5  md:py-16 flex xl:flex-row flex-col  gap-[134px] justify-between xl:items-center">
         {/* left */}
         {/* <div className=" w-[735px] gap-20 flex flex-col justify-between ">
           <div className=" flex flex-col gap-4 justify-between">
@@ -104,7 +104,7 @@ const PropertyDetailAvailableSection = ({ slug }) => {
           </div>
         </div> */}
         <div className=" flex flex-col justify-between    xl:py-8  bg-white   dark:border-gray-700 dark:bg-gray-800  ">
-          <div className="  flex flex-col gap-3 ">
+          <div className="  flex flex-col gap-3  dark:border-gray-700 ">
             <div>
               <div
                 className={`inline-block px-4 rounded-sm text-neutral-50 text-base font-medium font-heading ${
@@ -113,7 +113,7 @@ const PropertyDetailAvailableSection = ({ slug }) => {
                     : "bg-[#EAB308]"
                 }`}
               >
-                {currentData.available === true ? "Available" : "Not Available"}
+                {currentData.available === true ? "Available" : "Unavailable"}
               </div>
             </div>
             <p className="text-primary-500 text-lg md:text-[40px]   font-heading  leading-normal font-bold ">
@@ -126,17 +126,20 @@ const PropertyDetailAvailableSection = ({ slug }) => {
             <p className=" text-base  text-neutral-500">
               {currentData.details.description}
             </p>
+
             <p
-              className={
-                currentData.available === false
-                  ? "line-through text-neutral-500"
-                  : ""
-              }
+              className={`flex items-center
+                ${
+                  currentData.available === false
+                    ? "line-through decoration-[1.5px] text-2xl font-heading  text-neutral-500"
+                    : ""
+                }
+              `}
             >
-              <span className="  font-semibold text-neutral-700 text-2xl font-heading ">
+              <span className=" text-2xl font-heading text-center  font-semibold text-neutral-700">
                 ${currentData.pricePerMonth}
               </span>{" "}
-              <span className="text-2xl font-semibold text-neutral-500 ">
+              <span className="text-2xl font-heading text-center  font-semibold text-neutral-500 ">
                 / month
               </span>
             </p>
@@ -159,7 +162,8 @@ const PropertyDetailAvailableSection = ({ slug }) => {
               </div>
             </div>
           </div>
-          <hr className=" dark:border-gray-600" />
+          <hr className=" dark:border-gray-600 mt-10" />
+
           <div className=" flex justify-between items-center mt-4 pt-10  ">
             <div className="   dark:text-slate-300 flex gap-2 items-center text-base font-sans font-normal  text-neutral-700">
               <span>

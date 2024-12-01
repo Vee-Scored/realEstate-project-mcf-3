@@ -8,8 +8,8 @@ export const SimilarListSection = () => {
       <div className=" flex flex-col gap-8 py-16">
         <div className=" flex justify-between items-center ">
           <ProperDetailTitle text="Similar Listings " />
-          <Link className=" md:inline-block hidden">
-            <button className="  p-2.5 font-heading text-xs text-white bg-black ">
+          <Link to="/properties" className=" md:inline-block hidden">
+            <button className="  p-2.5 font-heading text-xs  border border-gray-200 rounded-md bg-white text-neutral-700 ">
               See More
             </button>
           </Link>
@@ -18,8 +18,8 @@ export const SimilarListSection = () => {
           <SimilarListCardSection />
         </div>
         <div>
-          <Link className=" md:hidden inline-block">
-            <button className="  p-2.5 font-heading text-xs text-white bg-black ">
+          <Link to="/properties" className=" md:hidden inline-block">
+            <button className="  p-2.5 font-heading text-xs  border border-gray-200 rounded-md bg-white text-neutral-700 ">
               See More
             </button>
           </Link>
