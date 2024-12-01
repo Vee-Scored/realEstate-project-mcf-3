@@ -13,25 +13,22 @@ import SecBreadCrumb from "../../../components/SecBreadCrumb";
 import { SimilarListSection } from "../components/propertySectionCompo/SimilarListSection";
 import useCardList from "../../../stores/useCardList";
 const PropertyDetail = () => {
-
   const { slug } = useParams();
 
   return (
     <div>
-     
       <Container>
-      <SecBreadCrumb
-        currentPageTitle={"property detail"}
-        links={[{ title: "property", path: "/properties" }]}
-      />
+        <SecBreadCrumb
+          currentPageTitle={"property detail"}
+          links={[{ title: "property", path: "/properties" }]}
+        />
         <PropertyDetailAvailableSection slug={slug} />
-
         <PropertyLightbox />
         <PropertyDetailList />
         <AmenityFeatures />
         <PropertyVideo />
         <LocationInMap />
-        <SimilarListSection />
+        <SimilarListSection slug={slug} />
       </Container>
     </div>
   );
