@@ -74,7 +74,7 @@ const RealEstateAgency = () => {
                       d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
                     />
                   </svg>{" "}
-                  <span className="">Search location</span>
+                  
                 </RealEstateAgencyBigButton>
               </motion.div>
 
@@ -84,10 +84,7 @@ const RealEstateAgency = () => {
                 transition={{ duration: 0.5, delay: 0.8 }}
                 viewport={{ once: true }}
               >
-                <div className=" text-neutral-500 flex gap-3 items-center">
-                  <RealEstateAgencySmallButton name={"Property"} />
-                  <RealEstateAgencySmallButton name={"Buy"} />
-                </div>
+                
               </motion.div>
 
              <div className=" text-neutral-500 flex gap-3 w-full items-center">
@@ -119,14 +116,11 @@ const RealEstateAgency = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 1 }}
                 viewport={{ once: true }}
+                className="w-full col-span-2 md:col-span-1"
               >
-                <RealEstateAgencyBigButton
-                  styleClass={" bg-neutral-700 shadow-sm"}
-                >
-                  <span className=" font-notoSansLao text-lg text-neutral-50 font-[500]">
-                    Search Result
-                  </span>
-                </RealEstateAgencyBigButton>
+                 <button className=" bg-neutral-700 h-16 w-full text-sm   rounded-sm text-white   text-center ">
+                  Search Result
+                </button>
               </motion.div>
             </div>
           </div>
