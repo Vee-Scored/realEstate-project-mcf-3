@@ -5,7 +5,6 @@ import ViewAllBtn from "../../../components/ViewAllBtn";
 import PopularProperCard from "./propertySectionCompo/PopularProperCard";
 import { motion } from "framer-motion";
 
-import data from "../../../../data.json";
 import { useEffect, useState } from "react";
 
 import SeeMoreBtn from "./SeeMoreBtn";
