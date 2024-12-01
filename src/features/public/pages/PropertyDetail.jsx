@@ -16,7 +16,8 @@ const PropertyDetail = () => {
   const { slug } = useParams();
 
   return (
-    <div>
+  
+     
       <Container>
         <SecBreadCrumb
           currentPageTitle={"property detail"}
@@ -30,7 +31,7 @@ const PropertyDetail = () => {
         <LocationInMap />
         <SimilarListSection slug={slug} />
       </Container>
-    </div>
+   
   );
 };
 

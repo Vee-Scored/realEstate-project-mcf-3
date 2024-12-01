@@ -80,15 +80,29 @@ const Header = () => {
     const currentScrollY = window.scrollY;
 
     if (currentScrollY > lastScrollY && currentScrollY > 100) {
-      // Scrolling down, hide navbar
+      
       setIsVisible(false);
     } else {
-      // Scrolling up, show navbar
+      
       setIsVisible(true);
     }
 
     setLastScrollY(currentScrollY);
   };
+
+  useEffect(() => {
+   
+    if (isOpen) {
+      document.body.style.overflow = "hidden"; 
+    } else {
+      document.body.style.overflow = ""; 
+    }
+
+   
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -116,6 +130,13 @@ const Header = () => {
     <header className={`sticky top-0 z-50 transition-all duration-300 bg-white ${
         isVisible ? "translate-y-0" : "-translate-y-full"
       } `}>
+        <div
+              className={` inset-0 fixed bottom-0 h-lvh pointer-events-none  bg-black/50 backdrop-blur-sm transition-all duration-300 ${
+                isOpen ? "opacity-100" : "pointer-events-none opacity-0"
+              }`}
+              aria-hidden="true"
+              onClick={closeMenu}
+            />
      
       <nav className="flex flex-col  justify-center dark:bg-gray-800">
         <Container className={"w-full relative overflow-visible"}>
@@ -133,7 +154,7 @@ const Header = () => {
            <img src={envelope} alt="envelope" /> estatela123@gmail.com
            </div>
 
-              <div className="flex  gap-5 md:hidden ml-3">
+              <div className="flex gap-1 md:hidden">
 
                  <button onClick={toggleAuth}>
                    <img className="size-[25px]" src={userFavicon} alt="" />
@@ -204,13 +225,7 @@ const Header = () => {
               </ul>
             </div>
 
-            <div
-              className={`fixed inset-0 z-40 bg-black/50 backdrop-blur-sm transition-all duration-300 ${
-                isOpen ? "opacity-100" : "pointer-events-none opacity-0"
-              }`}
-              aria-hidden="true"
-              onClick={closeMenu}
-            />
+            
 
             {/* Mobile menu */}
             <div
