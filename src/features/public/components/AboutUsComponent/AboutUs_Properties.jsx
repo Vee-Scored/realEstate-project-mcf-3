@@ -2,7 +2,7 @@ import React from "react";
 
 const AboutUs_Properties = ({ header, text }) => {
   return (
-    <div className=" w-[617px] gap-8  flex flex-col ">
+    <div className=" md:w-[44%] md:h-[240px] w-[617px] gap-8  flex flex-col ">
       <div>
         <h1 className=" text-2xl font-semibold font-sans text-neutral-700">
           {header}

@@ -1,5 +1,5 @@
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import useCookie from "react-use-cookie";
@@ -72,9 +72,52 @@ const navs = [
 const Header = () => {
   const [user] = useCookie("user");
   const [isOpen, setIsOpen] = useState(false)
+  const [isAuthOpen, setAuthOpen] = useState(false)
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
+  const handleScroll = () => {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY > lastScrollY && currentScrollY > 100) {
+      
+      setIsVisible(false);
+    } else {
+      
+      setIsVisible(true);
+    }
+
+    setLastScrollY(currentScrollY);
+  };
+
+  useEffect(() => {
+   
+    if (isOpen) {
+      document.body.style.overflow = "hidden"; 
+    } else {
+      document.body.style.overflow = ""; 
+    }
+
+   
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]);
+  const nav = useNavigate();
   const toggleMenu = () => {
     setIsOpen(!isOpen)
+  }
+
+  const toggleAuth = () => {
+    setAuthOpen(!isAuthOpen)
   }
 
   // Close the menu when a link is clicked
@@ -82,12 +125,28 @@ const Header = () => {
     setIsOpen(false)
   }
 
+
   return (
-    <header className=" sticky top-0 z-50 bg-white ">
+    <header className={`sticky top-0 z-50 transition-all duration-300 bg-white ${
+        isVisible ? "translate-y-0" : "-translate-y-full"
+      } `}>
+        <div
+              className={` inset-0 fixed bottom-0 h-lvh pointer-events-none  bg-black/50 backdrop-blur-sm transition-all duration-300 ${
+                isOpen ? "opacity-100" : "pointer-events-none opacity-0"
+              }`}
+              aria-hidden="true"
+              onClick={closeMenu}
+            />
      
-      <nav className="flex flex-col justify-center dark:bg-gray-800">
-        <Container className={"w-full"}>
-        <div className="border-b text-xs md:text-sm text-neutral-700 border-neutral-200 mb-5 py-3 justify-end flex items-center">
+      <nav className="flex flex-col  justify-center dark:bg-gray-800">
+        <Container className={"w-full relative overflow-visible"}>
+        <div className={`w-[110px] md:right-16 right-10 lg:right-20 ${isAuthOpen ? 'md:-bottom-12 bottom-8 opacity-100' : 'md:bottom-14 -bottom-10  opacity-0'} transition-all duration-300 absolute grid grid-rows-2  rounded-sm h-[70px] border-2 cursor-pointer bg-white`}>
+              <button onClick={()=> nav('/login')} className="hover:text-gray-500">Sign in</button>
+              <button onClick={()=> nav('/register')} className="hover:text-gray-500">Sign up</button>
+        </div>
+        <div className="border-b text-xs    md:text-sm text-neutral-700 border-neutral-200 mb-5 py-3 justify-end flex items-center">
+        
+
            <div className="border-r border-neutral-700 px-3">
            +95034526313
            </div>
@@ -95,16 +154,17 @@ const Header = () => {
            <img src={envelope} alt="envelope" /> estatela123@gmail.com
            </div>
 
-           <div className="flex gap-5 md:hidden ml-3">
-                 
-                 <button>
+              <div className="flex gap-1 md:hidden">
+
+                 <button onClick={toggleAuth}>
                    <img className="size-[25px]" src={userFavicon} alt="" />
                  </button>
                  <button>
                    <img className="size-[25px]" src={globe} />
                  </button>
                </div>
-          </div>
+            
+       </div>
           <div className="flex h-20 flex-wrap justify-between items-center">
             <Link to="/" className="flex items-center">
               <img className="h-9" src={logo} alt="" />
@@ -113,7 +173,7 @@ const Header = () => {
               {!user ? (
                 <div className="hidden md:flex gap-3">
                  
-                  <button>
+                  <button onClick={()=> toggleAuth()}>
                     <img className="size-[28px]" src={userFavicon} alt="" />
                   </button>
                   <button>
@@ -132,7 +192,7 @@ const Header = () => {
               )}
 
               
-<button
+             <button
                 className="relative h-10 w-10 text-gray-500 hover:text-gray-600 md:hidden"
                 onClick={toggleMenu}
                 aria-label={isOpen ? "Close Menu" : "Open Menu"}
@@ -165,13 +225,7 @@ const Header = () => {
               </ul>
             </div>
 
-            <div
-              className={`fixed inset-0 z-40 bg-black/50 backdrop-blur-sm transition-all duration-300 ${
-                isOpen ? "opacity-100" : "pointer-events-none opacity-0"
-              }`}
-              aria-hidden="true"
-              onClick={closeMenu}
-            />
+            
 
             {/* Mobile menu */}
             <div
@@ -202,7 +256,9 @@ const Header = () => {
               </nav>
             </div>
           </div>
+          
         </Container>
+        
       </nav>
     </header>
   );

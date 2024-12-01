@@ -3,19 +3,23 @@ import Container from "../../../components/Container";
 import SectionTitleComponent from "../../../components/SectionTitleComponent";
 import ViewAllBtn from "../../../components/ViewAllBtn";
 import PopularProperCard from "./propertySectionCompo/PopularProperCard";
-
 import { motion } from "framer-motion";
 
 import data from "../../../../data.json";
 import { useEffect, useState } from "react";
 
 import SeeMoreBtn from "./SeeMoreBtn";
+// import data from "../../../../data.json";
+
+import useCardList from "../../../stores/useCardList";
 
 const HomePopularProper = () => {
+  const { cards } = useCardList();
+
   const [properties, setProperties] = useState([]);
 
   useEffect(() => {
-    setProperties(data.slice(0, 6));
+    setProperties(cards.slice(0, 6));
   }, []);
 
   return (
@@ -52,7 +56,8 @@ const HomePopularProper = () => {
                 <PopularProperCard property={property} />
               </motion.div>
             ))}
-            <SeeMoreBtn className={"rounded-md"} />
+
+            <SeeMoreBtn className={"rounded-md md:hidden"} />
           </div>
 
           <div className="hidden md:flex my-2 justify-center items-center ">

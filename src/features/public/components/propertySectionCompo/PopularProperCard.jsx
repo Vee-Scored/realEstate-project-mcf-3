@@ -21,6 +21,12 @@ const PopularProperCard = ({
     slug,
   },
 }) => {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // Adds smooth scrolling animation
+    });
+  };
   return (
     <div className=" flex relative overflow-hidden  flex-col rounded-sm border border-gray-200 bg-white  shadow-sm dark:border-gray-700 dark:bg-gray-800">
       {/* img section */}
@@ -39,10 +45,12 @@ const PopularProperCard = ({
           <div>
             <div
               className={`inline-block px-4 rounded-sm ${
-                available === true ? "bg-[#22C55E] text-white" : "bg-[#EAB308]"
+                available === true
+                  ? "bg-[#22C55E] text-white"
+                  : "bg-[#EAB308] text-gray-100"
               }`}
             >
-              {available === true ? "Available" : "Not Available"}
+              {available === true ? "Available" : " Unavailable"}
             </div>
           </div>
           <p className=" text-blue-500 leading-normal font-bold text-2xl">
@@ -52,11 +60,17 @@ const PopularProperCard = ({
             <p>Unit ID : </p>
             <p>{id}</p>
           </div>
-          <p className=" text-xs  text-neutral-500">{shortDescription}</p>
+          <p className=" text-xs min-h-9  text-neutral-500">
+            {shortDescription}
+          </p>
           <p
-            className={
-              available === false ? "line-through text-neutral-500" : ""
-            }
+            className={`flex items-center
+                ${
+                  available === false
+                    ? "line-through decoration-[1.5px]  text-neutral-500"
+                    : ""
+                }
+              `}
           >
             <span className=" text-sm font-semibold text-neutral-700">
               ${pricePerMonth}
@@ -94,7 +108,7 @@ const PopularProperCard = ({
             <span>{listedDate}</span>
           </div>
           <Link to={`/properties/property-detail/${slug}`}>
-            <PropertyBtn text={"View detail"} />
+            <PropertyBtn onClick={scrollToTop} text={"View detail"} />
           </Link>
         </div>
       </div>

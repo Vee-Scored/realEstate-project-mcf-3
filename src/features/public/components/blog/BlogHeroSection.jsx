@@ -4,7 +4,7 @@ import SectionTitleComponent from "../../../../components/SectionTitleComponent"
 import ViewAllBtn from "../../../../components/ViewAllBtn";
 const BlogHeroSection = () => {
   return (
-    <section className=" min-h-dvh   grid  lg:grid-cols-2  lg:grid-flow-col  items-center gap-6 py-10 lg:py-0 my-6 lg:my-0">
+    <section className=" grid  lg:grid-cols-2  lg:grid-flow-col  items-center gap-10 py-10  mb-10 lg:mb-20 ">
       <div className="order-2 lg:order-1  ">
         <img
           src={blogHero}

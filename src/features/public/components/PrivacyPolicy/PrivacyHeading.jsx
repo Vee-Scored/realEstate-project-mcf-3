@@ -2,7 +2,7 @@ import React from "react";
 
 const PrivacyHeading = () => {
   return (
-    <div className="flex flex-col gap-12 items-start">
+    <div className="flex flex-col gap-7 lg:gap-12 items-start">
       <h2 className="text-[32px] lg:text-[40px] font-heading font-semibold text-neutral-700">
         Privacy Policy
       </h2>

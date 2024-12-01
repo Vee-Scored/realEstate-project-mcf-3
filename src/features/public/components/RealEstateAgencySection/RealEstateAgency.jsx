@@ -12,6 +12,7 @@ const RealEstateAgency = () => {
     <section className=" my-5">
       <Container>
         <div className=" relative md:flex gap-5 items-stretch">
+
           <div className="w-full md:hidden my-2 h-[624px]">
             <img
               className=" w-full h-full object-cover "
@@ -88,6 +89,31 @@ const RealEstateAgency = () => {
                   <RealEstateAgencySmallButton name={"Buy"} />
                 </div>
               </motion.div>
+
+             <div className=" text-neutral-500 flex gap-3 w-full items-center">
+                <RealEstateAgencySmallButton className={" w-1/2"}>
+                  {
+                    <>
+                      {" "}
+                      <option selected>property</option>
+                      <option value="US">United States</option>
+                      <option value="CA">Canada</option>
+                      <option value="FR">France</option>
+                      <option value="DE">Germany</option>
+                    </>
+                  }
+                </RealEstateAgencySmallButton>
+                <RealEstateAgencySmallButton className={" w-1/2"}>
+                  {
+                    <>
+                      {" "}
+                      <option selected>Buy</option>
+                      <option value="Rent">Rent</option>
+                    </>
+                  }
+                </RealEstateAgencySmallButton>
+              </div>
+
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -110,13 +136,21 @@ const RealEstateAgency = () => {
             transition={{ duration: 0.5, delay: 0.5 }}
             viewport={{ once: true }}
             className="w-1/2 hidden md:block lg:h-[624px]"
-          >
+        >
+            
+            
+            
+
+              
+              
             <img
               className=" w-full h-full object-cover "
               src={RealEstateAgencyImg}
               alt=""
             />
+
           </motion.div>
+
           <div className="hidden lg:absolute w-[194px]  h-[78px] left-[44%] top-[11%] ">
             <img
               className=" rounded-md w-full h-full object-cover"

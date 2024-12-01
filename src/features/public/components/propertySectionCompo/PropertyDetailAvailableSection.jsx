@@ -1,32 +1,48 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import BedSingle from "../../../../assets/propertyDetail/bed-single.png";
-import Bath from "../../../../assets/propertyDetail/bath.png";
-import Move from "../../../../assets/propertyDetail/move.png";
 import CheckCircle from "../../../../assets/propertyDetail/check-circle.png";
 import AvatarOne from "../../../../assets/propertyDetail/AvatarOne.png";
 import AvatarTwo from "../../../../assets/propertyDetail/AvatarTwo.png";
 import AvatarThree from "../../../../assets/propertyDetail/AvatarThree.png";
 import AvatarFour from "../../../../assets/propertyDetail/AvatarFour.png";
 import Vector from "../../../../assets/propertyDetail/Vector.png";
-import calendar from "../../../../assets/propertyDetail/calendar-days.png";
-import PropertyDetailRoomInfoSmall from "./PropertyDetailRoomInfoSmall";
-import data from "../../../../../data.json";
+// import calendar from "../../../../assets/propertyDetail/calendar-days.png";
+// import PropertyDetailRoomInfoSmall from "./PropertyDetailRoomInfoSmall";
+import { FaRegCalendarAlt } from "react-icons/fa";
+// import PropertyBtn from "./PropertyBtn";
+import { BsArrowsMove } from "react-icons/bs";
+import { LuBath } from "react-icons/lu";
+import { IoBedOutline } from "react-icons/io5";
+import useCardList from "../../../../stores/useCardList";
 
 const avatars = [AvatarOne, AvatarTwo, AvatarThree, AvatarFour];
 
-const PropertyDetailAvailableSection = ({slug}) => {
+const PropertyDetailAvailableSection = ({ slug }) => {
+  const { cards } = useCardList();
+  const currentData = cards.find((d) => d.slug == slug);
+ 
+  // const {
+  //   id,
+  //   name,
+  //   available,
+  //   type,
+  //   propertyImg,
+  //   shortDescription,
+  //   pricePerMonth,
+  //   bedrooms,
+  //   bathrooms,
+  //   sizeSqft,
+  //   listedDate,
+  //   slug,
+  // } = currentData;
 
-  const currentData =data.find(d => d.slug == slug
-)
-  
   return (
     <section>
-      <div className="  py-16 flex  gap-[134px] justify-between items-center">
+      <div className="  py-5  md:py-16 flex xl:flex-row flex-col  gap-[134px] justify-between xl:items-center">
         {/* left */}
-        <div className=" w-[735px] gap-20 flex flex-col justify-between ">
+        {/* <div className=" w-[735px] gap-20 flex flex-col justify-between ">
           <div className=" flex flex-col gap-4 justify-between">
-            {/* name */}
+           
             <div className=" flex flex-col gap-4">
               <div className="  flex justify-center items-center bg-[#22C55E] w-[128px] h-[32px] py-[2px] px-[10px] rounded-sm">
                 <span className=" text-neutral-50 text-base font-medium font-heading">
@@ -39,16 +55,13 @@ const PropertyDetailAvailableSection = ({slug}) => {
                 </h1>
               </div>
             </div>
-            {/* Unit Id */}
             <div className=" flex items-center gap-1 text-neutral-700 text-base font-medium font-sans">
               <span>Unit ID :</span>
               <span>{currentData.id}</span>
             </div>
-            {/* description */}
             <div className=" text-neutral-700 font-normal text-base font-sans">
               <p>{currentData.details.description}</p>
             </div>
-            {/* price */}
             <div className=" flex items-center gap-[5px]">
               <span className=" text-2xl font-semibold font-heading text-neutral-700">
                 ${currentData.pricePerMonth}
@@ -57,7 +70,6 @@ const PropertyDetailAvailableSection = ({slug}) => {
                 /month
               </span>
             </div>
-            {/* Room Info */}
             <div className=" flex items-center gap-4">
               <PropertyDetailRoomInfoSmall
                 image={BedSingle}
@@ -80,7 +92,6 @@ const PropertyDetailAvailableSection = ({slug}) => {
               />
             </div>
           </div>
-          {/* Calendar Listed */}
           <div className=" flex items-center gap-2">
             <div>
               <img src={calendar} alt="" />
@@ -90,9 +101,80 @@ const PropertyDetailAvailableSection = ({slug}) => {
               <span>{currentData.listedDate}</span>
             </div>
           </div>
+        </div> */}
+        <div className=" flex flex-col justify-between    xl:py-8  bg-white   dark:border-gray-700 dark:bg-gray-800  ">
+          <div className="  flex flex-col gap-3  dark:border-gray-700 ">
+            <div>
+              <div
+                className={`inline-block px-4 rounded-sm text-neutral-50 text-base font-medium font-heading ${
+                  currentData.available === true
+                    ? "bg-[#22C55E] text-white"
+                    : "bg-[#EAB308]"
+                }`}
+              >
+                {currentData.available === true ? "Available" : "Unavailable"}
+              </div>
+            </div>
+            <p className="text-primary-500 text-lg md:text-[40px]   font-heading  leading-normal font-bold ">
+              {currentData.name}
+            </p>
+            <div className=" flex gap-2 text-sm  text-neutral-700 dark:text-neutral-400 font-normal">
+              <p>Unit ID : </p>
+              <p>{currentData.id}</p>
+            </div>
+            <p className=" text-base  text-neutral-500">
+              {currentData.details.description}
+            </p>
+
+            <p
+              className={`flex items-center
+                ${
+                  currentData.available === false
+                    ? "line-through decoration-[1.5px] text-2xl font-heading  text-neutral-500"
+                    : ""
+                }
+              `}
+            >
+              <span className=" text-2xl font-heading text-center  font-semibold text-neutral-700">
+                ${currentData.pricePerMonth}
+              </span>{" "}
+              <span className="text-2xl font-heading text-center  font-semibold text-neutral-500 ">
+                / month
+              </span>
+            </p>
+            <div className=" flex gap-2 text-[12px] sm:text-base text-neutral-700 items-center">
+              <div className=" flex items-center gap-2 text-nowrap justify-center  text-neutral-500 dark:text-neutral-400">
+                <IoBedOutline />
+
+                <span> {currentData.bedrooms} Bedrooms</span>
+              </div>{" "}
+              |
+              <div className=" flex items-center gap-2 text-nowrap justify-center  text-neutral-500 dark:text-neutral-400 ">
+                <LuBath />
+
+                <span> {currentData.bathrooms} Bathrooms</span>
+              </div>{" "}
+              |
+              <div className=" flex items-center gap-2 text-nowrap justify-center  text-neutral-500 dark:text-neutral-400">
+                <BsArrowsMove />
+                <span> {currentData.sizeSqft} Sqft</span>
+              </div>
+            </div>
+          </div>
+          <hr className=" dark:border-gray-600 mt-10" />
+
+          <div className=" flex justify-between items-center mt-4 pt-10  ">
+            <div className="   dark:text-slate-300 flex gap-2 items-center text-base font-sans font-normal  text-neutral-700">
+              <span>
+                <FaRegCalendarAlt className=" text-blue-500" />
+              </span>
+              <span>Listed date : </span>
+              <span>{currentData.listedDate}</span>
+            </div>
+          </div>
         </div>
         {/* right */}
-        <div className=" w-[411px] p-6 flex flex-col gap-8 rounded-xl bg-neutral-50 shadow-xl ">
+        <div className=" xl:w-[411px] w-full p-6 flex flex-col gap-8 rounded-xl bg-neutral-50 shadow-xl ">
           <div className=" flex gap-5  flex-col">
             {/* header img */}
             <div className=" flex justify-between items-center">

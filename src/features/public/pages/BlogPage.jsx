@@ -10,9 +10,9 @@ const BlogPage = () => {
 
     <div className="flex flex-col  mb-20 gap-24">
     <BreadCrumb className={'hidden md:block'} currentPage={"Blog"} />
-    <SecBreadCrumb currentPageTitle={'blog'}  className={'md:hidden'} />
       
     <Container>
+    <SecBreadCrumb currentPageTitle={'blog'}  className={'md:hidden'} />
       <BlogHeroSection />
       <BlogCardGroup />
     </Container>

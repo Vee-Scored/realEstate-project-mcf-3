@@ -85,6 +85,7 @@ const HomePoperBenefit = () => {
             >
               <PropertyBenefitCard {...benefit} />
             </motion.div>
+
           ))}
         </div>
       </Container>
