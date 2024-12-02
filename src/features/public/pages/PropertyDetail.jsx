@@ -16,22 +16,19 @@ const PropertyDetail = () => {
   const { slug } = useParams();
 
   return (
-  
-     
-      <Container>
-        <SecBreadCrumb
-          currentPageTitle={"property detail"}
-          links={[{ title: "property", path: "/properties" }]}
-        />
-        <PropertyDetailAvailableSection slug={slug} />
-        <PropertyLightbox />
-        <PropertyDetailList />
-        <AmenityFeatures />
-        <PropertyVideo />
-        <LocationInMap />
-        <SimilarListSection slug={slug} />
-      </Container>
-   
+    <Container>
+      <SecBreadCrumb
+        currentPageTitle={"property detail"}
+        links={[{ title: "property", path: "/properties" }]}
+      />
+      <PropertyDetailAvailableSection slug={slug} />
+      <PropertyLightbox />
+      <PropertyDetailList />
+      <AmenityFeatures />
+      <PropertyVideo />
+      <LocationInMap />
+      <SimilarListSection slug={slug} />
+    </Container>
   );
 };
 
