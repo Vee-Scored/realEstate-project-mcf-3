@@ -13,8 +13,25 @@ import SecBreadCrumb from "../../../components/SecBreadCrumb";
 import { SimilarListSection } from "../components/propertySectionCompo/SimilarListSection";
 import useCardList from "../../../stores/useCardList";
 const PropertyDetail = () => {
+  const { cards } = useCardList();
   const { slug } = useParams();
-
+  const currentData = cards.find((d) => d.slug == slug);
+  // console.log(currentData);
+  const {
+    id,
+    name,
+    available,
+    type,
+    propertyImg,
+    shortDescription,
+    pricePerMonth,
+    bedrooms,
+    bathrooms,
+    sizeSqft,
+    listedDate,
+    details,
+  } = currentData;
+  console.log(details);
   return (
     <Container>
       <SecBreadCrumb
@@ -23,8 +40,8 @@ const PropertyDetail = () => {
       />
       <PropertyDetailAvailableSection slug={slug} />
       <PropertyLightbox />
-      <PropertyDetailList />
-      <AmenityFeatures />
+      <PropertyDetailList details={details} />
+      <AmenityFeatures details={details} />
       <PropertyVideo />
       <LocationInMap />
       <SimilarListSection slug={slug} />
