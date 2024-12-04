@@ -10,17 +10,17 @@ const ServiceForYou = () => {
   const [show, setShow] = useState(false);
   const pBarRef = useRef();
 
-  const updateScrollPosition = () => {
-    const sectionPos = pBarRef.current.getBoundingClientRect().top;
-    const screenPos = window.innerHeight;
-    if (sectionPos < screenPos) {
-      setShow(true);
-    } else {
-      setShow(false);
-    }
-  };
-
   useEffect(() => {
+    const updateScrollPosition = () => {
+      const sectionPos = pBarRef.current.getBoundingClientRect().top;
+      const screenPos = window.innerHeight;
+      if (sectionPos < screenPos) {
+        setShow(true);
+      } else {
+        setShow(false);
+      }
+    };
+
     window.addEventListener("scroll", updateScrollPosition);
 
     return () => {
