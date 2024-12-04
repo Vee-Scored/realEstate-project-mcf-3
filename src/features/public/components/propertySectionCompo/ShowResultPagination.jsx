@@ -1,7 +1,14 @@
 const ShowResultPagination = ({ setPage }) => {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // Adds smooth scrolling animation
+    });
+  };
   const handlePageChange = (e) => {
     setPage(e.target.value);
-    console.log(e.target.value);
+    scrollToTop();
+    // console.log(e.target.value);
   };
   return (
     <>

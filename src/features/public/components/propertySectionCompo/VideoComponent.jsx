@@ -5,10 +5,10 @@ const VideoComponent = () => {
   return (
     <ReactPlayer
       url={propertyVd}
-      playing // Autoplay enabled
+      playing={true} // Autoplay enabled
       loop
       muted
-      controls={false}
+      controls={true}
       width="100%"
       height="100%"
     />
