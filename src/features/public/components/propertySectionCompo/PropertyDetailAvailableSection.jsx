@@ -66,6 +66,7 @@ const PropertyDetailAvailableSection = ({ slug }) => {
 
             <p
               className={`flex items-center
+                
                 ${
                   currentData.available === false
                     ? "line-through decoration-[1.5px] text-2xl font-heading  text-neutral-500"
