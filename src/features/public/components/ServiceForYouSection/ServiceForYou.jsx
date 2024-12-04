@@ -58,7 +58,23 @@ const ServiceForYou = () => {
                 Your Trusted Property Partner
               </motion.h1>
               <div className="hidden md:block col-span-1">
-                <img className="" src={ServiceForYouStickerImg} alt="" />
+                <motion.img
+                  initial={{ y: 0, rotate: 0 }}
+                  animate={{
+                    y: [0, -30, 20, -30, 0],
+                    x: [0, -30, 20, 30, 0],
+                    rotate: [0, 10, -10, 10, 0],
+                  }}
+                  transition={{
+                    duration: 10,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    repeatType: "reverse",
+                  }}
+                  className=""
+                  src={ServiceForYouStickerImg}
+                  alt=""
+                />
               </div>
             </div>
             <div>
