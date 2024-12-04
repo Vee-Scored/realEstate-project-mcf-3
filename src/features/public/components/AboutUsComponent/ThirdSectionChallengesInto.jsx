@@ -17,7 +17,16 @@ const ThirdSectionChallengesInto = () => {
             alt=""
           />
         </div>
-        <div>
+        <div className=" flex-col lg:flex-row flex justify-between items-center gap-5">
+          <span className=" text-base font-normal text-neutral-700 font-heading ">
+            Our story is one of perseverance and growth. We’ve faced obstacles,
+            embraced change, and used every challenge as an opportunity to learn
+            and improve. This resilience is what makes us who we are today. Our
+            story began with a simple idea: to make a meaningful difference in
+            the lives of our customers. What started as a small venture has
+            grown into a trusted name, built on hard work, innovation, and an
+            unwavering commitment to excellence.
+          </span>
           <span className=" text-base font-normal text-neutral-700 font-heading ">
             Our story is one of perseverance and growth. We’ve faced obstacles,
             embraced change, and used every challenge as an opportunity to learn
