@@ -57,13 +57,18 @@ const navs = [
   },
   {
     id: 3,
+    content: "BLOG",
+    path: "/blogs",
+  },
+  {
+    id: 4,
     content: "ABOUT",
     path: "/about-us",
   },
   
   
   {
-    id: 4,
+    id: 5,
     content: "CONTACT",
     path: "/contact-us",
   }
@@ -140,7 +145,7 @@ const Header = () => {
      
       <nav className="flex flex-col  justify-center dark:bg-gray-800">
         <Container className={"w-full relative overflow-visible"}>
-        <div className={`w-[110px] md:right-16 right-10 lg:right-20 ${isAuthOpen ? 'md:-bottom-12 bottom-8 opacity-100' : 'md:bottom-14 -bottom-10  opacity-0'} transition-all duration-300 absolute grid grid-rows-2  rounded-sm h-[70px] border-2 cursor-pointer bg-white`}>
+        <div className={`w-[110px] md:right-16 right-10 lg:right-20 ${isAuthOpen ? 'md:-bottom-12 bottom-8 opacity-100' : 'md:bottom-14 pointer-events-none -bottom-10  opacity-0'} transition-all duration-300 absolute grid grid-rows-2  rounded-sm h-[70px] border-2 cursor-pointer bg-white`}>
               <button onClick={()=> nav('/login')} className="hover:text-gray-500">Sign in</button>
               <button onClick={()=> nav('/register')} className="hover:text-gray-500">Sign up</button>
         </div>
