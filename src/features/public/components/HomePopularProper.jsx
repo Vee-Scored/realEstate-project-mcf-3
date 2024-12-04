@@ -36,7 +36,12 @@ const HomePopularProper = () => {
             >
               Popular Properties
             </motion.h1>
-            <ViewAllBtn className={"hidden md:block py-1 px-2"}>
+            <ViewAllBtn
+              path={"/properties"}
+              className={
+                "!text-neutral-500 bg-white border hidden md:block  border-neutral-500 hover:bg-neutral-500 hover:!text-white  py-1 px-2"
+              }
+            >
               View all
             </ViewAllBtn>
           </div>
