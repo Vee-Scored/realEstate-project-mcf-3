@@ -9,7 +9,7 @@ const SectionTitleComponent = ({ name }) => {
         <motion.img
           src={Line101}
           alt="line"
-          initial={{ x: -50, opacity: 0 }}
+          initial={{ x: -10, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
