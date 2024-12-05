@@ -1,8 +1,6 @@
-import { Link } from "react-router-dom";
+import { FaApple, FaGoogle } from "react-icons/fa";
 import ButtonSpinner from "../../../components/ButtonSpinner";
 import useRegister from "../hooks/useRegister";
-import apple from "../../../assets/AuthAsset/apple.svg";
-import google from "../../../assets/AuthAsset/google.svg";
 const RegisterForm = () => {
   const {
     register,
@@ -14,11 +12,11 @@ const RegisterForm = () => {
   } = useRegister();
 
   return (
-    <section className="flex flex-col gap-3 justify-center">
-      <div className="bg-neutral-50 p-6 border border-neutral-200 rounded">
+    <section className="flex flex-col gap-3 justify-center   ">
+      <div className=" p-6 px-8 py-4  rounded">
         <div className=" flex  flex-col gap-3  mb-5">
-          <div className="text-center">
-            <h2 className=" font-heading font-semibold text-neutral-700 text-2xl lg:text-4xl mb-2">
+          <div className="">
+            <h2 className=" font-heading font-bold text-neutral-700 text-2xl lg:text-4xl mb-2">
               Create Account
             </h2>
             <p className="text-sm font-normal text-neutral-500">
@@ -26,16 +24,16 @@ const RegisterForm = () => {
             </p>
           </div>
 
-          <div className="flex justify-between items-center w-full">
-            <button className="flex hover:bg-neutral-100 active:bg-neutral-200 duration-200 items-center gap-2 border border-neutral-200 rounded-md py-1.5 px-5">
-              <img src={apple} alt="apple" />
+          <div className="flex justify-between items-center w-full gap-4">
+            <button className="flex justify-center items-center hover:bg-neutral-100 active:bg-neutral-200 gap-2 border border-neutral-200 rounded-md w-full py-1 ">
+              <FaApple />
               <span className="text-neutral-700 font-normal text-base">
                 {" "}
                 Apple
               </span>
             </button>
-            <button className="flex items-center hover:bg-neutral-100 active:bg-neutral-200 gap-2 border border-neutral-200 rounded-md py-1.5 px-5">
-              <img src={google} alt="google" />
+            <button className="flex justify-center items-center hover:bg-neutral-100 active:bg-neutral-200 gap-2 border border-neutral-200 rounded-md w-full py-1 ">
+              <FaGoogle />
               <span className="text-neutral-700 font-normal text-base">
                 {" "}
                 Google
@@ -196,7 +194,7 @@ const RegisterForm = () => {
           </button>
         </form>
       </div>
-      <p className="text-xs font-normal text-neutral-500 text-center">
+      <p className="text-xs font-normal text-neutral-500 text-center mb-6">
         By clicking continue, you agree to our <br /> Terms of Service and
         Privacy Policy.
       </p>
