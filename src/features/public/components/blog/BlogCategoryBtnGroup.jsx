@@ -1,6 +1,7 @@
 import React from "react";
 import useBlogCategoriesStore from "../../../../stores/useBlogCategoriesStore";
 import BlogCategoryBtn from "./BlogCategoryBtn";
+import { motion } from "framer-motion";
 
 const BlogCategoryBtnGroup = () => {
   const { categories } = useBlogCategoriesStore();
@@ -11,10 +12,18 @@ const BlogCategoryBtnGroup = () => {
         You Can Choose Your Category
       </h3>
       <div className=" flex gap-3 items-center overflow-x-hidden category-buttons-group ">
-        {categories.map((category) => (
-          <BlogCategoryBtn key={category.id} category={category}>
-            {category.name}
-          </BlogCategoryBtn>
+        {categories.map((category, index) => (
+          <motion.div
+            key={category.id}
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: index * 0.3 }}
+            viewport={{ once: true }}
+          >
+            <BlogCategoryBtn category={category}>
+              {category.name}
+            </BlogCategoryBtn>
+          </motion.div>
         ))}
       </div>
     </div>

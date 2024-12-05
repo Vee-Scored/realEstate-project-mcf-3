@@ -4,6 +4,7 @@ import BlogCard from "./BlogCard";
 import ViewAllBtn from "../../../../components/ViewAllBtn";
 import useBlogStore from "../../../../stores/useBlogStore";
 import useBlogCategoriesStore from "../../../../stores/useBlogCategoriesStore";
+import { motion } from "framer-motion";
 
 const BlogCardGroup = () => {
   const pageLimits = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -22,8 +23,16 @@ const BlogCardGroup = () => {
               blog.category === currentActive.name ||
               currentActive.name === "All"
           )
-          .map((blog) => (
-            <BlogCard key={blog.id} blog={blog} />
+          .map((blog, index) => (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: index * 0.3 }}
+              viewport={{ once: true }}
+              key={blog.id}
+            >
+              <BlogCard blog={blog} />
+            </motion.div>
           ))}
       </div>
       <div className=" flex items-center gap-2 w-full justify-center ">
