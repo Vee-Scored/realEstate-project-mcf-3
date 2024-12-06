@@ -107,7 +107,7 @@ const PopularProperCard = ({
             <span>Listed date : </span>
             <span>{listedDate}</span>
           </div>
-          <Link to={`/properties/property-detail/${slug}`}>
+          <Link to={`/properties/${type}/${slug}`}>
             <PropertyBtn onClick={scrollToTop} text={"View detail"} />
           </Link>
         </div>

@@ -1,10 +1,17 @@
+import { motion } from "framer-motion";
 import React from "react";
 import Container from "./Container";
 const NewLetters = () => {
   return (
     <section>
       <Container>
-        <div className="flex flex-col gap-5 ;g:gap-8 items-start newLetters__bg border border-neutral-200 rounded-lg lg:px-8 px-4 py-5 lg:py-10 ">
+        <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="flex flex-col gap-5 ;g:gap-8 items-start newLetters__bg border border-neutral-200 rounded-lg lg:px-8 px-4 py-5 lg:py-10 "
+        >
           <div className="flex flex-col gap-3 items-start">
             <h4 className="text-2xl font-semibold text-black font-heading">
               Newsletter
@@ -26,7 +33,7 @@ const NewLetters = () => {
               SUBSCRIBE
             </button>
           </div>
-        </div>
+        </motion.div>
       </Container>
     </section>
   );

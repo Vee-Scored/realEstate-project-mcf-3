@@ -1,6 +1,7 @@
 import React from "react";
 import SectionTitleComponent from "../../../../components/SectionTitleComponent";
 import AboutUs_Properties from "./AboutUs_Properties";
+import { motion } from "framer-motion";
 
 const SecondSectionThePath = ({ AboutUsPropertiesArray }) => {
   return (
@@ -9,12 +10,22 @@ const SecondSectionThePath = ({ AboutUsPropertiesArray }) => {
       <div className=" flex md:flex-row flex-col xl:flex-row  justify-between items-center">
         {/* left */}
         <div className=" w-11/12 md:w-[35%]  xl:w-[30%] me-[8%] xl:me-0">
-          <h1 className=" text-neutral-700 xl:text-[40px]   text-[36px] leading-[59.22px] xl:leading-[65.8px] font-sans font-semibold">
+          <motion.h1
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className=" text-neutral-700 xl:text-[40px]   text-[36px] leading-[59.22px] xl:leading-[65.8px] font-sans font-semibold"
+          >
             The Path to Where We Are Today
-          </h1>
+          </motion.h1>
         </div>
         {/* right */}
-        <div className=" md:w-2/5 text-base flex flex-col  text-neutral-500 w-full  xl:w-[44%] mr-[2%]">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className=" md:w-2/5 text-base flex flex-col  text-neutral-500 w-full  xl:w-[44%] mr-[2%]"
+        >
           <span>
             From humble beginnings to a trusted name in the industry, our
             journey reflects our dedication to innovation, quality, and customer
@@ -26,7 +37,7 @@ const SecondSectionThePath = ({ AboutUsPropertiesArray }) => {
             grown into a trusted name, built on hard work, innovation, and an
             unwavering commitment to excellence.
           </span>
-        </div>
+        </motion.div>
       </div>
       {/* second */}
       <div className="gap-8 flex flex-col">

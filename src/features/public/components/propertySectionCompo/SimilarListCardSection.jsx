@@ -4,12 +4,17 @@ import { useEffect, useState } from "react";
 import PopularProperCard from "./PopularProperCard";
 import useCardList from "../../../../stores/useCardList";
 
-const SimilarListCardSection = () => {
+const SimilarListCardSection = ({ slug }) => {
   const { cards } = useCardList();
+  const currentData = cards.find((d) => d.slug == slug);
+
+  // console.log(cards);
+
+  const similarLists = cards.filter((card) => card.type === currentData.type);
 
   const [resultList, setResultList] = useState([]);
   useEffect(() => {
-    setResultList(cards);
+    setResultList(similarLists);
   }, []);
   // console.log(resultList.slice(0, 3));
   return (

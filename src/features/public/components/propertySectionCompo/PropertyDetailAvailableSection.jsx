@@ -20,7 +20,6 @@ const avatars = [AvatarOne, AvatarTwo, AvatarThree, AvatarFour];
 const PropertyDetailAvailableSection = ({ slug }) => {
   const { cards } = useCardList();
   const currentData = cards.find((d) => d.slug == slug);
-  console.log(currentData);
 
   // const {
   //   id,
@@ -39,71 +38,9 @@ const PropertyDetailAvailableSection = ({ slug }) => {
 
   return (
     <section>
-      <div className="  py-5  md:py-16 flex xl:flex-row flex-col  gap-[134px] justify-between xl:items-center">
+      <div className="  py-5  md:py-10 grid xl:grid-cols-5 grid-cols-1  gap-[134px] xl:justify-between  xl:items-center">
         {/* left */}
-        {/* <div className=" w-[735px] gap-20 flex flex-col justify-between ">
-          <div className=" flex flex-col gap-4 justify-between">
-           
-            <div className=" flex flex-col gap-4">
-              <div className="  flex justify-center items-center bg-[#22C55E] w-[128px] h-[32px] py-[2px] px-[10px] rounded-sm">
-                <span className=" text-neutral-50 text-base font-medium font-heading">
-                  {currentData.details.propertyDetails.status}
-                </span>
-              </div>
-              <div>
-                <h1 className=" text-primary-500 text-[40px] leading-[65.8px] font-semibold font-heading">
-                  {currentData.name}
-                </h1>
-              </div>
-            </div>
-            <div className=" flex items-center gap-1 text-neutral-700 text-base font-medium font-sans">
-              <span>Unit ID :</span>
-              <span>{currentData.id}</span>
-            </div>
-            <div className=" text-neutral-700 font-normal text-base font-sans">
-              <p>{currentData.details.description}</p>
-            </div>
-            <div className=" flex items-center gap-[5px]">
-              <span className=" text-2xl font-semibold font-heading text-neutral-700">
-                ${currentData.pricePerMonth}
-              </span>
-              <span className=" text-neutral-500 text-lg font-normal font-sans">
-                /month
-              </span>
-            </div>
-            <div className=" flex items-center gap-4">
-              <PropertyDetailRoomInfoSmall
-                image={BedSingle}
-                bathrooms={currentData.bathrooms}
-                unt={"Bedrooms"}
-              />
-              <div className=" bg-neutral-700 py-3 px-[1px]"></div>
-
-              <PropertyDetailRoomInfoSmall
-                image={Bath}
-                unt={"Bathrooms"}
-                bathrooms={currentData.bedrooms}
-              />
-              <div className=" bg-neutral-700 py-3 px-[1px]"></div>
-
-              <PropertyDetailRoomInfoSmall
-                image={Move}
-                bathrooms={currentData.sizeSqft}
-                unt={"sqft"}
-              />
-            </div>
-          </div>
-          <div className=" flex items-center gap-2">
-            <div>
-              <img src={calendar} alt="" />
-            </div>
-            <div className=" text-base font-sans font-normal  text-neutral-700">
-              <span>Listed date :</span>
-              <span>{currentData.listedDate}</span>
-            </div>
-          </div>
-        </div> */}
-        <div className=" flex flex-col justify-between    xl:py-8  bg-white   dark:border-gray-700 dark:bg-gray-800  ">
+        <div className=" flex flex-col justify-between xl:col-span-3    xl:py-8  bg-white   dark:border-gray-700 dark:bg-gray-800  ">
           <div className="  flex flex-col gap-3  dark:border-gray-700 ">
             <div>
               <div
@@ -116,19 +53,20 @@ const PropertyDetailAvailableSection = ({ slug }) => {
                 {currentData.available === true ? "Available" : "Unavailable"}
               </div>
             </div>
-            <p className="text-primary-500 text-lg md:text-[40px]   font-heading  leading-normal font-bold ">
+            <p className="text-primary-500 text-2xl md:text-4xl   font-heading  leading-normal font-bold ">
               {currentData.name}
             </p>
             <div className=" flex gap-2 text-sm  text-neutral-700 dark:text-neutral-400 font-normal">
               <p>Unit ID : </p>
               <p>{currentData.id}</p>
             </div>
-            <p className=" text-base  text-neutral-500">
+            <p className=" text-base  text-neutral-500 md:tracking-normal tracking-tight xl:pe-6 md:pe-60">
               {currentData.details.description}
             </p>
 
             <p
               className={`flex items-center
+                
                 ${
                   currentData.available === false
                     ? "line-through decoration-[1.5px] text-2xl font-heading  text-neutral-500"
@@ -136,10 +74,10 @@ const PropertyDetailAvailableSection = ({ slug }) => {
                 }
               `}
             >
-              <span className=" text-2xl font-heading text-center  font-semibold text-neutral-700">
+              <span className=" text-xl md:text-2xl font-heading text-center  font-semibold text-neutral-700">
                 ${currentData.pricePerMonth}
               </span>{" "}
-              <span className="text-2xl font-heading text-center  font-semibold text-neutral-500 ">
+              <span className="text-xl md:text-2xl font-heading text-center  font-semibold text-neutral-500 ">
                 / month
               </span>
             </p>
@@ -175,7 +113,7 @@ const PropertyDetailAvailableSection = ({ slug }) => {
           </div>
         </div>
         {/* right */}
-        <div className=" xl:w-[411px] w-full p-6 flex flex-col gap-8 rounded-xl bg-neutral-50 shadow-xl ">
+        <div className=" w-full p-6 flex flex-col me-auto  xl:col-span-2 gap-8 rounded-xl bg-neutral-50 shadow-xl  ">
           <div className=" flex gap-5  flex-col">
             {/* header img */}
             <div className=" flex justify-between items-center">

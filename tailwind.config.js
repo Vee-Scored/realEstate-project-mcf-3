@@ -38,6 +38,7 @@ export default {
       backgroundImage: {
         "error-pattern": "url('/src/assets/erroState.png')",
         "dream-home": "url('/src/assets/building.png')",
+        "auth-bg": "url('/src/assets/AuthAsset/AuthPhoto.jpg')",
       },
       fontFamily: {
         sans: ["Inter", "sans-serif"],

@@ -1,6 +1,6 @@
 import React from "react";
 
-const LabelAndInputComponent = ({
+const LabelAndTextAreaComponent = ({
   name,
   textType,
   textPlaceholder,
@@ -14,14 +14,15 @@ const LabelAndInputComponent = ({
       >
         {name}
       </label>
-      <input
+      <textarea
         id={name}
-        className=" rounded-sm border py-3 px-3  border-neutral-200 text-sm font-normal font-heading"
+        className=" rounded-sm  resize-none border py-3 px-3  border-neutral-200 text-sm font-normal font-heading"
         type={textType}
         placeholder={textPlaceholder}
+        rows={5}
       />
     </div>
   );
 };
 
-export default LabelAndInputComponent;
+export default LabelAndTextAreaComponent;
