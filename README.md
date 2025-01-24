@@ -23,7 +23,7 @@ This is a co-operative project of MMS-Connections program intend for team-collab
 
 * Github host
 * Header, Testimonial and FAQs  sections
-* Animations
+
 
 ## Project Link
 
