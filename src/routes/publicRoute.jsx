@@ -44,7 +44,7 @@ const publicRoute = [
     element: <BlogPage />,
   },
   {
-    path: "blogs/estate/:slug-name",
+    path: "blogs/estate/:slug",
     element: <BlogDetailPage />,
   },
 
@@ -58,7 +58,7 @@ const publicRoute = [
     element: <PropertyPage />,
   },
   {
-    path: "properties/property-detail/:slug",
+    path: "properties/:category-name/:slug",
     element: <PropertyDetail />,
   },
   {

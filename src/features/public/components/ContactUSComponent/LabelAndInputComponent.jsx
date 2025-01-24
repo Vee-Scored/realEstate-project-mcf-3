@@ -7,9 +7,7 @@ const LabelAndInputComponent = ({
   className,
 }) => {
   return (
-    <div
-      className={`flex flex-col gap-2 w-[301px] ${className ? className : ""}`}
-    >
+    <div className={`flex flex-col gap-2 w-full ${className ? className : ""}`}>
       <label
         htmlFor={name}
         className=" font-heading font-normal text-base text-neutral-700 first-letter:uppercase"
@@ -18,7 +16,7 @@ const LabelAndInputComponent = ({
       </label>
       <input
         id={name}
-        className=" rounded-sm border py-2 px-3  border-neutral-200 text-sm font-normal font-heading"
+        className=" rounded-sm border py-3 px-3  border-neutral-200 text-sm font-normal font-heading"
         type={textType}
         placeholder={textPlaceholder}
       />

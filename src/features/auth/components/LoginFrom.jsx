@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import ButtonSpinner from "../../../components/ButtonSpinner";
 import useLogin from "../hooks/useLogin";
 
-const LoginFrom = () => {
+const LoginFrom = ({ changeModal }) => {
   const { handleLogin, handleSubmit, errors, register, isSubmitting } =
     useLogin();
 
@@ -93,12 +93,12 @@ const LoginFrom = () => {
       </button>
       <p className="text-sm font-light text-neutral-500 dark:text-neutral-400">
         Don’t have an account yet?{" "}
-        <Link
-          to="/register"
+        <button
+          onClick={changeModal}
           className="font-medium text-blue-600 hover:underline dark:text-blue-500"
         >
           Sign up
-        </Link>
+        </button>
       </p>
     </form>
   );

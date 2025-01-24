@@ -1,23 +1,35 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const SearchForm = () => {
   const [isFocused, setIsFocused] = useState(false);
   return (
     <div>
-      <form action="" className=" flex justify-between gap-6">
+      <motion.form
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.5 }}
+        action=""
+        className="grid grid-cols-2 md:grid-cols-7 gap-5"
+      >
         {/* search input  */}
-        <div className="relative ">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          className="relative col-span-2 md:col-span-3"
+        >
           <input
             type="search"
             id="default-search"
-            className="block w-96 h-16 rounded-sm group p-4  text-sm text-gray-900 border border-gray-300   focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 placeholder:text-center dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 "
+            className="block w-full h-16 rounded-sm group p-4  text-sm text-gray-900 border border-gray-300   focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 placeholder:text-center dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 "
             placeholder={`${isFocused ? " " : "Search Location"}`}
             onFocus={() => setIsFocused(true)}
             onBlur={() => setIsFocused(false)}
             required
           />
           <div
-            className={`absolute inset-y-0 left-3 translate-x-16 flex items-center pointer-events-none transition-opacity duration-200 ${
+            className={`absolute inset-y-0 md:-left-2 lg:left-5 xl:left-24 translate-x-16 flex items-center pointer-events-none transition-opacity duration-200 ${
               isFocused ? "opacity-0" : "opacity-100"
             }`}
           >
@@ -37,36 +49,56 @@ const SearchForm = () => {
               />
             </svg>
           </div>
-        </div>
-        {/* select buy  */}
-        <div>
-          <select
-            id="countries"
-            className=" border   border-gray-300 text-gray-900 text-sm  p-4  focus:ring-neutral-300 focus:border-neutral-300 text-center  block w-80 h-16 rounded-sm  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white  "
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.7 }}
+          className="grid md:grid-cols-3 col-span-2 grid-cols-2 gap-5  md:col-span-4"
+        >
+          {/* select buy  */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.9 }}
           >
-            <option selected>Buy</option>
-            <option value="Rent">Rent</option>
-          </select>
-        </div>
-        {/* select property  */}
-        <div>
-          <select
-            id="countries"
-            className=" border border-gray-300 text-gray-900 text-sm focus:ring-neutral-300 focus:border-neutral-300 text-center    block w-80 h-16 rounded-sm p-4  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white focus:border-0"
+            <select
+              id="countries"
+              className=" border w-full  border-gray-300 text-gray-900 text-sm  p-4  focus:ring-neutral-300 focus:border-neutral-300 text-center  block h-16 rounded-sm  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white  "
+            >
+              <option selected>Buy</option>
+              <option value="Rent">Rent</option>
+            </select>
+          </motion.div>
+          {/* select property  */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 1.1 }}
           >
-            <option selected>property</option>
-            <option value="US">United States</option>
-            <option value="CA">Canada</option>
-            <option value="FR">France</option>
-            <option value="DE">Germany</option>
-          </select>
-        </div>
-        <div>
-          <button className=" bg-neutral-700 h-16  rounded-sm text-white p-3  text-center ">
-            Search Result
-          </button>
-        </div>
-      </form>
+            <select
+              id="countries"
+              className=" border w-full border-gray-300 text-gray-900 text-sm focus:ring-neutral-300 focus:border-neutral-300 text-center    block h-16 rounded-sm p-4  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white focus:border-0"
+            >
+              <option selected>property</option>
+              <option value="US">United States</option>
+              <option value="CA">Canada</option>
+              <option value="FR">France</option>
+              <option value="DE">Germany</option>
+            </select>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 1.3 }}
+            className="w-full col-span-2 md:col-span-1"
+          >
+            <button className=" bg-neutral-700 h-16 w-full text-sm   rounded-sm text-white   text-center ">
+              Search Result
+            </button>
+          </motion.div>
+        </motion.div>
+      </motion.form>
     </div>
   );
 };

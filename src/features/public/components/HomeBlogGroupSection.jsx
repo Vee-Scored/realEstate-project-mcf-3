@@ -1,6 +1,4 @@
 import React from "react";
-import { blogs } from "../../../components/blog/constant";
-import BlogCard from "../../../components/blog/BlogCard";
 import ViewAllBtn from "../../../components/ViewAllBtn";
 import Container from "../../../components/Container";
 import SectionTitleComponent from "../../../components/SectionTitleComponent";
@@ -8,7 +6,14 @@ import "swiper/css";
 import "swiper/css/autoplay";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import useBlogStore from "../../../stores/useBlogStore";
+import BlogCard from "./blog/BlogCard";
+import SeeMoreBtn from "./SeeMoreBtn";
+
+import { motion } from "framer-motion";
+
 const HomeBlogGroupSection = () => {
+  const { blogs } = useBlogStore();
   const options = {
     delay: 3000,
     disableOnInteraction: false,
@@ -28,20 +33,45 @@ const HomeBlogGroupSection = () => {
         </div> */}
 
           <SectionTitleComponent name={"Blog"} />
-          <h1 className="text-5xl leading-10 font-semibold text-neutral-700 font-heading">
+          <motion.h1
+            initial={{ opacity: 0, y: -100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            viewport={{ once: true }}
+            className="text-5xl leading-10 font-semibold text-neutral-700 font-heading"
+          >
             Read Our Sight
-          </h1>
+          </motion.h1>
           <div className="flex justify-between items-center w-full">
-            <p className="font-normal text-lg text-neutral-500">
+            <motion.p
+              initial={{ opacity: 0, y: -100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+              viewport={{ once: true }}
+              className="font-normal text-lg text-neutral-500"
+            >
               Explore expert tips, market trends, and home-buying guides in our
               blog <br />
               section. Start reading today.
-            </p>
-            <ViewAllBtn>View all</ViewAllBtn>
+            </motion.p>
+            <ViewAllBtn
+              path={"/blogs"}
+              className={
+                "!text-neutral-500 bg-white border hidden md:block  border-neutral-500 hover:bg-neutral-500 hover:!text-white"
+              }
+            >
+              View all
+            </ViewAllBtn>
           </div>
         </div>
         <Container className={"!px-0"}>
-          <div className=" gap-5 ">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            viewport={{ once: true }}
+            className=" gap-5 "
+          >
             <Swiper
               modules={[Autoplay]}
               spaceBetween={20}
@@ -49,13 +79,18 @@ const HomeBlogGroupSection = () => {
               loop={true}
               breakpoints={breakPoint}
             >
-              {blogs.map((blog) => (
+              {blogs?.map((blog) => (
                 <SwiperSlide key={blog.id}>
                   <BlogCard blog={blog} />
                 </SwiperSlide>
               ))}
             </Swiper>
-          </div>
+          </motion.div>
+
+
+          <SeeMoreBtn path={'/blogs'} className={'my-2 rounded-md md:hidden'}/>
+
+         
         </Container>
       </section>
     </Container>

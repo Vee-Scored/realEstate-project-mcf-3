@@ -4,6 +4,8 @@ import BreadCrumb from "../BreadCrumb";
 import MeetOurTeam from "../MeetOurTeam";
 import FaqImg from "../../../../assets/FaqImgs/faq.png";
 import Arrow from "../../../../assets/FaqImgs/arrow.svg";
+import PaperPlane from "../../../../assets/meetOurTeam/paper-plane.svg";
+import SecBreadCrumb from "../../../../components/SecBreadCrumb";
 
 const faqs = [
   {
@@ -41,25 +43,23 @@ const Faq = () => {
   };
 
   return (
-    <section>
-      <BreadCrumb currentPage={"faq"} />
+    <section className="flex flex-col gap-10 lg:gap-24">
+      <BreadCrumb currentPage={"Faq"} className={"hidden md:block"} />
       <Container>
-        <div className="mt-10 flex flex-col gap-36">
-          <div className="flex items-center justify-between gap-6">
-            <div>
-              <h1 className="font-sans font-semibold text-4xl text-neutral-700 mb-8">
+        <SecBreadCrumb className={"block md:hidden"} currentPageTitle={"faq"} />
+        <div className="mt-10 flex flex-col gap-5">
+          <div className="lg:grid flex flex-col-reverse lg:grid-cols-2 gap-6">
+            <div className="">
+              <h1 className="font-sans font-semibold lg:text-3xl xl:text-4xl text-neutral-700 mb-8">
                 You ask ? We Answer
               </h1>
 
-              <p className="font-sans font-semibold text-2xl text-neutral-700 mb-8">
-
-             
-
+              <p className="font-sans font-semibold text-lg md:text-2xl text-neutral-700 lg:mb-5 xl:mb-8">
                 Now, dive in, explore, and let’s answer those burning questions!
                 🔥
               </p>
-              <div className="max-w-3xl mx-auto">
-                <div className="space-y-4">
+              <div className="max-w-3xl text-sm md:text-lg mx-auto">
+                <div className="space-y-2">
                   {faqs.map((faq, index) => (
                     <div
                       key={index}
@@ -98,11 +98,16 @@ const Faq = () => {
               </div>
             </div>
             <div>
-              <img src={FaqImg} />
+              <img className="w-full h-full bg-contain" src={FaqImg} />
             </div>
           </div>
-          <div>
+          <div className="relative  ">
             <MeetOurTeam />
+            <img
+              src={PaperPlane}
+              alt=""
+              className="w-1/4 md:w-auto absolute top-0 right-0 lg:top-28 lg:right-20"
+            />
           </div>
         </div>
       </Container>

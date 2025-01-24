@@ -1,11 +1,12 @@
 import React from "react";
 import ContactAdminInputLable from "./ContactAdminInputLable";
 import useContactAdminSend from "../../hooks/useContactAdminSend";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const ContactAdminComponent = () => {
   const { handleSend, handleSubmit, register, isSubmitting } =
     useContactAdminSend();
+  const nav = useNavigate();
 
   return (
     <form
@@ -41,16 +42,15 @@ const ContactAdminComponent = () => {
       />
 
       <div className=" flex justify-between items-center">
-        <Link to={"/"}>
-          <button
-            // disabled={isSubmitting}
-            className=" font-heading bg-white py-2 px-3 rounded-sm text-sm text-neutral-700 flex disabled:pointer-events-none disabled:opacity-80 justify-center items-center gap-3 "
-          >
-            Cancle
-            {/* {isSubmitting && <ButtonSpinner />} */}
-          </button>
-        </Link>
-
+        <button
+          // disabled={isSubmitting}
+          onClick={() => nav(-1)}
+          className=" font-heading bg-white py-2 px-3 rounded-sm text-sm text-neutral-700 flex disabled:pointer-events-none disabled:opacity-80 justify-center items-center gap-3 "
+        >
+          Cancle
+          {/* {isSubmitting && <ButtonSpinner />} */}
+        </button>
+        {/*  */}
         <button
           type="submit"
           //   disabled={isSubmitting}

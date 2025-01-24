@@ -2,6 +2,7 @@ import React from 'react'
 import Container from '../../../components/Container'
 import BreadCrumb from '../components/BreadCrumb'
 import MeetOurTeam from '../components/MeetOurTeam'
+import SecBreadCrumb from '../../../components/SecBreadCrumb'
 
 
 const terms = [
@@ -39,13 +40,13 @@ const terms = [
 const TermsBox = ({serial,title, paragraph, subLines}) => {
   console.log(subLines)
   return (
-    <div className='py-10 pr-32 flex border-b-2 flex-col gap-5'>
-      <h4 className='text-2xl text-neutral-700 font-semibold leading-10 font-sans'>
+    <div className='md:py-10 py-5 md:pr-32 flex border-b-2 flex-col gap-5'>
+      <h4 className='md:text-2xl text-lg text-neutral-700 font-semibold leading-10 font-sans'>
       {serial + 1}. {title}
       </h4>
 
-      <div className='w-3/4'>
-          <p className='font-normal text-neutral-500 text-xl font-heading'>
+      <div className='md:w-3/4'>
+          <p className='font-normal text-neutral-500 text-sm md:text-xl font-heading'>
           {
             paragraph
           }
@@ -53,7 +54,7 @@ const TermsBox = ({serial,title, paragraph, subLines}) => {
 
           {
             subLines && (
-              <ul className='font-heading text-xl font-normal text-neutral-500 px-3 flex flex-col gap-3 my-3'>
+              <ul className='font-heading text-sm md:text-xl font-normal text-neutral-500 px-3 flex flex-col gap-3 my-3'>
             {
               subLines.map((l,i) => <li className='flex gap-2' key={i}><div className='text-center w-3'>{i+1}</div> <div>.</div> {l}</li> )
             }
@@ -71,13 +72,14 @@ const TermsBox = ({serial,title, paragraph, subLines}) => {
 const TermsAndConditionPage = () => {
   return (
     <section>
-            <BreadCrumb currentPage={"Terms & Condition"} />
-        <Container className={"my-20"}>
+            <BreadCrumb className={'hidden md:block'} currentPage={"Terms & Conditions"} />
+        <Container className={"md:my-20"}>
+            <SecBreadCrumb className={"block md:hidden"} currentPageTitle={'terms & conditions'} />
 
             
              <div className='border-b-2  pb-10'>
-             <h2 className='font-sans text-neutral-700 text-4xl my-5 font-bold'>Terms & condition</h2>
-              <h4 className='font-sans  text-neutral-500 text-2xl font-semibold leading-10 my-10'>Last Updated: 27 Nov 2024</h4>
+             <h2 className='font-sans text-neutral-700 text-2xl md:text-4xl my-3 md:my-5 font-bold'>Terms & condition</h2>
+              <h4 className='font-sans  text-neutral-500 text-lg md:text-2xl font-semibold leading-10 my-5 md:my-10'>Last Updated: 27 Nov 2024</h4>
               <p className='font-heading'>Welcome to Estatela. By accessing or using our website ([Website URL]) and services, you agree to comply with and be bound by these Terms and Conditions. If you do not agree to these terms, please do not use our services.</p>
              </div>
 

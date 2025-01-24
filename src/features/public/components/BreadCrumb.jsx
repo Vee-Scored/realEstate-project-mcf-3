@@ -3,11 +3,18 @@ import { LuHome } from "react-icons/lu";
 import { Link } from "react-router-dom";
 import Container from "../../../components/Container";
 import { IoIosArrowForward } from "react-icons/io";
+import { motion } from "framer-motion";
 
-const BreadCrumb = ({ currentPage }) => {
+const BreadCrumb = ({ currentPage, className }) => {
   return (
-    <Container className={"w-full"}>
-      <div className="  ps-10 py-10 w-full  bg-neutral-100  flex flex-col items-start justify-center gap-3 border-y ">
+    <Container className={`w-full ${className}`}>
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+        className="  ps-10 py-10 w-full  bg-neutral-100  flex flex-col items-start justify-center gap-3 border-y "
+      >
         <div className=" ">
           <h1 className=" first-letter:uppercase font-sans text-neutral-700 text-[40px] leading-[65.8px] font-semibold">
             {currentPage}
@@ -35,7 +42,7 @@ const BreadCrumb = ({ currentPage }) => {
             </span>
           </li>
         </ol>
-      </div>
+      </motion.div>
     </Container>
   );
 };

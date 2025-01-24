@@ -1,19 +1,39 @@
 import React from "react";
 import BlogCategoryBtnGroup from "./BlogCategoryBtnGroup";
-import { blogs } from "../../../../components/blog/constant";
-import BlogCard from "../../../../components/blog/BlogCard";
+import BlogCard from "./BlogCard";
 import ViewAllBtn from "../../../../components/ViewAllBtn";
+import useBlogStore from "../../../../stores/useBlogStore";
+import useBlogCategoriesStore from "../../../../stores/useBlogCategoriesStore";
+import { motion } from "framer-motion";
 
 const BlogCardGroup = () => {
   const pageLimits = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-
+  const { blogs } = useBlogStore();
+  const { categories } = useBlogCategoriesStore();
+  const currentActive = categories.find(
+    (category) => category.isActive === true
+  );
   return (
     <section className=" min-h-dvh flex flex-col gap-10 mb-10">
       <BlogCategoryBtnGroup />
       <div className=" grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-5 ">
-        {blogs.map((blog) => (
-          <BlogCard key={blog.id} blog={blog} />
-        ))}
+        {blogs
+          .filter(
+            (blog) =>
+              blog.category === currentActive.name ||
+              currentActive.name === "All"
+          )
+          .map((blog, index) => (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: index * 0.3 }}
+              viewport={{ once: true }}
+              key={blog.id}
+            >
+              <BlogCard blog={blog} />
+            </motion.div>
+          ))}
       </div>
       <div className=" flex items-center gap-2 w-full justify-center ">
         <label

@@ -1,10 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import Container from "../../../components/Container";
-import BreadCrumb from "../components/BreadCrumb";
 
 import FirstSectionWhoWeAre from "../components/AboutUsComponent/FirstSectionWhoWeAre";
 import SecondSectionThePath from "../components/AboutUsComponent/SecondSectionThePath";
 import ThirdSectionChallengesInto from "../components/AboutUsComponent/ThirdSectionChallengesInto";
+import SecBreadCrumb from "../../../components/SecBreadCrumb";
+import BreadCrumb from "../components/BreadCrumb";
 const AboutUsPage = () => {
   const [show, setShow] = useState(false);
   const pBarRef = useRef();
@@ -38,10 +39,11 @@ const AboutUsPage = () => {
     },
   ];
   return (
-    <section className="flex flex-col mb-20 gap-20">
-      <BreadCrumb currentPage={"about-as"} />
+    <section className="flex flex-col mb-20 gap-24">
+      <BreadCrumb className={"hidden md:block"} currentPage={"about-us"} />
       <Container>
-        <div className=" flex flex-col justify-between gap-40">
+        <SecBreadCrumb currentPageTitle={"about-us"} className={"md:hidden"} />
+        <div className=" flex flex-col justify-between gap-8 xl:gap-16">
           {/* first section */}
           <FirstSectionWhoWeAre show={show} pBarRef={pBarRef} />
 

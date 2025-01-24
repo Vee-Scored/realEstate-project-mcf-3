@@ -11,13 +11,13 @@ const Lightbox = ({ images }) => {
   };
 
   return (
-    <div className="mx-auto">
+    <div className="mx-auto flex flex-col justify-center items-center">
       {/* Main Image */}
-      <div className="mb-8">
+      <div className="mb-8 xl:w-[1000px]  xl:h-[636px] ">
         <img
           src={selectedImage}
           alt="Selected"
-          className="w-full h-[519px] rounded-sm shadow-md "
+          className="h-full w-full aspect-square object-cover rounded-sm shadow-md "
         />
       </div>
 
@@ -40,7 +40,7 @@ const Lightbox = ({ images }) => {
               <img
                 src={image}
                 alt={`Thumbnail ${index + 1}`}
-                className="w-[194px] h-[153px] object-cover rounded-sm"
+                className="xl:w-[194px] md:w-[173px] w-[142px] md:h-[153px] h-[120px] object-cover rounded-sm"
               />
             </div>
           </SwiperSlide>

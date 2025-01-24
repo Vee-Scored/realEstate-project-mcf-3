@@ -4,20 +4,21 @@ import avatarImage2 from "../../../assets/Avatars/AvatarImage-2.png";
 import avatarImage3 from "../../../assets/Avatars/AvatarImage-3.png";
 import avatarImage4 from "../../../assets/Avatars/AvatarImage-4.png";
 import avatarImage5 from "../../../assets/Avatars/AvatarImage-5.png";
-import bgImg from "../../../assets/meetOurTeam/meetOurTeamBg.jpg"
+import bgImg from "../../../assets/meetOurTeam/meetOurTeamBg.jpg";
+import { Link } from "react-router-dom";
 const avatars = [
   avatarImage5,
+  avatarImage4,
   avatarImage1,
   avatarImage2,
   avatarImage3,
-  avatarImage5,
 ];
 
 const MeetOurTeam = () => {
   return (
-    <section className="bg-[url('/src/assets/meetOurTeam/meetOurTeamBg.jpg')] bg-no-repeat bg-cover  py-10 my-16 lg:py-16">
+    <section className=" bg-[url('/src/assets/meetOurTeam/meetOurTeamBg.jpg')] bg-no-repeat bg-cover  py-10 my-16 lg:py-16">
       {/* Content Container */}
-      <div className="flex flex-col gap-12 max-w-[1280px] mx-auto px-4 lg:px-8">
+      <div className=" flex flex-col gap-12 max-w-[1280px] mx-auto px-4 lg:px-8">
         <div className="text-center ">
           <h2 className="text-2xl lg:text-4xl font-bold text-blue-600 mb-4">
             Meet Our Team
@@ -30,9 +31,12 @@ const MeetOurTeam = () => {
         {/* Team Section */}
         <div className="flex flex-col items-center gap-5">
           <div className=" top-1/2 transform -translate-y-1/2 z-10">
-            <button className="bg-[#18181B] text-white px-6 py-2 rounded-md hover:opacity-90 shadow-lg">
+            <Link
+              to="/contact-us"
+              className="bg-[#18181B] text-white px-6 py-2 rounded-md hover:opacity-90 shadow-lg"
+            >
               Get In Touch
-            </button>
+            </Link>
           </div>
 
           <div className="flex justify-center items-center">
